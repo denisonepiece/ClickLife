@@ -1,0 +1,49 @@
+{
+  "name": "toxin",
+  "version": "1.0.0",
+  "description": "FSD education, learning way",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --open --env development --mode development",
+    "build": "webpack --env production --mode production",
+    "serv": "static build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/denisonepiece/toxin.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/denisonepiece/toxin/issues"
+  },
+  "homepage": "https://github.com/denisonepiece/toxin#readme",
+  "devDependencies": {
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^3.2.0",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^4.2.0",
+    "html-webpack-plugin": "^3.2.0",
+    "inputmask": "^4.0.8",
+    "mini-css-extract-plugin": "^0.8.0",
+    "node-sass": "^4.12.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "pug": "^2.0.4",
+    "pug-loader": "^2.4.0",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.0",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "webpack": "^4.39.3",
+    "webpack-cli": "^3.3.7",
+    "webpack-dev-server": "^3.8.0",
+    "webpack-merge": "^4.2.2"
+  },
+  "dependencies": {
+    "jquery": "^3.4.1",
+    "lodash": "^4.17.15",
+    "normalize.css": "^8.0.1",
+    "terser-webpack-plugin": "^1.4.1"
+  }
+}
