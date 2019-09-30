@@ -1,0 +1,27 @@
+mixin button(style, content)
+  case style
+    when 'big-fill-log'
+      button.button.button_fill-big= content
+    when 'business'
+      a.button.button_border.button_business Перевести <br> в бизнес-профиль
+        include lightning.svg
+    when 'setting'
+      button.button.button_border.button_setting Редактировать
+        include setting.svg
+    when 'send'
+      button.button.button_border.button_send= content
+    when 'default-green'
+      button.button.button_border.button_default= content
+    when 'default-orange'
+      button.button.button_border.button_default.button_orange= content
+    when 'default-red'
+      button.button.button_border.button_default.button_red= content
+    when 'default-grey'
+      button.button.button_border.button_default.button_grey= content
+    when 'default-grad'
+      button.button.button_border.button_default.button_grad= content
+    when 'default-grad-big'
+      button.button.button_border.button_default.button_grad.button_big= content
+    when 'default-orange-big'
+      button.button.button_border.button_default.button_orange.button_big= content
+

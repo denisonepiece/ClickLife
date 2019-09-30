@@ -1,3 +1,5 @@
+include ../../components/button/button
+
 section.colors
   h1.section__title Цветовая схема
   .container
@@ -23,6 +25,22 @@ section.typography
     h4 h4 Захавай алтайских этих булок
     h5 h5 Захавай алтайских этих булок
     p p Захавай алтайских этих булок
+
+section.components
+  h1.section__title Компоненты
+  .container
+    .column
+      +button('big-fill-log', 'Войти')
+      +button('business')
+      +button('setting')
+      +button('send', 'Отправить новое письмо')
+      +button('default-green', 'Смотреть всe')
+      +button('default-orange', 'Отозвать заявку')
+      +button('default-red', 'Удалить')
+      +button('default-grey', 'Отказаться')
+      +button('default-grad', 'Создать задание')
+      +button('default-grad-big', 'Подключить')
+      +button('default-orange-big', 'Добавить в избранное')
 
 
 

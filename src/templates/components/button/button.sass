@@ -1,0 +1,133 @@
+@import "../../../sass/colors"
+
+.button
+  border: none
+  cursor: pointer
+
+.button_border
+  border: 1px solid $green
+  border-radius: 15px
+  background: $white
+  color: $green
+
+  &:hover
+    background: $green
+    color: $white
+
+
+.button_default
+  font-weight: 500
+  line-height: 1.6rem
+  padding: .8rem 1.6rem
+  border-radius: 36px
+
+
+.button_orange
+  border-color: $orange
+  color: $orange
+  &:hover
+    background: $orange
+    color: $white
+
+
+.button_red
+  border-color: $red
+  color: $red
+  &:hover
+    background: $red
+    color: $white
+
+.button_grey
+  border-color: $grey-delicate
+  background: $grey-delicate
+  color: $grey-dark
+  &:hover
+    border-color: $red
+    background: $red
+    color: $white
+
+.button_grad
+  background: linear-gradient(347.4deg, #008666 31.95%, #15BC8A 101.43%)
+  border: 1px solid rgba(255, 255, 255, 0.19)
+  box-shadow: 0 4px 11px rgba(41, 230, 173, 0.34)
+  color: $white
+  &:hover
+    background: linear-gradient(174.39deg, #22DCA7 3.34%, #099E74 82.52%);
+
+
+.button_big
+  font-size: 2rem
+  line-height: 2.3rem
+  padding: 1.6rem 3.5rem 1.5rem
+
+.button_grad.button_big
+  border: 2px solid rgba(255, 255, 255, 0.238)
+  &:hover
+    border: 2px solid rgba(255, 255, 255, 0.238)
+
+
+.button_send
+  height: 3rem
+  font-size: 1.4rem
+  line-height: 1.9rem
+  padding: 0 1.6rem
+
+.button_business
+  display: block
+  border-color: $green
+  font-weight: 500
+  color: $green
+  font-size: 1.4rem
+  height: 5.5rem
+  max-width: 17.8rem
+  position: relative
+  padding: 1.1rem 1.8rem 1.3rem 3.8rem
+  line-height: 1.6rem
+
+  &:hover
+    color: $white
+    background: $green
+
+    .icon-lighting
+      path
+        fill: $white
+
+.icon-lighting
+  content: ''
+  position: absolute
+  left: 1.4rem
+  top: 1.1rem
+
+.button_fill-big
+  border-radius: 10px
+  width: 100%
+  background: $green
+  color: $white
+  font-size: 2rem
+  padding: 1.7rem 0
+
+  &:hover
+    background: $grad-green
+
+.button_setting
+  height: 30px
+  width: 150px
+  background: transparent
+  border-color: #EFEFEF
+  color: #CBCBCB
+  padding-left: 25px
+  position: relative
+  font-size: 14px
+
+  &:hover
+    background: $grey-dark
+    color: $white
+
+    .icon-setting
+      path
+        fill: $white
+
+.icon-setting
+  position: absolute
+  left: 13px
+  top: calc(50% - 7px)
