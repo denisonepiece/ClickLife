@@ -1,4 +1,5 @@
 include ../../components/button/button
+include ../../components/input/input
 
 section.colors
   h1.section__title Цветовая схема
@@ -30,6 +31,7 @@ section.components
   h1.section__title Компоненты
   .container
     .column
+      h3 Кнопки
       +button('big-fill-log', 'Войти')
       +button('business')
       +button('setting')
@@ -41,7 +43,9 @@ section.components
       +button('default-grad', 'Создать задание')
       +button('default-grad-big', 'Подключить')
       +button('default-orange-big', 'Добавить в избранное')
-
+      h3 Поля ввода
+      +input('E-mail', 'email')
+      +input()
 
 
 
