@@ -1,7 +1,5 @@
 import './input.sass'
 
-
-
 validateAllEmails();
 
 function validateAllEmails() {
