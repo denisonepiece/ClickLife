@@ -1,0 +1,7 @@
+mixin select(placeholder, ...items)
+  div.select
+    include arrow.svg
+    select
+      option(value="0")=placeholder
+      each item in items
+        option(value= item)= item

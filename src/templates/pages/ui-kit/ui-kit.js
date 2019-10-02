@@ -6,3 +6,4 @@ import './ui-kit.sass';
 import '../../components/button/button'
 import '../../components/input/input'
 import '../../components/input-password/inputPassword'
+import '../../components/select/select'

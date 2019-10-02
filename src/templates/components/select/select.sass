@@ -1,0 +1,56 @@
+@import "../../../sass/colors"
+
+.select
+  position: relative
+  font-size: 1.6rem
+
+.select select
+  display: none
+
+.select-selected
+  background: $grey-delicate
+  color: $grey-dark
+
+.selected
+  color: $black
+
+.select-arrow
+  position: absolute
+  content: ""
+  top: calc(50% - 8px / 2)
+  right: 18px
+  width: 14px
+  height: 8px
+
+.select-arrow-active
+  .input__field
+    border-color: $black
+
+  .select-arrow
+    transform: rotate(180deg)
+
+    path
+      stroke: $black
+
+.select-items div, .select-selected
+  padding: 8px 16px
+  cursor: pointer
+
+.select-items
+  position: absolute
+  background-color: $grey-delicate
+  border-radius: 0.625em
+  top: calc(100% + 0.375em)
+  color: $grey-dark
+  left: 0
+  right: 0
+  z-index: 99
+  padding: 0.5em 0.313em
+
+.select-hide
+  display: none
+
+.select-items div:hover, .same-as-selected
+  background-color: $grey-lite
+  color: $black
+  border-radius: 0.5em
