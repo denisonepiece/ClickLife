@@ -1,0 +1,26 @@
+@import "../../../sass/colors"
+
+.textarea
+  font-size: 1.4rem
+  position: relative
+
+.textarea.input_success
+  .textarea__counter
+    color: $green
+
+.textarea.input_error
+  &:after
+    display: none
+
+  .textarea__counter
+    color: $red
+
+.textarea__field
+  resize: none
+  height: 10em
+
+
+.textarea__counter
+  position: absolute
+  bottom: calc( -1em - 0.6rem)
+  right: 0.6rem

@@ -10,6 +10,7 @@
 .select-selected
   background: $grey-delicate
   color: $grey-dark
+  cursor: pointer
 
 .selected
   color: $black
@@ -32,9 +33,11 @@
     path
       stroke: $black
 
-.select-items div, .select-selected
-  padding: 8px 16px
+.select-items div
   cursor: pointer
+  line-height: 1.5em
+  padding: 0.188em 0.9rem 0.25em
+
 
 .select-items
   position: absolute
@@ -45,7 +48,7 @@
   left: 0
   right: 0
   z-index: 99
-  padding: 0.5em 0.313em
+  padding: 0.5em 0.5rem
 
 .select-hide
   display: none
