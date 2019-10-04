@@ -15,7 +15,7 @@ for (i = 0; i < x.length; i++) {
   for (j = 1; j < selElmnt.length; j++) {
     c = document.createElement("DIV");
     c.innerHTML = selElmnt.options[j].innerHTML;
-    c.addEventListener("click", function(e) {
+    c.addEventListener("click", function (e) {
       var y, i, k, s, h;
       s = this.parentNode.parentNode.getElementsByTagName("select")[0];
       h = this.parentNode.previousSibling;
@@ -36,7 +36,7 @@ for (i = 0; i < x.length; i++) {
     b.appendChild(c);
   }
   x[i].appendChild(b);
-  a.addEventListener("click", function(e) {
+  a.addEventListener("click", function (e) {
     e.stopPropagation();
     closeAllSelect(this);
     this.nextSibling.classList.toggle("select-hide");
@@ -58,6 +58,7 @@ function closeAllSelect(elmnt) {
   }
   for (i = 0; i < x.length; i++) {
     if (arrNo.indexOf(i)) {
+      x[i].parentNode.classList.remove("select-arrow-active");
       x[i].classList.add("select-hide");
     }
   }
