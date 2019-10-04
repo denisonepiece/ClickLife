@@ -1,56 +1,62 @@
+extends ../../layout/layout
+
 include ../../components/button/button
 include ../../components/input/input
 include ../../components/input-password/input-password
 include ../../components/select/select
 include ../../components/textarea/textarea
 
-section.colors
-  h1.section__title Цветовая схема
-  .container
-    .color
-    .color
-    .color
-    .color
-    .color
-    .color
-    .color
-    .color
-    .color
-    .color
-    .color
-    .color
 
-section.typography
-  h1.section__title Типографика
-  .container
-    h1 h1 Захавай алтайских этих булок
-    h2 h2 Захавай алтайских этих булок
-    h3 h3 Захавай алтайских этих булок
-    h4 h4 Захавай алтайских этих булок
-    h5 h5 Захавай алтайских этих булок
-    p p Захавай алтайских этих булок
+block title
 
-section.components
-  h1.section__title Компоненты
-  .container
-    .column
-      h3 Кнопки
-      +button('big-fill-log', 'Войти')
-      +button('business')
-      +button('setting')
-      +button('send', 'Отправить новое письмо')
-      +button('default-green', 'Смотреть всe')
-      +button('default-orange', 'Отозвать заявку')
-      +button('default-red', 'Удалить')
-      +button('default-grey', 'Отказаться')
-      +button('default-grad', 'Создать задание')
-      +button('default-grad-big', 'Подключить')
-      +button('default-orange-big', 'Добавить в избранное')
-      h3 Поля ввода
-      +input('E-mail', 'email')
-      +input-password()
-      +select('Список', 'Сука', 'Пидор', 'Чмо', 'Говно')
-      +textarea('Немного напишите о себе')
+block main
+  section.colors
+    h1.section__title Цветовая схема
+    .container
+      .color
+      .color
+      .color
+      .color
+      .color
+      .color
+      .color
+      .color
+      .color
+      .color
+      .color
+      .color
+
+  section.typography
+    h1.section__title Типографика
+    .container
+      h1 h1 Захавай алтайских этих булок
+      h2 h2 Захавай алтайских этих булок
+      h3 h3 Захавай алтайских этих булок
+      h4 h4 Захавай алтайских этих булок
+      h5 h5 Захавай алтайских этих булок
+      p p Захавай алтайских этих булок
+
+  section.components
+    h1.section__title Компоненты
+    .container
+      .column
+        h3 Кнопки
+        +button('big-fill-log', 'Войти')
+        +button('business')
+        +button('setting')
+        +button('send', 'Отправить новое письмо')
+        +button('default-green', 'Смотреть всe')
+        +button('default-orange', 'Отозвать заявку')
+        +button('default-red', 'Удалить')
+        +button('default-grey', 'Отказаться')
+        +button('default-grad', 'Создать задание')
+        +button('default-grad-big', 'Подключить')
+        +button('default-orange-big', 'Добавить в избранное')
+        h3 Поля ввода
+        +input('E-mail', 'email')
+        +input-password()
+        +select('Список', 'Сука', 'Пидор', 'Чмо', 'Говно')
+        +textarea('Немного напишите о себе')
 
 
 
