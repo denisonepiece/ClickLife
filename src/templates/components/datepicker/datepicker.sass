@@ -1,5 +1,22 @@
 @import "../../../sass/colors"
 
+.datepicker-block
+  position: relative
+
+.datepicker_is-active + .datepicker-arrow
+  transform: rotate(180deg)
+  path
+    stroke: $black
+
+
+.datepicker-arrow
+  position: absolute
+  content: ""
+  top: calc(50% - 8px / 2)
+  right: 18px
+  width: 14px
+  height: 8px
+
 .datepicker
   border: none
   border-radius: 10px
