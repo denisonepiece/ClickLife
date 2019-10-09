@@ -47,8 +47,10 @@
       var _date = dp.getParsedDate(date);
 
       this._handleDate(date);
-      this.hours = _date.hours < this.minHours ? this.minHours : _date.hours;
-      this.minutes = _date.minutes < this.minMinutes ? this.minMinutes : _date.minutes;
+      // this.hours = _date.hours < this.minHours ? this.minHours : _date.hours;
+      this.hours = 12;
+      // this.minutes = _date.minutes < this.minMinutes ? this.minMinutes : _date.minutes;
+      this.minutes = 0;
     },
 
     /**
@@ -266,8 +268,7 @@
       this.d._trigger('timeChange', [this.hours, this.minutes]);
 
       this._handleDate(this.d.lastSelectedDate);
-      this.update()
-      console.log($target, $target.val());
+      this.update();
     },
 
     _onChangeRange: function (e) {
