@@ -3,7 +3,6 @@ export function initAllInputsPass() {
 
   for( let i = 0; i < inputsPass.length; i++) {
     showPassword(inputsPass[i]);
-    console.log(i)
   }
 }
 

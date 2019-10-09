@@ -1,13 +1,110 @@
 @import "../../../sass/colors"
 
+.datepicker-block.datepicker-is-open
+  .datepicker-inline
+    left: unset
+    display: block
+    z-index: 1
+
+.datepicker
+  width: 100%
+
 .datepicker-block
   position: relative
+  height: fit-content
 
-.datepicker_is-active + .datepicker-arrow
+  .datepicker-inline
+    position: absolute
+    top: 50px
+    left: -10000px
+    display: none
+
+.datepicker--time-current
+  display: none
+
+.datepicker--time-sliders
+  display: none
+
+.datepicker--time
+  height: 45px
+
+
+.datepicker--nav-title
+  padding: 11px 14px
+
+.datepicker__select
+  display: block
+  font-size: 14px
+  color: $black
+  line-height: 19px
+  padding: 4px 7px
+  width: 58px
+  max-width: 100%
+  box-sizing: border-box
+  margin: 0
+  border: 0.5px solid #99DDCA
+  box-shadow: 0 1px 0 1px rgba(0, 0, 0, .04)
+  border-radius: .5em
+  -moz-appearance: none
+  -webkit-appearance: none
+  appearance: none
+  background-color: #fff
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='14' height='8' viewBox='0 0 14 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1 1L7 7L13 0.999999' stroke='%2399DDCA' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ")
+  background-repeat: no-repeat, repeat
+  background-position: right .7em top 50%, 0 0
+  option
+
+    &:hover
+      background: $green
+
+.datapicker__bottom
+  position: absolute
+  display: flex
+  align-items: center
+  width: 100%
+  bottom: 9px
+  z-index: 101
+  padding: 0 14px
+
+//.datepicker__select
+//  border-radius: 10px
+//  border: none
+//  padding: 5px 7px
+
+.datepicker-is-open .datepicker-arrow
   transform: rotate(180deg)
+
   path
     stroke: $black
 
+
+.datepicker--buttons
+  position: absolute
+  bottom: 4px
+  right: 14px
+  z-index: 120
+
+  .datepicker--button
+    color: $green-lite
+    font-size: 16px
+    &:hover
+      background: transparent
+      color: $white
+
+.datepicker--nav-action
+  position: absolute
+
+.datepicker--nav-bottom
+  height: 200px
+  width: 100%
+  position: absolute
+  left: 100%
+
+.datepicker__separator
+  color: $white
+  font-size: 20px
+  padding-left: 5px
+  padding-right: 5px
 
 .datepicker-arrow
   position: absolute
@@ -17,10 +114,10 @@
   width: 14px
   height: 8px
 
-.datepicker
+.datepicker-inline .datepicker
   border: none
   border-radius: 10px
-  box-shadow: 0px 10px 25px rgba(0, 52, 40, 0.2)
+  box-shadow: 0 10px 25px rgba(0, 52, 40, 0.2)
   font-family: Roboto, sans-serif
   background: $grey-delicate
 
@@ -74,7 +171,7 @@
   right: 14px
 
 .datepicker--nav-action
-  top: 9px
+  top: 13px
   height: 20px
   width: 16px
   display: flex

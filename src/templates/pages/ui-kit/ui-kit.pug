@@ -42,6 +42,7 @@ block main
     .container
       .column
         h3 Кнопки
+        +datepicker()
         +button('big-fill-log', 'Войти')
         +button('business')
         +button('setting')
@@ -58,6 +59,7 @@ block main
         +input-password()
         +select('Список', 'Первый', 'Второй', 'Третий', 'Четвертый')
         +textarea('Немного напишите о себе')
+      .column
         +datepicker()
 
 
