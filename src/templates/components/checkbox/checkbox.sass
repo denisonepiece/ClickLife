@@ -1,0 +1,53 @@
+@import "../../../sass/colors"
+
+.checkbox
+  display: block
+  position: relative
+  font-size: 1.6rem
+  height: 1.3125em
+  display: flex
+  align-items: center
+  user-select: none
+  cursor: pointer
+
+  //&:hover input ~ .checkbox__mark
+  //  background: $grey-lite
+  //  border-color: $grey-lite
+
+  input
+    opacity: 0
+    cursor: pointer
+    height: 100%
+    width: 100%
+    //position: absolute
+
+
+    &:checked ~ .checkbox__mark
+      background: url("mark.svg") center center
+      background-size: contain
+      border: none
+      background-repeat: no-repeat
+
+    &:checked ~ .checkbox__label
+      color: $green
+
+
+
+
+
+.checkbox__mark
+  display: block
+  position: absolute
+  height: 1.3125em
+  width: 1.3125em
+  border: 1px solid $black
+  border-radius: 50%
+  left: 0
+  top: 0
+
+.checkbox__label
+  position: absolute
+  padding-left: 1.8125em
+  z-index: -1
+
+

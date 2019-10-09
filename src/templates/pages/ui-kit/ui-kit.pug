@@ -7,6 +7,7 @@ include ../../components/select/select
 include ../../components/textarea/textarea
 include ../../components/datepicker/datepicker
 include ../../components/input-phone/input-phone
+include ../../components/checkbox/checkbox
 
 
 block title
@@ -54,16 +55,19 @@ block main
         +button('default-grad', 'Создать задание')
         +button('default-grad-big', 'Подключить')
         +button('default-orange-big', 'Добавить в избранное')
+
+      .column
         h3 Поля ввода
         +input('E-mail', 'email')
         +input-password()
         +select('Список', 'Первый', 'Второй', 'Третий', 'Четвертый')
         +textarea('Немного напишите о себе')
-      .column
         +datepicker()
         +inputPhone()
 
       .column
+        h3 Другие
+        +checkbox('Ты нормальный?')
 
 
 
