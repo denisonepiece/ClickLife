@@ -6,6 +6,7 @@ include ../../components/input-password/input-password
 include ../../components/select/select
 include ../../components/textarea/textarea
 include ../../components/datepicker/datepicker
+include ../../components/input-phone/input-phone
 
 
 block title
@@ -42,7 +43,6 @@ block main
     .container
       .column
         h3 Кнопки
-        +datepicker()
         +button('big-fill-log', 'Войти')
         +button('business')
         +button('setting')
@@ -61,6 +61,9 @@ block main
         +textarea('Немного напишите о себе')
       .column
         +datepicker()
+        +inputPhone()
+
+      .column
 
 
 

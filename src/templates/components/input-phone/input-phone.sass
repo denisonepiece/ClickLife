@@ -1,0 +1,77 @@
+@import "../../../sass/colors"
+
+.input-phone
+  position: relative
+  font-size: 1.6rem
+
+
+.input-phone__field.input__field
+  border-right: 0
+  border-bottom-right-radius: 0
+  border-top-right-radius: 0
+
+.input-phone__field
+  &:hover ~ .input-phone__messengers
+    border-color: $grey
+  &:focus ~ .input-phone__messengers
+    border-color: $black
+  &:active ~ .input-phone__messengers
+    border-color: $black
+
+.input-phone__messengers
+  position: absolute
+  left: 100%
+  top: 0
+  height: 100%
+  border: 1px solid $grey-delicate
+  border-top-right-radius: 0.625em
+  border-bottom-right-radius: 0.625em
+  border-left: none
+  display: flex
+  align-items: center
+  padding-right: 0.7em
+  padding-left: 0.7em
+
+
+.messenger-checkbox
+  display: flex
+  align-items: center
+  position: relative
+  height: 23px
+  margin-right: 6px
+
+  &:last-child
+    margin-right: 0
+
+  &:hover input ~ svg
+    path
+      fill: $grey-dark
+
+  svg
+    path
+      fill: $grey
+
+  input
+    position: absolute
+    opacity: 0
+    cursor: pointer
+    height: 23px
+    width: 23px
+
+    &:checked ~ .icon-telegram
+      path
+        fill: #2AA0D8
+
+    &:checked ~ .icon-viber
+      path
+        fill: #9B51E0
+
+    &:checked ~ .icon-whatsup
+      path
+        fill: #1BD741
+
+
+
+
+
+

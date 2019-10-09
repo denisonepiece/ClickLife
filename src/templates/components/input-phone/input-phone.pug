@@ -1,0 +1,13 @@
+mixin inputPhone()
+  div.input-phone
+    input.input__field.input-phone__field(type="tel" placeholder="Номер телефона")
+    div.input-phone__messengers
+      label.messenger-checkbox
+        input(type="checkbox")
+        include whatsup.svg
+      label.messenger-checkbox
+        input(type="checkbox")
+        include viber.svg
+      label.messenger-checkbox
+        input(type="checkbox")
+        include telegram.svg
