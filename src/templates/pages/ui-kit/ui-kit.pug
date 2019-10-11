@@ -8,6 +8,7 @@ include ../../components/textarea/textarea
 include ../../components/datepicker/datepicker
 include ../../components/input-phone/input-phone
 include ../../components/checkbox/checkbox
+include ../../components/add-phone-block/add-phone-block
 
 
 block title
@@ -63,7 +64,8 @@ block main
         +select('Список', 'Первый', 'Второй', 'Третий', 'Четвертый')
         +textarea('Немного напишите о себе')
         +datepicker()
-        +inputPhone()
+        +addPhoneBlock()
+
 
       .column
         h3 Другие

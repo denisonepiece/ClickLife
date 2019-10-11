@@ -1,0 +1,10 @@
+include ../input-phone/input-phone
+
+mixin addPhoneBlock()
+  div.phones-block
+    +inputPhone()
+    div.add-phone-button
+      button.add-phone-button__button
+        include plus.svg
+      span Добавить номер телефона
+

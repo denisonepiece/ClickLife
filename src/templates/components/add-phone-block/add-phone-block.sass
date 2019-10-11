@@ -1,0 +1,48 @@
+@import "../../../sass/colors"
+
+.phones-block
+  .input-phone
+    margin-bottom: 1.1rem
+
+.add-phone-button
+  font-size: 1.4rem
+  display: flex
+  align-items: center
+  font-weight: 500
+  line-height: 1.15em
+  user-select: none
+
+  button
+    height: 19px
+    width: 19px
+    border: 1px solid $grey
+    border-radius: 50%
+    background-color: $white
+    cursor: pointer
+    display: flex
+    align-items: center
+    justify-content: center
+    padding: 0
+    position: relative
+
+    svg
+      position: absolute
+      top: calc(50% - 5px)
+      left: calc(50% - 5px)
+      path
+        stroke: $grey
+
+  span
+    margin-left: 0.8rem
+    color: $grey
+
+.-input-focus-
+  .add-phone-button
+    span
+      color: $green
+
+    button
+      border-color: $green
+      svg
+        path
+          stroke: $green
