@@ -13,6 +13,9 @@ include ../../components/add-phone-block/add-phone-block
 
 block title
 
+block modals
+  include ../../components/modals/modal-enter/modal-enter
+
 block main
   section.colors
     h1.section__title Цветовая схема
@@ -29,7 +32,7 @@ block main
       .color
       .color
       .color
-
+      .color
   section.typography
     h1.section__title Типографика
     .container
@@ -71,6 +74,10 @@ block main
         h3 Другие
         +checkbox('Ты нормальный?')
         +checkbox('Точно?')
+  section.modals
+    h1.section__title Модальные окна
+    .container
+      button.button.button_default.button-enter Вход
 
 
 

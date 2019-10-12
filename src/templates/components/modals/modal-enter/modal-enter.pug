@@ -1,0 +1,17 @@
+include ../../input/input
+include ../../input-password/input-password
+include ../social-sign/social-sign
+
+.modal.modal-enter
+  .modal__body
+    form
+      +input('Телефон или e-mail')
+      +input-password()
+      a.link-green(href='#') Восстановить пароль
+      +button('big-fill-log', 'Войти')
+      a.link-green(href='#') Зарегистрироваться
+    span.btn-close
+      include ../btn-close.svg
+    span.modal-role Вход
+      include ../icon-modal.svg
+    +social-sign('Войти с помощью соц.сетей')
