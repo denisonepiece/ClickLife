@@ -6,6 +6,8 @@ initModal('.button-enter', '.modal-enter');
 initModal('.button-reg-comp', '.modal-reg-comp');
 initModal('.button-reg-fiz', '.modal-reg-fiz');
 initModal('.button-mail-confirm', '.modal-mail-confirm');
+initModal('.button-tel-confirm', '.modal-tel-confirm');
+
 
 function showModal(modal) {
   modal.classList.remove("modal-hidden");
