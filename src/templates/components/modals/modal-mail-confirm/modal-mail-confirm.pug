@@ -1,0 +1,15 @@
+include ../../button/button
+
+.modal.modal-mail-confirm.modal-hidden
+  .modal__body
+    h3 Подтвердите адрес вашей почты
+    p На ваш электронный адрес ydgf@mail.ru было отправлено письмо со ссылкой для подтверждения вашей почты на ClickLife. <br><br> Пройдите по ссылке и активируйте вашу электронную почту.
+
+    div.bottom
+      +button('send', 'Отправить новое письмо')
+      +button('send', 'Указать другую почту')
+
+    span.btn-close
+      include ../btn-close.svg
+    span.modal-role Регистрация
+      include ../icon-modal.svg
