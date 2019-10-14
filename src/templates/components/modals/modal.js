@@ -7,6 +7,7 @@ initModal('.button-reg-comp', '.modal-reg-comp');
 initModal('.button-reg-fiz', '.modal-reg-fiz');
 initModal('.button-mail-confirm', '.modal-mail-confirm');
 initModal('.button-tel-confirm', '.modal-tel-confirm');
+initModal('.button-pass', '.modal-pass');
 
 
 function showModal(modal) {

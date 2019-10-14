@@ -1,0 +1,13 @@
+.modal.modal-pass
+  .modal__body
+    h3 Придумайте пароль
+
+    +input-password()
+    +input-password('Подтвердите пароль')
+
+    +button('big-fill-log', 'Войти в кабинет')
+
+    span.btn-close
+      include ../btn-close.svg
+    span.modal-role Регистрация
+      include ../icon-modal.svg
