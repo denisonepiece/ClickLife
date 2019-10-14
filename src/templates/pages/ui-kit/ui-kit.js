@@ -4,6 +4,7 @@ import './ui-kit.sass';
 
 //includes
 import '../../includes/header/header'
+import '../../includes/footer/footer'
 
 import '../../components/modals/modal'
 //pug components
