@@ -2,6 +2,8 @@ import 'normalize.css';
 import '../../../sass/typography.sass'
 import './ui-kit.sass';
 
+//includes
+import '../../includes/header/header'
 
 import '../../components/modals/modal'
 //pug components

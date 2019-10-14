@@ -1,0 +1,105 @@
+@import "../../../sass/colors"
+
+.header
+  position: fixed
+  top: 0
+  height: 6rem
+  width: 100%
+  display: flex
+  justify-content: space-between
+  background-color: $white
+  border-bottom: 1px solid #EFEFEF
+  padding-left: 4rem
+  padding-right: 2.3rem
+  z-index: 9999
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03)
+
+.nav
+  display: flex
+  align-items: center
+  max-width: 55rem
+  width: 100%
+  justify-content: space-between
+
+.nav__list
+  display: flex
+
+.nav__item
+  margin-right: 5.5rem
+
+  &:last-child
+    margin-right: 0
+  a
+    display: block
+    line-height: 6rem
+    height: 100%
+    color: #C5C5C5
+    font-weight: 500
+
+.nav__item_active
+  position: relative
+
+  a
+    color: $green
+
+  &:before
+    content: ''
+    position: absolute
+    display: block
+    height: 1.8rem
+    width: 1.8rem
+    border-radius: 50%
+    background: $green
+
+    top: -11px
+    left: calc(50% - 1.8rem / 2)
+
+.control-panel
+  display: flex
+  align-items: center
+
+.control-panel > *
+  margin-right: 2rem
+  &:last-child
+    margin-right: 0
+
+.notice
+  display: flex
+  align-items: center
+  padding: 0.3rem
+  cursor: pointer
+  position: relative
+
+.notice__count
+  border: 2px solid $white
+  background: $green
+  font-size: 12.5px
+  color: $white
+  font-weight: 700
+  line-height: 17px
+  border-radius: 10px
+  letter-spacing: 0.5px
+  padding: 0 4.67px
+
+  position: absolute
+  top: -6px
+  right: 0
+  transform: translateX(28%)
+
+
+.control-panel__photo
+  height: 4rem
+  width: 4rem
+  background: url("greyscale-square.png") top center
+  background-size: 110%
+  border-radius: 50%
+  border: 2px solid #EAEAEA
+  cursor: pointer
+
+
+.control-panel__photo.active
+  box-shadow: 0 0 0 3px $green
+  border: 1px solid $white
+
+
+

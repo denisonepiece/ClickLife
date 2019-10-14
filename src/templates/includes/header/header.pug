@@ -1,0 +1,31 @@
+include ../../components/button/button
+
+header.header
+  nav.nav
+    a.logo(href="#")
+      include logo.svg
+
+    ul.nav__list
+      li.nav__item.nav__item_active
+        a(href="#") Создать задание
+      li.nav__item
+        a(href="#") Задания
+
+  div.control-panel
+    +button('default-green', 'Оплатить тариф')
+    div.notice
+      include notice.svg
+      span.notice__count 12
+    div.control-panel__photo.active
+
+
+
+
+
+
+
+
+
+
+
+
