@@ -4,6 +4,7 @@ import './modal.sass'
 
 initModal('.button-enter', '.modal-enter');
 initModal('.button-reg-comp', '.modal-reg-comp');
+initModal('.button-reg-fiz', '.modal-reg-fiz');
 
 function showModal(modal) {
   modal.classList.remove("modal-hidden");
