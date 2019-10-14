@@ -3,7 +3,7 @@
 import './modal.sass'
 
 initModal('.button-enter', '.modal-enter');
-
+initModal('.button-reg-comp', '.modal-reg-comp');
 
 function showModal(modal) {
   modal.classList.remove("modal-hidden");
@@ -30,7 +30,6 @@ function initModal(btn, modal) {
 
   //Обработка кнопки закрытия
   closeBtn.onclick = () => hideModal(modalCurrent);
-
 
   //Закрытие модального окна при клике мимо
   modalCurrent.onclick = function(e) {

@@ -1,0 +1,18 @@
+.modal.modal-reg-comp.modal-hidden
+  .modal__body
+    form
+      +input('Наименование компании')
+      +input('ИНН')
+      +input('Город')
+      +input('Адрес офиса компании')
+      +input('Email', 'email')
+      +inputPhone('simple')
+      +input('ФИО представителя', 'name')
+      +button('big-fill-log', 'Зарегистрироваться')
+      a.link-green(href='#') Зарегистрироваться как физ.лицо
+      +social-sign('Зарегистрироваться с помощью соц.сетей')
+
+    span.btn-close
+      include ../btn-close.svg
+    span.modal-role Вход
+      include ../icon-modal.svg
