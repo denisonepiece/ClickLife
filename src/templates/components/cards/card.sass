@@ -23,6 +23,31 @@
     flex-direction: column
     justify-content: space-between
 
+
+.card_no-active
+  background: $grey-delicate
+
+  h4
+    color: $grey
+
+  .card-info__price
+    background: $grey
+
+.card_category
+  .button
+    display: none
+
+  &:hover
+    border-color: $green
+
+    .button
+      display: block
+
+
+
+
+
+
 .card-title
   h4
     margin-bottom: 0.6em
@@ -70,6 +95,12 @@
     background-image: url("respond.svg")
     height: 18px
     width: 17px
+
+.card-buttons
+  .button
+    margin-right: 1.5rem
+    &:last-child
+      margin-right: 0
 
 
 

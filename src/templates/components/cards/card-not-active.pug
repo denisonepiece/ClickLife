@@ -1,0 +1,15 @@
+include card-status/card-status
+include card-person/card-person
+
+div.card.card_no-active
+  .left
+    .card-title
+      h4 Разработать логотип
+      +card-status('red', 'Исполнитель опердлен')
+
+    +card-person()
+  .right
+    .card-info
+      span.card-info__price 4600 ₽
+    .card-buttons
+      +button('default-red', 'Удалить')
