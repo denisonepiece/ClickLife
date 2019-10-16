@@ -1,6 +1,7 @@
 import 'normalize.css';
-import '../../../sass/typography.sass'
+import '../../../sass/main.sass'
 import './ui-kit.sass';
+
 
 //includes
 import '../../includes/header/header'

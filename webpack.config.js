@@ -17,10 +17,11 @@ const PATHS = {
   build: path.join(__dirname, 'build')
 };
 
+
 const common = merge(
   {
     entry: {
-      // 'index': PATHS.src + '/templates/pages/index/index.js',
+      'index': PATHS.src + '/templates/pages/index/index.js',
       'ui-kit': PATHS.src + '/templates/pages/ui-kit/ui-kit.js'
     },
     output: {
@@ -29,11 +30,11 @@ const common = merge(
     },
     plugins: [
       new CleanWebpackPlugin(),
-      // new HtmlWebpackPlugin({
-      //   filename: "index.html",
-      //   chunks: ['index', 'common'],
-      //   template: PATHS.src + '/templates/pages/index/index.pug'
-      // }),
+      new HtmlWebpackPlugin({
+        filename: "index.html",
+        chunks: ['index', 'common'],
+        template: PATHS.src + '/templates/pages/index/index.pug'
+      }),
       new HtmlWebpackPlugin({
         filename: "ui-kit.html",
         chunks: ['ui-kit', 'common'],

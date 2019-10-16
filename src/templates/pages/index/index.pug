@@ -1,0 +1,29 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='initial-scale=1.0, width=device-width')
+    title Clicklife
+  body
+    include ../../components/button/button
+    header.index-header
+      nav.nav
+        a.logo(href="#")
+          include ../../../assets/img/logo.svg
+        ul.nav__list
+          li.nav__item
+            a.button.button_border.button_default.button_grad(href="#") Создать задание
+          li.nav__item
+            a(href="#") Задания
+      button.enter-btn Вход
+        include ../../../assets/img/icon-enter.svg
+
+
+
+
+    main.main
+      div.preview
+        h1 Зарабатывай, выполняя.<br> Упрощай жизнь, заказывая.
+        div.preview__nav
+          button.preview__btn Выполнить задание
+          button.preview__btn Заказать задание
