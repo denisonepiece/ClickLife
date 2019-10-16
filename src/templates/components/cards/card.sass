@@ -1,0 +1,75 @@
+@import "../../../sass/colors"
+@import "card-status/card-status"
+@import "card-person/card-person"
+
+.card
+  font-size: 1.4rem
+  border: 1px solid $grey-lite
+  padding: 2em 3.2rem
+  border-radius: 1.1em
+  height: 26rem
+  display: flex
+  justify-content: space-between
+
+  .card-status
+    margin-right: 1rem
+    &:last-child
+      margin-right: 0
+
+  .left,
+  .right
+    height: 100%
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+
+.card-title
+  h4
+    margin-bottom: 0.6em
+
+.card-info
+  display: flex
+  flex-direction: column
+  align-items: flex-end
+
+.card-info__price
+  background: $green
+  color: $white
+  font-size: 1.8rem
+  padding: 0.33em 1.4rem
+  border-radius: 1em
+  margin-bottom: 2.4rem
+
+.card-info__respond,
+.card-info__date
+  color: #858585
+  padding-left: 20px
+  position: relative
+  display: flex
+  align-items: center
+  height: 19px
+
+  &:before
+    content: ''
+    display: block
+    position: absolute
+    left: 0
+    background-size: contain
+    background-repeat: no-repeat
+
+.card-info__date
+  &:before
+    background-image: url("time.svg")
+    height: 16px
+    width: 16px
+
+.card-info__respond
+  margin-bottom: 1.5rem
+  &:before
+    top: 0
+    background-image: url("respond.svg")
+    height: 18px
+    width: 17px
+
+
+

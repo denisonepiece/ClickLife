@@ -1,0 +1,13 @@
+mixin card-status(color, content)
+  case color
+    when 'green'
+      span.card-status.card-status_green= content
+    when 'grey'
+      span.card-status.card-status_grey= content
+    when 'orange'
+      span.card-status.card-status_orange= content
+    when 'red'
+      span.card-status.card-status_red= content
+    when 'border'
+      span.card-status.card-status_border= content
+

@@ -1,0 +1,40 @@
+@import "../../../sass/colors"
+
+.rate
+  display: flex
+  height: 2.6rem
+
+.rate__like,
+.rate__dislike
+  width: fit-content
+  padding-left: 21px
+  position: relative
+  display: flex
+  align-items: center
+
+.rate__like
+  color: $green
+  margin-right: 1rem
+
+.rate__dislike
+  color: $red
+
+.rate__like,
+.rate__dislike
+  &:before
+    content: ''
+    left: 0
+    display: block
+    position: absolute
+    height: 20px
+    width: 17px
+
+.rate__like
+  &:before
+    top: 0
+    background: url("like.svg")
+
+.rate__dislike
+  &:before
+    bottom: 0
+    background: url("dislike.svg")

@@ -24,8 +24,8 @@ block modals
 
 block main
   section.colors
-    h1.section__title
     .container
+      h2.section__title Colors
       .color
       .color
       .color
@@ -40,8 +40,8 @@ block main
       .color
       .color
   section.typography
-    h1.section__title Типографика
     .container
+      h2.section__title Typography
       h1 h1 Захавай алтайских этих булок
       h2 h2 Захавай алтайских этих булок
       h3 h3 Захавай алтайских этих булок
@@ -50,8 +50,8 @@ block main
       p p Захавай алтайских этих булок
 
   section.components
-    h1.section__title Компоненты
     .container
+      h2.section__title Components
       .column
         h3 Кнопки
         +button('big-fill-log', 'Войти')
@@ -75,20 +75,25 @@ block main
         +datepicker()
         +addPhoneBlock()
 
-
       .column
         h3 Другие
         +checkbox('Ты нормальный?')
         +checkbox('Точно?')
+
   section.modals
-    h1.section__title Модальные окна
     .container
+      h2.section__title Modals
       button.button.button_default.button-enter Вход
       button.button.button_default.button-reg-comp Регистрация компании
       button.button.button_default.button-reg-fiz Регистрация физ лица
       button.button.button_default.button-mail-confirm Подтверждение email
       button.button.button_default.button-tel-confirm Подтверждение телефона
       button.button.button_default.button-pass Пароль
+
+  section.cards
+    .container
+      h2.section__title Cards
+      include ../../components/cards/card
 
 
 
