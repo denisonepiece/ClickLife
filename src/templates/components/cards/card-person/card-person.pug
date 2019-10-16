@@ -1,8 +1,17 @@
 include ../../like-dislike/like-dislike
 
-mixin card-person()
-  .card-person
-    .card-person__photo
-    .right
-      span.card-person__name Денис Митряков
-      +like-dislike()
+mixin card-person(status, color)
+  if (status)
+    .card-person
+      .card-person__photo
+      .right
+        span.card-person__name Денис Митряков
+        +card-status(color, status)
+  else
+    .card-person
+      .card-person__photo
+      .right
+        span.card-person__name Денис Митряков
+        +like-dislike()
+
+

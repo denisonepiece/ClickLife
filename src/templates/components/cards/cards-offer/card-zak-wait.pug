@@ -1,0 +1,11 @@
+include ../card-person/card-person
+
+.card-offer.card-offer_wait
+  .card-offer__info
+    +card-person('Выбран как исполнитель, дождитесь ответа', 'orange')
+    span.card-info__price 4600 ₽
+  p.card-offer__message
+    | Берусь! Уже ознакомился с ТЗ и остальными документами, готов работать. Выполню всё по ТЗ и в сроки.
+
+  +button('default-red', 'Отменить выбор')
+

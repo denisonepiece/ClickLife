@@ -94,19 +94,30 @@ block main
     .container
       h2.section__title Cards
       h3 Карточки заданий в профиле
-      include ../../components/cards/card
-      include ../../components/cards/card-sbor-isp
-      include ../../components/cards/card-pred-zak
-      include ../../components/cards/card-isp
-      include ../../components/cards/card-ready
-      include ../../components/cards/card-not-active
-      include ../../components/cards/card-wait-isp
-      include ../../components/cards/card-select-isp
-      include ../../components/cards/card-deny-isp
-      include ../../components/cards/card-in-work-zak
-      include ../../components/cards/card-ready-zak
+      include ../../components/cards/cards-task/card
+      include ../../components/cards/cards-task/card-sbor-isp
+      include ../../components/cards/cards-task/card-pred-zak
+      include ../../components/cards/cards-task/card-isp
+      include ../../components/cards/cards-task/card-ready
+      include ../../components/cards/cards-task/card-not-active
+      include ../../components/cards/cards-task/card-wait-isp
+      include ../../components/cards/cards-task/card-select-isp
+      include ../../components/cards/cards-task/card-deny-isp
+      include ../../components/cards/cards-task/card-in-work-zak
+      include ../../components/cards/cards-task/card-ready-zak
       h3 Карточки заданий категорий заданий
-      include ../../components/cards/cards-category
+      include ../../components/cards/cards-task/cards-category
+
+      h3 Карточки предложений у исполнителя
+      <br>
+      include ../../components/cards/cards-offer/card-isp
+      <br>
+      h3 Карточки предложений у заказчика
+      <br>
+      include ../../components/cards/cards-offer/card-zak-select
+      include ../../components/cards/cards-offer/card-zak-wait
+      include ../../components/cards/cards-offer/card-zak-abort
+      include ../../components/cards/cards-offer/card-zak-selected
 
 
 

@@ -1,0 +1,12 @@
+include ../card-person/card-person
+
+.card-offer
+  .card-offer__info
+    +card-person()
+    span.card-info__price 4600 ₽
+  p.card-offer__message
+    | Берусь! Уже ознакомился с ТЗ и остальными документами, готов работать. Выполню всё по ТЗ и в сроки.
+
+  +button('default-grad', 'Подтвердить предложение')
+  +button('default-grey', 'Отозвать предложение')
+
