@@ -9,6 +9,7 @@ include ../../components/datepicker/datepicker
 include ../../components/input-phone/input-phone
 include ../../components/checkbox/checkbox
 include ../../components/add-phone-block/add-phone-block
+include ../../components/notification/notification
 
 
 block title
@@ -23,31 +24,13 @@ block modals
   include ../../components/modals/modal-pass/modal-pass
 
 block main
-  section.colors
+
+  section.section-notice
     .container
-      h2.section__title Colors
-      .color
-      .color
-      .color
-      .color
-      .color
-      .color
-      .color
-      .color
-      .color
-      .color
-      .color
-      .color
-      .color
-  section.typography
-    .container
-      h2.section__title Typography
-      h1 h1 Захавай алтайских этих булок
-      h2 h2 Захавай алтайских этих булок
-      h3 h3 Захавай алтайских этих булок
-      h4 h4 Захавай алтайских этих булок
-      h5 h5 Захавай алтайских этих булок
-      p p Захавай алтайских этих булок
+      .notification-block
+        +notification()
+
+
 
   section.components
     .container
@@ -118,6 +101,33 @@ block main
       include ../../components/cards/cards-offer/card-zak-wait
       include ../../components/cards/cards-offer/card-zak-abort
       include ../../components/cards/cards-offer/card-zak-selected
+
+  section.colors
+    .container
+      h2.section__title Colors
+      .color
+      .color
+      .color
+      .color
+      .color
+      .color
+      .color
+      .color
+      .color
+      .color
+      .color
+      .color
+      .color
+
+  section.typography
+    .container
+      h2.section__title Typography
+      h1 h1 Захавай алтайских этих булок
+      h2 h2 Захавай алтайских этих булок
+      h3 h3 Захавай алтайских этих булок
+      h4 h4 Захавай алтайских этих булок
+      h5 h5 Захавай алтайских этих булок
+      p p Захавай алтайских этих булок
 
 
 

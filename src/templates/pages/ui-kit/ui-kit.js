@@ -19,4 +19,5 @@ import '../../components/input-phone/input-phone'
 import '../../components/checkbox/checkbox'
 import '../../components/add-phone-block/addPhoneBlock'
 import '../../components/cards/card'
+import '../../components/notification/notification'
 

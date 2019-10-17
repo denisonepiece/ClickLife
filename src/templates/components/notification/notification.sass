@@ -1,0 +1,68 @@
+@import "../../../sass/colors"
+
+.notification
+  font-size: 1.4rem
+  background: $white
+  border: 1px solid $grey-lite
+  border-radius: 1rem
+  padding: 0.8em 1.3rem 0.9em
+  display: flex
+  position: relative
+  margin-top: 2rem
+
+.notification__photo
+  width: 3.7rem
+  height: 3.7rem
+  min-width: 3.7rem
+  border: 1px solid $grey-lite
+  border-radius: 50%
+  background-image: url("greyscale-square.png")
+  background-position: top center
+  background-size: 110%
+  margin-right: 1rem
+
+.notification__message
+  color: $black
+  line-height: 1.35em
+  margin-top: 0.2rem
+
+.notification__time
+  color: $grey
+  font-size: 1.2rem
+  position: absolute
+  top: -2rem
+
+.notification__link
+  color: $green
+
+.notification-block
+  max-width: 44rem
+  padding: 0.7rem 0.9rem 1rem
+  border: 1px solid $grey-lite
+  background: $white
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05)
+  border-radius: 1rem
+  position: relative
+
+  &:before,
+  &:after
+    position: absolute
+    pointer-events: none
+    border: solid transparent
+    content: ''
+    height: 0
+    width: 0
+    bottom: calc(100%)
+    right: 42px
+
+  &:after
+    border-width: 9px
+    margin: 0 -5px
+    border-bottom-color: #fff
+
+  &:before
+    border-width: 10px
+    margin: 0 -6px
+    border-bottom-color: $grey-lite
+
+
