@@ -1,5 +1,23 @@
-mixin notification()
-  .notification
-    .notification__photo
-    p.notification__message Пользователь Денис Митряков предложил вам задание: <a href="#" class="notification__link">Сделать аборт</a>
-    span.notification__time вчера, 11:34
+mixin notification(type)
+  case type
+    when 1
+      .notification
+        .notification__photo
+        p.notification__message Пользователь <a href="#1" class="notification__link">Денис Митряков</a>  предложил вам задание: <a href="#2" class="notification__link">Сделать аборт</a>
+        span.notification__time вчера, 11:34
+    when 2
+      .notification
+        .notification__icon.-star-
+        p.notification__message Вас выбрали исполнителем для задания <a href="#1" class="notification__link">Доставить посылку</a>
+        span.notification__time вчера, 11:34
+    when 3
+      .notification
+        .notification__icon.-fire-
+        p.notification__message В категории <a  href="#1" class="notification__link">Курьерская доставка</a> появилось подходящее для вас задание: <a href="#2" class="notification__link">Доставить посылку</a>
+        span.notification__time вчера, 11:34
+    when 4
+      .notification
+        .notification__icon.-hand-
+        p.notification__message У задания <a href="#1" class="notification__link">Доставить посылку</a>  появились предложения
+        span.notification__time вчера, 11:34
+

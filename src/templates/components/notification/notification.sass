@@ -8,7 +8,11 @@
   padding: 0.8em 1.3rem 0.9em
   display: flex
   position: relative
-  margin-top: 2rem
+  cursor: pointer
+
+  &:hover
+    border-color: $grey
+
 
 .notification__photo
   width: 3.7rem
@@ -20,6 +24,25 @@
   background-position: top center
   background-size: 110%
   margin-right: 1rem
+
+.notification__icon
+  width: 25px
+  min-width: 25px
+  height: 25px
+  background-position: center center
+  background-repeat: no-repeat
+  margin-right: 1.3rem
+
+.notification__icon.-star-
+  background-image: url("star.svg")
+
+.notification__icon.-fire-
+  background-image: url("fire.svg")
+
+.notification__icon.-hand-
+  background-image: url("hand.svg")
+  width: 34px
+  height: 37px
 
 .notification__message
   color: $black
@@ -34,15 +57,24 @@
 
 .notification__link
   color: $green
+  display: inline-block
 
 .notification-block
   max-width: 44rem
-  padding: 0.7rem 0.9rem 1rem
+  width: 44rem
+  padding: 3rem 0.9rem 1rem
   border: 1px solid $grey-lite
   background: $white
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05)
   border-radius: 1rem
-  position: relative
+  position: absolute
+  top: 1.4rem
+  right: calc(100% - 6rem)
+
+  .notification
+    margin-bottom: 3rem
+    &:last-child
+      margin-bottom: 2.5rem
 
   &:before,
   &:after
@@ -53,16 +85,29 @@
     height: 0
     width: 0
     bottom: calc(100%)
-    right: 42px
+    right: 4.2rem
 
   &:after
-    border-width: 9px
-    margin: 0 -5px
+    border-width: 0.9rem
+    margin: 0 -0.5rem
     border-bottom-color: #fff
 
   &:before
-    border-width: 10px
-    margin: 0 -6px
+    border-width: 1rem
+    margin: 0 -0.6rem
     border-bottom-color: $grey-lite
+
+.notification-block__button
+  font-size: 1.4rem
+  line-height: 1.35em
+  display: block
+  text-align: center
+  padding: 0.8em
+  color: $grey-dark
+  border: 1px solid $grey-lite
+  border-radius: 1rem
+
+  &:hover
+    border-color: $grey
 
 
