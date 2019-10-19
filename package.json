@@ -1,7 +1,7 @@
 {
-  "name": "toxin",
+  "name": "clicklife",
   "version": "1.0.0",
-  "description": "FSD education, learning way",
+  "description": "src files for ClickLife",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/denisonepiece/toxin.git"
+    "url": "git+https://github.com/denisonepiece/clicklife.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/denisonepiece/toxin/issues"
+    "url": "https://github.com/denisonepiece/clicklife/issues"
   },
-  "homepage": "https://github.com/denisonepiece/toxin#readme",
+  "homepage": "https://github.com/denisonepiece/clicklife#readme",
   "devDependencies": {
     "air-datepicker": "^2.2.3",
     "clean-webpack-plugin": "^3.0.0",

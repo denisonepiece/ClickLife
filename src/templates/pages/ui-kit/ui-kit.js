@@ -20,4 +20,5 @@ import '../../components/checkbox/checkbox'
 import '../../components/add-phone-block/addPhoneBlock'
 import '../../components/cards/card'
 import '../../components/notification/notification'
+import '../../components/tooltip/tooltip'
 
