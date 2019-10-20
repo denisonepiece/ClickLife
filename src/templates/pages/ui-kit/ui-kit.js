@@ -24,4 +24,6 @@ import '../../components/tooltip/tooltip'
 import '../../components/feedback/feedback'
 import '../../components/profile-person/profile-person'
 import '../../components/profile-contact/profile-contact'
+import '../../components/profile-rate/profile-rate'
+import '../../components/profile-elect/profile-elect'
 

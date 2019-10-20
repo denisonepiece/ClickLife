@@ -1,0 +1,63 @@
+@import "../../../sass/colors"
+
+.profile-elect
+  display: block
+  padding: 3rem 3.2rem
+  width: max-content
+  border: 1px solid $white
+
+
+  &:hover
+    border: 1px solid $grey-lite
+    border-radius: 1rem
+
+    .profile-elect__title
+      color: $green
+
+
+.profile-elect__title
+  color: #2B2B2B
+  font-weight: 500
+  margin-bottom: 1rem
+
+.profile-elect__sub
+  color: #ACACAC
+  margin-bottom: 1.5rem
+  max-width: 16rem
+
+
+.profile-elect__list
+  display: flex
+  align-items: center
+
+.profile-elect__item
+  height: 4.5rem
+  width: 4.5rem
+  min-width: 4.5rem
+  margin-left: -1.2rem
+  border: 3px solid $white
+  background: url("../../../assets/img/greyscale-square.png") top center
+  background-size: 110%
+  border-radius: 50%
+
+  &:nth-child(1)
+    z-index: 5
+
+  &:nth-child(2)
+    z-index: 4
+
+  &:nth-child(3)
+    z-index: 3
+
+  &:nth-child(4)
+    z-index: 2
+
+  &:first-child
+    margin-left: 0
+
+.profile-elect__more
+  color: #ACACAC
+  margin-left: 1rem
+  display: block
+  min-width: fit-content
+
