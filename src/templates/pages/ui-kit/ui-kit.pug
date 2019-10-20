@@ -10,6 +10,7 @@ include ../../components/input-phone/input-phone
 include ../../components/checkbox/checkbox
 include ../../components/add-phone-block/add-phone-block
 include ../../components/tooltip/tooltip
+include ../../components/feedback/feedback
 
 
 block title
@@ -63,6 +64,8 @@ block main
         +checkbox('Точно?')
         h3 Тултип
         +tooltip('Отметьте мессенджеры, привязанные к этому номеру')
+        h3 Отзывы
+        +feedback()
 
 
   section.modals
