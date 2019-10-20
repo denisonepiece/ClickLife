@@ -22,4 +22,5 @@ import '../../components/cards/card'
 import '../../components/notification/notification'
 import '../../components/tooltip/tooltip'
 import '../../components/feedback/feedback'
+import '../../components/profile-person/profile-person'
 

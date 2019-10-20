@@ -26,10 +26,13 @@ block modals
 
 block main
 
-  section.section-notice
+
+  section.another
     .container
-
-
+      h2.section__title Another...
+      +feedback()
+      +tooltip('Сделай это, сделай то. Давай завтра.')
+      include ../../components/profile-person/profile-person
 
 
   section.components
@@ -62,10 +65,8 @@ block main
         h3 Другие
         +checkbox('Ты нормальный?')
         +checkbox('Точно?')
-        h3 Тултип
-        +tooltip('Отметьте мессенджеры, привязанные к этому номеру')
-        h3 Отзывы
-        +feedback()
+
+
 
 
   section.modals
