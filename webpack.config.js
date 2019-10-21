@@ -21,8 +21,9 @@ const PATHS = {
 const common = merge(
   {
     entry: {
+      'ui-kit': PATHS.src + '/templates/pages/ui-kit/ui-kit.js',
       'index': PATHS.src + '/templates/pages/index/index.js',
-      'ui-kit': PATHS.src + '/templates/pages/ui-kit/ui-kit.js'
+      'profile': PATHS.src + '/templates/pages/profile/profile.js',
     },
     output: {
       path: PATHS.build,
@@ -31,14 +32,19 @@ const common = merge(
     plugins: [
       new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
+        filename: "ui-kit.html",
+        chunks: ['ui-kit', 'common'],
+        template: PATHS.src + '/templates/pages/ui-kit/ui-kit.pug'
+      }),
+      new HtmlWebpackPlugin({
         filename: "index.html",
         chunks: ['index', 'common'],
         template: PATHS.src + '/templates/pages/index/index.pug'
       }),
       new HtmlWebpackPlugin({
-        filename: "ui-kit.html",
-        chunks: ['ui-kit', 'common'],
-        template: PATHS.src + '/templates/pages/ui-kit/ui-kit.pug'
+        filename: "profile.html",
+        chunks: ['profile', 'common'],
+        template: PATHS.src + '/templates/pages/profile/profile.pug'
       }),
       new webpack.ProvidePlugin({
           $: 'jquery',

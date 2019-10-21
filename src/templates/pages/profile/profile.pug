@@ -1,0 +1,71 @@
+extends ../../layout/layout
+
+include ../../components/button/button
+include ../../components/feedback/feedback
+
+
+block title
+  | Clicklife — ЛК
+
+block main
+  .container
+    .wrapper
+      section.information
+        h2.information__header Привет, Денис!
+        p.information__sub Это твой личный кабинет
+        include ../../components/profile-person/profile-person
+        .detail-information
+          .contact
+            include ../../components/profile-contact/profile-contact
+            include ../../components/profile-rate/profile-rate
+          .about
+            h5 Обо мне
+            pre
+              |Работаю с Физ. и Юр. лицами.
+              | Опыт в доставках более 11 лет.
+              |Сбербанк, Альфа, Тинькофф, ВТБ. Выполняю ваши задания с Друзьями.
+              |Топовый рейтинг и множество отзывов - ваша гарантия и наша надежность
+            +button('setting')
+          +button('hidden')
+
+      section.profile-categories
+        .tab-nav
+          h5.tab-nav__item Как исполнитель
+          h5.tab-nav__item.-active- Как заказчик
+        .skills
+          .skills__list
+            .skills__item Заварить кофе
+            .skills__item Выпить кофе
+            .skills__item Помолоть кофе
+            .skills__item Процедить кофе
+            .skills__item Купить кофе
+            .skills__item Продать кофе
+            .skills__item Вколоть кофе в вену
+            .skills__item Выпить 2 литра кофе на спор
+            .skills__item Кофе?
+          +button('setting')
+        .tasks
+          h5 Мои задания
+          .tab-nav
+            p.tab-nav__item.-active- Сбор завявок
+            p.tab-nav__item В работе
+            p.tab-nav__item Выполненные
+          .tasks__list
+            include ../../components/cards/cards-task/card-pred-zak
+            include ../../components/cards/cards-task/card
+            include ../../components/cards/cards-task/card-sbor-isp
+            include ../../components/cards/cards-task/card-not-active
+          +button('default-green', 'Смотреть все')
+
+
+      section.feedbacks
+            h5 Отзывы
+            +feedback(1)
+            +feedback
+            +button('default-green', 'Смотреть все')
+    aside.aside
+      +button('business')
+      include ../../components/profile-elect/profile-elect
+      include ../../components/profile-elect/profile-elect
+
+
