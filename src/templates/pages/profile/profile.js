@@ -21,7 +21,8 @@ toggleShowInformation();
 
 function toggleShowInformation() {
   const btn = document.querySelector('#btn-toggle-information');
-  let isOpen = true;
+  let isOpen = false;
+  btn.innerHTML = 'Показать больше информации';
 
   btn.onclick = function (e) {
     isOpen = !isOpen;
