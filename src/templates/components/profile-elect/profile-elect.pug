@@ -1,9 +1,22 @@
-a.profile-elect(href="#")
-  h5.profile-elect__title В избранном
-  .profile-elect__sub Эти люди добавили вас в избранное
-  .profile-elect__list
-    .profile-elect__item
-    .profile-elect__item
-    .profile-elect__item
-    .profile-elect__item
-    span.profile-elect__more + еще 5
+mixin profile-elect(my)
+  if (my)
+    .profile-elect.button-my-elect
+      h5.profile-elect__title Мои избранные
+      .profile-elect__sub Эти люди добавили вас в избранное
+      .profile-elect__list
+        .profile-elect__item
+        .profile-elect__item
+        .profile-elect__item
+        .profile-elect__item
+        span.profile-elect__more + еще 5
+  else
+    .profile-elect.button-i-elect
+      h5.profile-elect__title В избранном
+      .profile-elect__sub Эти люди добавили вас в избранное
+      .profile-elect__list
+        .profile-elect__item
+        .profile-elect__item
+        .profile-elect__item
+        .profile-elect__item
+        span.profile-elect__more + еще 5
+

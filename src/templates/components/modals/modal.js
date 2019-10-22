@@ -13,20 +13,21 @@ initModal('.button-real-tel', '.modal-real-tel');
 initModal('.button-i-elect', '.modal-i-elect');
 initModal('.button-my-elect', '.modal-my-elect');
 
-
-
 function showModal(modal) {
   modal.classList.remove("modal-hidden");
-  document.body.style.overflowY = "hidden";
+  // document.body.style.overflowY = "hidden";
 }
 
 function hideModal(modal) {
   modal.classList.add("modal-hidden");
-  document.body.style.overflowY = "";
+  // document.body.style.overflowY = "";
 }
 
-
 function initModal(btn, modal) {
+  if(!document.querySelector(modal) || !document.querySelectorAll(btn)) {
+    return;
+  }
+
   const modalCurrent = document.querySelector(modal),
     allButtons = document.querySelectorAll(btn),
     closeBtn = modalCurrent.querySelector('.btn-close');

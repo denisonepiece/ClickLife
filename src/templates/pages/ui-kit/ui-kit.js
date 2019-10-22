@@ -7,7 +7,6 @@ import './ui-kit.sass';
 import '../../includes/header/header'
 import '../../includes/footer/footer'
 
-import '../../components/modals/modal'
 //pug components
 import '../../components/button/button'
 import '../../components/input/input'
@@ -26,4 +25,9 @@ import '../../components/profile-person/profile-person'
 import '../../components/profile-contact/profile-contact'
 import '../../components/profile-rate/profile-rate'
 import '../../components/profile-elect/profile-elect'
+
+import '../../components/modals/modal'
+
+
+
 

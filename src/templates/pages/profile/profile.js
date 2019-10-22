@@ -16,6 +16,7 @@ import '../../components/profile-rate/profile-rate'
 import '../../components/profile-elect/profile-elect'
 import '../../components/feedback/feedback'
 import '../../components/cards/card'
+import '../../components/modals/modal'
 
 toggleShowInformation();
 
