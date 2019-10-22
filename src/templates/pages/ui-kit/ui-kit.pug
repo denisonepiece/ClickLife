@@ -23,6 +23,10 @@ block modals
   include ../../components/modals/modal-mail-confirm/modal-mail-confirm
   include ../../components/modals/modal-tel-confirm/modal-tel-confirm
   include ../../components/modals/modal-pass/modal-pass
+  include ../../components/modals/modal-real-mail/modal-real-mail
+  include ../../components/modals/modal-real-tel/modal-real-tel
+  include ../../components/modals/modal-elect/modal-elect
+  include ../../components/modals/modal-elect/modal-elect-2
 
 block main
 
@@ -69,9 +73,6 @@ block main
         +checkbox('Ты нормальный?')
         +checkbox('Точно?')
 
-
-
-
   section.modals
     .container
       h2.section__title Modals
@@ -81,6 +82,11 @@ block main
       button.button.button_default.button-mail-confirm Подтверждение email
       button.button.button_default.button-tel-confirm Подтверждение телефона
       button.button.button_default.button-pass Пароль
+      button.button.button_default.button-real-mail Укажите действ. имэйл
+      button.button.button_default.button-real-tel Укажите действ. телефон
+      button.button.button_default.button-my-elect Мои избранные
+      button.button.button_default.button-i-elect Вы в избранном
+
 
   section.cards
     .container

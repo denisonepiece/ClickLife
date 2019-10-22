@@ -8,6 +8,11 @@ initModal('.button-reg-fiz', '.modal-reg-fiz');
 initModal('.button-mail-confirm', '.modal-mail-confirm');
 initModal('.button-tel-confirm', '.modal-tel-confirm');
 initModal('.button-pass', '.modal-pass');
+initModal('.button-real-mail', '.modal-real-mail');
+initModal('.button-real-tel', '.modal-real-tel');
+initModal('.button-i-elect', '.modal-i-elect');
+initModal('.button-my-elect', '.modal-my-elect');
+
 
 
 function showModal(modal) {

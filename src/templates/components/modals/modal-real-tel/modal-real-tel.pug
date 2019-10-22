@@ -1,0 +1,12 @@
+include ../../input/input
+
+.modal.modal-real-tel.modal-hidden
+  .modal__body
+    h3 Укажите действительный номер телефона
+    form
+      +input('Телефон', 'tel')
+      +button('big-fill-log', 'Отправить')
+    span.btn-close
+      include ../btn-close.svg
+    span.modal-role Регистрация
+      include ../../../../assets/img/icon-enter.svg

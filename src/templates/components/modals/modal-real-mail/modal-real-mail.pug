@@ -1,0 +1,12 @@
+include ../../input/input
+
+.modal.modal-real-mail.modal-hidden
+  .modal__body
+    h3 Укажите действительный E-mail
+    form
+      +input('E-mail', 'email')
+      +button('big-fill-log', 'Отправить')
+    span.btn-close
+      include ../btn-close.svg
+    span.modal-role Регистрация
+      include ../../../../assets/img/icon-enter.svg
