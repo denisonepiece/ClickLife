@@ -1,7 +1,6 @@
 @import "../../../sass/colors"
 
 .checkbox
-  display: block
   position: relative
   font-size: 1.6rem
   height: 1.3125em
@@ -15,6 +14,7 @@
     cursor: pointer
     height: 100%
     width: 100%
+    z-index: 1
 
     &:hover ~ .checkbox__mark
       background: $grey-lite
@@ -32,15 +32,13 @@
 .checkbox__mark
   display: block
   position: absolute
-  height: 1.3125em
-  width: 1.3125em
+  height: 1.3em
+  width: 1.3em
   border: 1px solid $black
   border-radius: 50%
   left: 0
   top: 0
-  z-index: -1
 
 .checkbox__label
   position: absolute
   padding-left: 1.8125em
-  z-index: -1

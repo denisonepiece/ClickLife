@@ -1,0 +1,64 @@
+@import "../../../../sass/colors"
+
+.modal-skills
+  .modal__body
+    max-width: 43rem
+
+.tab-skill
+  margin-bottom: 2.5rem
+
+  &:last-child
+    margin-bottom: 0
+
+.tab-skill.-is-open-
+  .tab-skill__items
+    display: block
+
+  .tab-skill__arrow
+    transform: rotate(180deg)
+
+.tab-skill__header
+  border: 1px solid $grey-lite
+  background: $grey-delicate
+  border-radius: 1rem
+  padding: 1rem 1.2rem
+  cursor: pointer
+  position: relative
+
+  .checkbox
+    input
+      width: 0
+      height: 0
+
+.tab-skill__header.-not-all-
+  .checkbox
+    .checkbox__mark
+      position: relative
+      &:before
+        content: ''
+        display: block
+        height: 0.8em
+        width: 0.8em
+        background: $green
+        position: absolute
+        border-radius: 50%
+        top: calc(50% - 0.8em/2)
+        right: calc(50% - 0.8em/2)
+
+
+.tab-skill__arrow
+  position: absolute
+  right: 1.8rem
+  top: calc(50% - 8px/2)
+
+
+
+.tab-skill__items
+  display: none
+  margin-top: 1.5rem
+  padding-left: 2rem
+
+  .checkbox
+    margin-bottom: 1.4rem
+    &:last-child
+      margin-bottom: 0

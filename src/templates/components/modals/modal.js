@@ -1,6 +1,7 @@
 'use strict';
 
 import './modal.sass'
+import './modal-skills/modal-skills'
 
 initModal('.button-enter', '.modal-enter');
 initModal('.button-reg-comp', '.modal-reg-comp');
@@ -12,6 +13,7 @@ initModal('.button-real-mail', '.modal-real-mail');
 initModal('.button-real-tel', '.modal-real-tel');
 initModal('.button-i-elect', '.modal-i-elect');
 initModal('.button-my-elect', '.modal-my-elect');
+initModal('.button-skills', '.modal-skills');
 
 function showModal(modal) {
   modal.classList.remove("modal-hidden");

@@ -9,9 +9,7 @@ function onClickNotice() {
 
   document.addEventListener('click', function (e) {
     let container = $('.notice');
-
-    console.log(container.has(e.target).length);
-
+    
     if (container.has(e.target).length === 0) {
       notice.classList.remove('-is-open-');
     }

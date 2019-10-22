@@ -1,4 +1,4 @@
-mixin button(style, content)
+mixin button(style, content, dopClass)
   case style
     when 'big-fill-log'
       button.button.button_fill-big= content
@@ -6,7 +6,7 @@ mixin button(style, content)
       a.button.button_border.button_business Перевести <br> в бизнес-профиль
         include lightning.svg
     when 'setting'
-      button.button.button_border.button_default.button_setting Редактировать
+      button.button.button_border.button_default.button_setting(class= dopClass) Редактировать
         include setting.svg
     when 'send'
       button.button.button_border.button_send= content

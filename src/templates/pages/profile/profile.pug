@@ -4,9 +4,6 @@ include ../../components/button/button
 include ../../components/feedback/feedback
 include ../../components/profile-elect/profile-elect
 
-
-
-
 block title
   | Clicklife — ЛК
 
@@ -46,7 +43,7 @@ block main
             .skills__item Вколоть кофе в вену
             .skills__item Выпить 2 литра кофе на спор
             .skills__item Кофе?
-          +button('setting')
+          +button('setting', '', 'button-skills')
         .tasks
           h5 Мои задания
           .tab-nav
@@ -76,5 +73,6 @@ block main
 block modals
   include ../../components/modals/modal-elect/modal-elect
   include ../../components/modals/modal-elect/modal-elect-2
+  include ../../components/modals/modal-skills/modal-skills
 
 
