@@ -8,7 +8,7 @@ addPhoneBlock();
 
 function addPhoneBlock() {
   const PhonesBlock = document.querySelector('.phones-block');
-  const addPhoneBtn = PhonesBlock.querySelector('.add-phone-button__button');
+  const addPhoneBtn = PhonesBlock.querySelector('.add-phone-button');
   const inputBlock = PhonesBlock.querySelector('.input-phone');
 
 
@@ -29,13 +29,14 @@ function addPhoneBlock() {
 
   document.addEventListener("DOMContentLoaded", function () {
     if(howElementsOnPage('.input-phone') === 3) {
-      addPhoneBtn.parentNode.remove();
+      addPhoneBtn.remove();
     }
 
     onFocusInputs(PhonesBlock);
   });
 
-  addPhoneBtn.addEventListener('click', function () {
+  addPhoneBtn.addEventListener('click', function (e) {
+    e.preventDefault();
     //Клонирование и сброс значений
     const inputClone = inputBlock.cloneNode(true);
     const checkboxes = inputClone.querySelectorAll('input[type="checkbox"]');
@@ -44,7 +45,7 @@ function addPhoneBlock() {
       checkboxes[i].checked = false;
     }
 
-    addPhoneBtn.parentNode.before(inputClone);
+    addPhoneBtn.before(inputClone);
     inputClone.focus();
     Inputmask({
       "mask": "+7 (999) 999-99-99",
@@ -52,7 +53,7 @@ function addPhoneBlock() {
 
     onFocusInputs(PhonesBlock);
     if(howElementsOnPage('.input-phone') === 3) {
-      addPhoneBtn.parentNode.remove();
+      addPhoneBtn.remove();
     }
   });
 }

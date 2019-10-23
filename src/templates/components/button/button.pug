@@ -26,4 +26,7 @@ mixin button(style, content, dopClass)
       button.button.button_border.button_default.button_orange.button_big= content
     when 'hidden'
       button.button.button_border(id="btn-toggle-information")
+    when 'default-cancel'
+      button.button.button_border.button_default.button_cancel= content
+
 

@@ -1,0 +1,54 @@
+extends ../../layout/layout
+
+include ../../components/button/button
+include ../../components/feedback/feedback
+include ../../components/profile-elect/profile-elect
+include ../../components/input/input
+include ../../components/add-phone-block/add-phone-block
+include ../../components/textarea/textarea
+
+block title
+  | Clicklife — ЛК-ред.
+
+block main
+  .container
+    .wrapper
+      section.information
+        h2.information__header Привет, Денис!
+        p.information__sub Это твой личный кабинет
+        .information-edit
+          .information-edit__photo
+          .information-edit__fields
+            form
+              +input('Имя Фамилия', 'name')
+              +input('Город', 'text')
+              +input('Email', 'email')
+              +addPhoneBlock()
+              +input('Логин Skype', 'text')
+              +input('Ссылка Вконтакте', 'text')
+              +input('Ссылка Facebook', 'text')
+              +input('Ссылка Одноклассники', 'text')
+
+              +button('default-green', 'Сохранить')
+              +button('default-cancel', 'Отмена')
+        .information-edit-about
+          h5 Обо мне
+          +textarea('Информация о вас')
+          +button('default-green', 'Сохранить')
+
+
+
+
+    aside.aside
+      +button('business')
+      // Два модальных окна в конце страницы,
+      // открываются разные в зависимости на какой блок нажать
+      +profile-elect()
+      +profile-elect(1)
+
+block modals
+  include ../../components/modals/modal-elect/modal-elect
+  include ../../components/modals/modal-elect/modal-elect-2
+  include ../../components/modals/modal-skills/modal-skills
+
+

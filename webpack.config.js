@@ -24,6 +24,7 @@ const common = merge(
       'ui-kit': PATHS.src + '/templates/pages/ui-kit/ui-kit.js',
       'index': PATHS.src + '/templates/pages/index/index.js',
       'profile': PATHS.src + '/templates/pages/profile/profile.js',
+      'profile-edit': PATHS.src + '/templates/pages/profile-edit/profile-edit.js',
     },
     output: {
       path: PATHS.build,
@@ -45,6 +46,11 @@ const common = merge(
         filename: "profile.html",
         chunks: ['profile', 'common'],
         template: PATHS.src + '/templates/pages/profile/profile.pug'
+      }),
+      new HtmlWebpackPlugin({
+        filename: "profile-edit.html",
+        chunks: ['profile-edit', 'common'],
+        template: PATHS.src + '/templates/pages/profile-edit/profile-edit.pug'
       }),
       new webpack.ProvidePlugin({
           $: 'jquery',
