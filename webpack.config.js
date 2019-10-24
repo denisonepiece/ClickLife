@@ -25,7 +25,7 @@ const common = merge(
       'index': PATHS.src + '/templates/pages/index/index.js',
       'profile': PATHS.src + '/templates/pages/profile/profile.js',
       'profile-edit': PATHS.src + '/templates/pages/profile-edit/profile-edit.js',
-      'profile-edit-сompany': PATHS.src + '/templates/pages/profile-edit-сompany/profile-edit-сompany.js',
+      'profile-edit-company': PATHS.src + '/templates/pages/profile-edit-company/profile-edit-company.js',
     },
     output: {
       path: PATHS.build,
@@ -54,9 +54,9 @@ const common = merge(
         template: PATHS.src + '/templates/pages/profile-edit/profile-edit.pug'
       }),
       new HtmlWebpackPlugin({
-        filename: "profile-edit-сompany.html",
+        filename: "profile-edit-company.html",
         chunks: ['profile-edit-сompany', 'common'],
-        template: PATHS.src + '/templates/pages/profile-edit-сompany/profile-edit-сompany.pug'
+        template: PATHS.src + '/templates/pages/profile-edit-company/profile-edit-company.pug'
       }),
 
       new webpack.ProvidePlugin({
