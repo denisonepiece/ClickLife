@@ -1,0 +1,48 @@
+extends ../../layout/layout
+
+include ../../components/button/button
+include ../../components/feedback/feedback
+include ../../components/profile-elect/profile-elect
+include ../../components/input/input
+include ../../components/add-phone-block/add-phone-block
+include ../../components/textarea/textarea
+
+block title
+  | Clicklife — ЛК-ред.комп.
+
+block main
+  .container
+    .wrapper
+      section.information
+        h2.information__header Привет, Денис!
+        p.information__sub Это твой личный кабинет
+        form
+          .information-edit
+            .information-edit__photo
+              label.information-edit__file-input
+                include photo.svg
+                input(type='file' id='file')
+            .information-edit__fields
+              +input('Название компании', 'text')
+              +input('Город*', 'text')
+              +input('Адрес офиса компании', 'text')
+              +input('ИНН', 'text')
+              +input('Email', 'email')
+              +input('Имя и Фамилия представителя*', 'text')
+              +addPhoneBlock()
+              +input('Логин Skype', 'text')
+              +input('Ссылка Вконтакте', 'text')
+              +input('Ссылка Facebook', 'text')
+              +input('Ссылка Одноклассники', 'text')
+
+              +button('default-green', 'Сохранить')
+              +button('default-cancel', 'Отмена')
+        .information-edit-about
+          h5 Обо мне
+          +textarea('Информация о вас')
+          +button('default-green', 'Сохранить')
+    aside.aside
+      +button('business')
+
+
+
