@@ -16,21 +16,24 @@ block main
       section.information
         h2.information__header Привет, Денис!
         p.information__sub Это твой личный кабинет
-        .information-edit
-          .information-edit__photo
-          .information-edit__fields
-            form
-              +input('Имя Фамилия', 'name')
-              +input('Город', 'text')
-              +input('Email', 'email')
-              +addPhoneBlock()
-              +input('Логин Skype', 'text')
-              +input('Ссылка Вконтакте', 'text')
-              +input('Ссылка Facebook', 'text')
-              +input('Ссылка Одноклассники', 'text')
+        form
+          .information-edit
+            .information-edit__photo
+              label.information-edit__file-input
+                include photo.svg
+                input(type='file' id='file')
+            .information-edit__fields
+                +input('Имя Фамилия', 'name')
+                +input('Город', 'text')
+                +input('Email', 'email')
+                +addPhoneBlock()
+                +input('Логин Skype', 'text')
+                +input('Ссылка Вконтакте', 'text')
+                +input('Ссылка Facebook', 'text')
+                +input('Ссылка Одноклассники', 'text')
 
-              +button('default-green', 'Сохранить')
-              +button('default-cancel', 'Отмена')
+                +button('default-green', 'Сохранить')
+                +button('default-cancel', 'Отмена')
         .information-edit-about
           h5 Обо мне
           +textarea('Информация о вас')

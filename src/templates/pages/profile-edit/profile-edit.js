@@ -16,4 +16,26 @@ import '../../components/input/input'
 import '../../components/add-phone-block/addPhoneBlock'
 import '../../components/textarea/textarea'
 
+function handleFileSelect(evt) {
+  let file = evt.target.files;
+  let f = file[0];
+
+  if (!f.type.match('image.*')) {
+    alert("Image only please....");
+  }
+  let reader = new FileReader();
+
+  reader.onload = (function(theFile) {
+    return function(e) {
+      const photoDemo = document.querySelector('.information-edit__photo');
+      photoDemo.style.backgroundImage = 'url('+ e.target.result + ')';
+    };
+  })(f);
+
+  reader.readAsDataURL(f);
+}
+
+document.getElementById('file')
+  .addEventListener('change', handleFileSelect, false);
+
 
