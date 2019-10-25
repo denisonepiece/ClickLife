@@ -55,7 +55,7 @@ const common = merge(
       }),
       new HtmlWebpackPlugin({
         filename: "profile-edit-company.html",
-        chunks: ['profile-edit-сompany', 'common'],
+        chunks: ['profile-edit-company', 'common'],
         template: PATHS.src + '/templates/pages/profile-edit-company/profile-edit-company.pug'
       }),
 

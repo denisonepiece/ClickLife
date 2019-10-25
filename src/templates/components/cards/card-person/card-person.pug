@@ -2,13 +2,13 @@ include ../../like-dislike/like-dislike
 
 mixin card-person(status, color)
   if (status)
-    .card-person
+    a(href="#").card-person
       .card-person__photo
       .right
         span.card-person__name Денис Митряков
         +card-status(color, status)
   else
-    .card-person
+    a(href="#").card-person
       .card-person__photo
       .right
         span.card-person__name Денис Митряков
