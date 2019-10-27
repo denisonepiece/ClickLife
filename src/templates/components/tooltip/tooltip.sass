@@ -1,15 +1,17 @@
 @import "../../../sass/colors"
 
 .tooltip
-  position: relative
+  position: absolute
   display: block
   font-size: 1.6rem
   line-height: 1.32em
   max-width: 25.6rem
+  width: max-content
   border: 1px solid $grey-delicate
   padding: 0.7em 1em
   border-radius: 1rem
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05)
+  background: $white
 
   &:after,
   &:before

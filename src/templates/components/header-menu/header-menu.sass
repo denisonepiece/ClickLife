@@ -1,0 +1,57 @@
+@import "../../../sass/colors"
+
+.header-menu
+  opacity: 0
+  visibility: hidden
+  position: absolute
+  background: $white
+  padding: 3rem 2.5rem
+  border-radius: 1rem
+  border: 1px solid $grey-lite
+  top: 2.4rem
+  right: calc(100% - 4.5rem)
+  cursor: default
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05)
+  transition: opacity 100ms linear, top 100ms linear, visibility 100ms linear
+
+  &:after,
+  &:before
+    position: absolute
+    pointer-events: none
+    border: solid transparent
+    content: ''
+    height: 0
+    width: 0
+    bottom: calc(100%)
+    right: 2rem
+
+  &:before
+    border-width: 1rem
+    margin: 0 -0.6rem
+    border-bottom-color: $grey-lite
+
+  &:after
+    border-width: 0.9rem
+    margin: 0 -0.5rem
+    border-bottom-color: $white
+
+
+.header-menu__item
+  margin-bottom: 1.7rem
+
+  &:last-child
+    margin-bottom: 0
+  a
+    color: $black
+    font-weight: 500
+
+.header-menu__item.logout
+  a
+    color: $grey
+    position: relative
+    padding-left: 2.1rem
+
+    svg
+      position: absolute
+      left: 0
+

@@ -1,6 +1,7 @@
 'use strict';
 
 import './header.sass'
+import '../../components/header-menu/header-menu'
 
 function onClickNotice() {
   const notice = document.querySelector('.notice');

@@ -90,10 +90,21 @@
     background-repeat: no-repeat
 
 .card-info__date
+  user-select: none
   &:before
     background-image: url("time.svg")
     height: 16px
     width: 16px
+
+  &:hover .tooltip
+    display: block
+
+  .tooltip
+    display: none
+    position: absolute
+    z-index: 10
+    bottom: calc(100% + 1rem)
+    left: 0
 
 .card-info__respond
   margin-bottom: 1.5rem
