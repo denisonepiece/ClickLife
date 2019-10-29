@@ -3,6 +3,7 @@ import '../../../sass/main.sass'
 import '../../../sass/typography.sass'
 import './profile.sass'
 
+
 //Includes
 import '../../includes/header/header'
 import '../../includes/footer/footer'
@@ -18,6 +19,10 @@ import '../../components/feedback/feedback'
 import '../../components/cards/card'
 import '../../components/modals/modal'
 import '../../components/tooltip/tooltip'
+
+//Media
+import '../../../sass/media.sass'
+
 
 toggleShowInformation();
 
