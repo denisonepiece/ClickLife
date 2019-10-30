@@ -26,7 +26,29 @@
       display: none
 
   .aside
-    display: none
+    display: flex
+    align-items: center
+    flex-direction: row-reverse
+    max-width: unset
+    flex-wrap: wrap
+    justify-content: flex-end
+    margin-top: 5rem
+    .button
+      display: inline-block
+      margin: 0
+      margin-bottom: 2rem
+
+  .profile-elect
+    display: inline-block
+    padding: 0
+    border: none
+    margin-bottom: 2rem
+    margin-right: 2rem
+    &:hover
+      border: none
+
+  .header-menu
+    font-size: 1.8rem
 
   .wrapper
     max-width: unset
@@ -74,11 +96,6 @@
     flex-direction: column
     position: relative
 
-  //.card-info
-  //  position: absolute
-  //  right: 2.2rem
-  //  bottom: 6rem
-
   .card-status
     display: block
 
@@ -89,7 +106,6 @@
       width: calc(50% - 0.5rem)
       &:last-child
         margin: 0
-        //width: 60%
 
   .card-title
     margin-bottom: 2rem
