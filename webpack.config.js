@@ -11,12 +11,13 @@ const extractCSS = require('./webpack/css.extract');
 const terserJS = require('./webpack/terser');
 const images = require('./webpack/images');
 const fonts = require('./webpack/fonts');
+const autoprefixer = require('autoprefixer');
+
 
 const PATHS = {
   src: path.join(__dirname, 'src'),
   build: path.join(__dirname, 'build')
 };
-
 
 const common = merge(
   {

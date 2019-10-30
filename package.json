@@ -41,9 +41,11 @@
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
+    "autoprefixer": "^9.7.0",
     "jquery": "^3.4.1",
     "lodash": "^4.17.15",
     "normalize.css": "^8.0.1",
+    "postcss-loader": "^3.0.0",
     "terser-webpack-plugin": "^1.4.1"
   }
 }

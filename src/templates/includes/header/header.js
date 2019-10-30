@@ -15,7 +15,18 @@ function onClickNotice() {
       notice.classList.remove('-is-open-');
     }
   });
-
 }
 
 onClickNotice();
+toggleMenu();
+
+function toggleMenu() {
+  const menuBtn = document.querySelector('.menu-btn');
+  const menu = document.querySelector('.menu');
+
+  menuBtn.onclick = () => {
+    menuBtn.classList.toggle('-is-open-');
+    menu.classList.toggle('-is-open-');
+  }
+
+}

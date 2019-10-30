@@ -36,7 +36,7 @@
     color: #C5C5C5
     font-weight: 500
 
-.nav__item_active
+.nav__item.-is-active-
   position: relative
 
   a
@@ -123,12 +123,103 @@
 
 .control-panel__account
   position: relative
+  margin-right: 0
 
 .control-panel__account.-menu-is-open-
   .header-menu
     visibility: visible
     opacity: 1
     top: 4.9rem
+
+.menu-btn
+  display: none
+  height: 19px
+  width: 23px
+  position: relative
+  cursor: pointer
+
+  span,
+  span:before,
+  span:after
+    content: ''
+    position: absolute
+    display: block
+    height: 3px
+    width: 100%
+    background: $black
+    border-radius: 10px
+    transition: transform 0.1s, width 0s, top 0.1s
+
+  span
+    top: calc(50% - 3px/2)
+
+  span:before
+    top: -7px
+
+  span:after
+    top: 7px
+
+.menu-btn.-is-open-
+  span
+    height: 0
+    &:before
+      top: 0
+      transform: rotate(45deg)
+
+    &:after
+      top: 0
+      transform: rotate(-45deg)
+
+.menu
+  position: absolute
+  left: 100vw
+  top: 0
+  width: 100%
+  height: 100vh
+  background: $white
+  z-index: -1
+  transition: 0.3s
+
+.menu.-is-open-
+  left: 0
+  transition: 0.3s
+
+.menu
+  display: flex
+  flex-direction: column
+  align-items: flex-end
+  padding: 12rem 2.3rem
+
+  .button
+    font-size: 1.6rem
+    margin-right: 1rem
+
+  .nav__list
+    display: block
+  .nav__item
+    display: flex
+    align-items: center
+    margin-bottom: 2rem
+    margin-right: 0
+    a
+      color: $black
+      font-size: 2.5rem
+      line-height: unset
+      height: unset
+
+  .nav__item.logout
+      a
+        color: $grey
+
+.separator
+  width: 100%
+  margin-bottom: 2rem
+  height: 1px
+  background: $grey-lite
+
+
+
+
 
 
 

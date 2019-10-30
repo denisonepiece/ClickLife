@@ -16,6 +16,17 @@ module.exports = function (paths) {
               }
             },
             'css-loader',
+            {
+              loader: 'postcss-loader',
+              options: {
+                plugins: () => [
+                  require('autoprefixer')({
+                    'overrideBrowserslist' : ['defaults', 'last 4 version']
+                  })
+                ],
+                sourceMap: true
+              }
+            },
             'sass-loader',
           ],
 
