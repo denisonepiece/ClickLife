@@ -32,8 +32,9 @@ block main
                 +input('Ссылка Facebook', 'text')
                 +input('Ссылка Одноклассники', 'text')
 
-                +button('default-green', 'Сохранить')
-                +button('default-cancel', 'Отмена')
+                .information-edit__buttons
+                  +button('default-green', 'Сохранить')
+                  +button('default-cancel', 'Отмена')
         .information-edit-about
           h5 Обо мне
           +textarea('Информация о вас')

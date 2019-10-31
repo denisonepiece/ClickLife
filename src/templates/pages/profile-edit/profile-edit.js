@@ -16,6 +16,10 @@ import '../../components/input/input'
 import '../../components/add-phone-block/addPhoneBlock'
 import '../../components/textarea/textarea'
 
+//media
+import '../../../sass/media.sass'
+
+
 function handleFileSelect(evt) {
   let file = evt.target.files;
   let f = file[0];

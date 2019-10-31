@@ -32,6 +32,7 @@ const common = merge(
       path: PATHS.build,
       filename: "js/[name].js",
     },
+    devtool: 'source-map',
     plugins: [
       new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
