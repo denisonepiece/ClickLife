@@ -7,7 +7,7 @@ block main
   .tariff-header
     .container
       h2 Подключите премиальный тариф<br> всего за 300₽/мес.
-      +button('default-grad', 'Подключить')
+      +button('default-grad', 'Подключить', 'button-tariff')
   .tariff-body
     .container
       .tariff-body__title
@@ -53,7 +53,8 @@ block main
               h5 Создание премиум-заказов
               p Смогут откликаться только исполнители с хорошей репутацией и заполненным профилем.
 
-      +button('default-grad', 'Подключить тариф')
+      +button('default-grad', 'Подключить тариф', 'button-tariff')
 
 
 block modals
+  include ../../components/modals/modal-tariff/modal-tariff
