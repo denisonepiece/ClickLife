@@ -21,7 +21,7 @@ mixin button(style, content, dopClass)
     when 'default-grad'
       button.button.button_border.button_default.button_grad= content
     when 'default-grad-big'
-      button.button.button_border.button_default.button_grad.button_big= content
+      button.button.button_border.button_default.button_grad.button_big(class= dopClass)= content
     when 'default-orange-big'
       button.button.button_border.button_default.button_orange.button_big= content
     when 'hidden'

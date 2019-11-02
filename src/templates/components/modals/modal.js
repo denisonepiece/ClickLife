@@ -15,6 +15,7 @@ initModal('.button-i-elect', '.modal-i-elect');
 initModal('.button-my-elect', '.modal-my-elect');
 initModal('.button-skills', '.modal-skills');
 initModal('.button-report', '.modal-report');
+initModal('.button-tasks', '.modal-tasks');
 
 function showModal(modal) {
   modal.classList.remove("modal-hidden");
