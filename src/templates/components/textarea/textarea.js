@@ -1,10 +1,8 @@
 import './textarea.sass'
-
+import '../input/input'
 
 const textarea = document.querySelector('.textarea');
 const maxChars = 200;
-
-
 
 function syncOnChange(textarea) {
   const textareaField = textarea.querySelector('.textarea__field');

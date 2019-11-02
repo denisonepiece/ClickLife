@@ -17,5 +17,6 @@ import '../../components/feedback/feedback'
 import '../../components/cards/card'
 import '../../components/modals/modal'
 import '../../components/tooltip/tooltip'
+import '../../components/textarea/textarea'
 //Media
 import '../../../sass/media.sass'

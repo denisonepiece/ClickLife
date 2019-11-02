@@ -1,0 +1,11 @@
+include ../../textarea/textarea
+
+.modal.modal-report
+  .modal__body
+    h4 Расскажите о причине жалобы
+    +textarea('Начните писать отзыв')
+    +button('big-fill-log', 'Отправить')
+
+    span.btn-close
+      include ../btn-close.svg
+
