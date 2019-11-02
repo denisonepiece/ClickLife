@@ -1,7 +1,8 @@
 import 'normalize.css';
 import '../../../sass/main.sass'
 import '../../../sass/typography.sass'
-import './profile.sass'
+import '../profile/profile.sass'
+import './profile-another.sass'
 //Includes
 import '../../includes/header/header'
 import '../../includes/footer/footer'
@@ -18,23 +19,3 @@ import '../../components/modals/modal'
 import '../../components/tooltip/tooltip'
 //Media
 import '../../../sass/media.sass'
-
-toggleShowInformation();
-
-function toggleShowInformation() {
-  const btn = document.querySelector('#btn-toggle-information');
-  let isOpen = false;
-  btn.innerHTML = 'Показать больше информации';
-
-  btn.onclick = function (e) {
-    isOpen = !isOpen;
-    btn.parentNode.classList.toggle('-info-hidden-');
-
-    if(isOpen) {
-      btn.innerHTML = 'Показать меньше информации'
-    }
-    else {
-      btn.innerHTML = 'Показать больше информации'
-    }
-  };
-}

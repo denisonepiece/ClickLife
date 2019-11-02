@@ -1,0 +1,47 @@
+extends ../../layout/layout
+
+include ../../components/button/button
+include ../../components/feedback/feedback
+include ../../components/profile-elect/profile-elect
+include ../../components/profile-person/profile-person
+
+block title
+  | Clicklife — Профиль Дениса Митрякова
+
+block main
+  .container
+    .wrapper
+      section.information
+        +profile-person('with-rate')
+        +button('default-grad-big', 'Предложить задание')
+        +button('default-orange-big', 'Добавить в избранное')
+      section.profile-categories
+        .tab-nav
+          h5.tab-nav__item Как исполнитель
+          h5.tab-nav__item.-active- Как заказчик
+        .skills
+          .skills__list
+            .skills__item Заварить кофе
+            .skills__item Выпить кофе
+            .skills__item Помолоть кофе
+            .skills__item Процедить кофе
+            .skills__item Купить кофе
+            .skills__item Продать кофе
+            .skills__item Вколоть кофе в вену
+            .skills__item Выпить 2 литра кофе на спор
+            .skills__item Кофе?
+      section.feedbacks
+        h5 Отзывы
+        +feedback('report')
+        +feedback('report')
+        +button('default-green', 'Смотреть все')
+    aside.aside
+      +button('default-grad-big', 'Предложить задание')
+      +button('default-orange-big', 'Добавить в избранное')
+      +profile-elect()
+
+block modals
+  include ../../components/modals/modal-elect/modal-elect-2
+
+
+

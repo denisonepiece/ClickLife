@@ -28,5 +28,9 @@ mixin button(style, content, dopClass)
       button.button.button_border(id="btn-toggle-information")
     when 'default-cancel'
       button.button.button_border.button_default.button_cancel= content
+    when 'report'
+      button.button_report.button-modal-report Пожаловаться
+        include report.svg
+
 
 

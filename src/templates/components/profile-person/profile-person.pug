@@ -1,11 +1,38 @@
-.profile-person
-  .profile-person__photo
-  .profile-person__info
-    .row
-      .profile-person__title
-        h4.profile-person__name Денис Митряков
-        p.profile-person__city Горно-Алтайск
-      +button('setting')
-    .profile-person__tasks
-      span.profile-person__task <b>69</b> Созданно заданий
-      span.profile-person__task <b>228</b> Выполненно заданий
+mixin profile-person(type)
+  case type
+    when 'with-rate'
+      .profile-person.profile-person_with-rate
+        .profile-person__photo
+        .profile-person__info
+          .profile-person__title
+            h4.profile-person__name Денис Митряков
+            p.profile-person__city Горно-Алтайск
+          .profile-person__tasks
+            span.profile-person__task <b>69</b> Созданно заданий
+            span.profile-person__task <b>228</b> Выполненно заданий
+          include ../profile-rate/profile-rate
+          +button('report')
+
+    when 'default'
+      .profile-person
+        .profile-person__photo
+        .profile-person__info
+          .row
+            .profile-person__title
+              h4.profile-person__name Денис Митряков
+              p.profile-person__city Горно-Алтайск
+            +button('setting')
+          .profile-person__tasks
+            span.profile-person__task <b>69</b> Созданно заданий
+            span.profile-person__task <b>228</b> Выполненно заданий
+    when 'without-setting'
+      .profile-person
+        .profile-person__photo
+        .profile-person__info
+          .row
+            .profile-person__title
+              h4.profile-person__name Денис Митряков
+              p.profile-person__city Горно-Алтайск
+          .profile-person__tasks
+            span.profile-person__task <b>69</b> Созданно заданий
+            span.profile-person__task <b>228</b> Выполненно заданий

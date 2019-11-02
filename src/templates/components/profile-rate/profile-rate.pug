@@ -1,7 +1,9 @@
 include ../like-dislike/like-dislike
 
 .profile-rate
-  .profile-rate__role Как исполнитель
-  +like-dislike()
-  .profile-rate__role Как заказчик
-  +like-dislike()
+  .left
+    .profile-rate__role Как исполнитель
+    +like-dislike()
+  .right
+    .profile-rate__role Как заказчик
+    +like-dislike()

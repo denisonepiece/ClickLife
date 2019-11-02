@@ -5,21 +5,23 @@ include ../../components/feedback/feedback
 include ../../components/profile-elect/profile-elect
 include ../../components/profile-person/profile-person
 
-
 block title
-  | Clicklife — ЛК
+  | Clicklife — Одобренный профиль
 
 block main
   .container
     .wrapper
       section.information
-        h2.information__header Привет, Денис!
-        p.information__sub Это твой личный кабинет
-        +profile-person('default')
-        .detail-information.-info-hidden-
+        +profile-person('without-setting')
+        +button('default-grad-big', 'Предложить задание')
+        +button('default-orange-big', 'Добавить в избранное')
+        .detail-information
           .contact
-            include ../../components/profile-contact/profile-contact
-            include ../../components/profile-rate/profile-rate
+            .top
+              include ../../components/profile-contact/profile-contact
+              include ../../components/profile-rate/profile-rate
+            +button('report')
+
           .about
             h5 Обо мне
             p
@@ -27,7 +29,6 @@ block main
               | Опыт в доставках более 11 лет.<br>
               |Сбербанк, Альфа, Тинькофф, ВТБ. Выполняю ваши задания с Друзьями.
               |Топовый рейтинг и множество отзывов - ваша гарантия и наша надежность
-          +button('hidden')
 
       section.profile-categories
         .tab-nav
@@ -44,36 +45,18 @@ block main
             .skills__item Вколоть кофе в вену
             .skills__item Выпить 2 литра кофе на спор
             .skills__item Кофе?
-          +button('setting', '', 'button-skills')
-        .tasks
-          h5 Мои задания
-          .tab-nav
-            p.tab-nav__item.-active- Сбор завявок
-            p.tab-nav__item В работе
-            p.tab-nav__item Выполненные
-          .tasks__list
-            include ../../components/cards/cards-task/card-pred-zak
-            include ../../components/cards/cards-task/card
-            include ../../components/cards/cards-task/card-sbor-isp
-            include ../../components/cards/cards-task/card-not-active
-          +button('default-green', 'Смотреть все')
-
-
       section.feedbacks
-            h5 Отзывы
-            +feedback(1)
-            +feedback
-            +button('default-green', 'Смотреть все')
+        h5 Отзывы
+        +feedback('report')
+        +feedback('report')
+        +button('default-green', 'Смотреть все')
     aside.aside
-      +button('business')
-      // Два модальных окна в конце страницы,
-      // открываются разные в зависимости на какой блок нажать
+      +button('default-grad-big', 'Предложить задание')
+      +button('default-orange-big', 'Добавить в избранное')
       +profile-elect()
-      +profile-elect(1)
 
 block modals
-  include ../../components/modals/modal-elect/modal-elect
   include ../../components/modals/modal-elect/modal-elect-2
-  include ../../components/modals/modal-skills/modal-skills
+
 
 
