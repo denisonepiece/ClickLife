@@ -29,6 +29,7 @@ const common = merge(
       'profile-edit-company': PATHS.src + '/templates/pages/profile-edit-company/profile-edit-company.js',
       'profile-another': PATHS.src + '/templates/pages/profile-another/profile-another.js',
       'profile-another-accept': PATHS.src + '/templates/pages/profile-another-accept/profile-another-accept.js',
+      'tariff': PATHS.src + '/templates/pages/tariff/tariff.js',
     },
     output: {
       path: PATHS.build,
@@ -71,6 +72,11 @@ const common = merge(
         filename: "profile-another-accept.html",
         chunks: ['profile-another-accept', 'common'],
         template: PATHS.src + '/templates/pages/profile-another-accept/profile-another-accept.pug'
+      }),
+      new HtmlWebpackPlugin({
+        filename: "tariff.html",
+        chunks: ['tariff', 'common'],
+        template: PATHS.src + '/templates/pages/tariff/tariff.pug'
       }),
 
       new webpack.ProvidePlugin({
