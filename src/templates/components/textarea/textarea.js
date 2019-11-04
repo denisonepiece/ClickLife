@@ -41,11 +41,13 @@ function validateTextarea(input) {
     error.innerHTML = 'Недопустимое кол. символов';
     inputBlock.classList.remove('input_success');
     inputBlock.classList.add('input_error');
-  } else if (counter < maxChars){
+  } else if (counter < maxChars) {
     error.innerHTML = '';
     inputBlock.classList.add('input_success');
     inputBlock.classList.remove('input_error');
   }
 }
 
-syncOnChange(textarea);
+if (textarea) {
+  syncOnChange(textarea);
+}

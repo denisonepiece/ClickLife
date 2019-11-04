@@ -2,7 +2,7 @@
 
 import './modal.sass'
 import './modal-skills/modal-skills'
-import './modal-tariff/modal-tariff'
+import './modal-offer/modal-offer'
 
 initModal('.button-enter', '.modal-enter');
 initModal('.button-reg-comp', '.modal-reg-comp');
@@ -18,6 +18,7 @@ initModal('.button-skills', '.modal-skills');
 initModal('.button-report', '.modal-report');
 initModal('.button-tasks', '.modal-tasks');
 initModal('.button-tariff', '.modal-tariff');
+initModal('.button-offer', '.modal-offer');
 
 function showModal(modal) {
   modal.classList.remove("modal-hidden");

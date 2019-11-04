@@ -30,6 +30,8 @@ const common = merge(
       'profile-another': PATHS.src + '/templates/pages/profile-another/profile-another.js',
       'profile-another-accept': PATHS.src + '/templates/pages/profile-another-accept/profile-another-accept.js',
       'tariff': PATHS.src + '/templates/pages/tariff/tariff.js',
+      'settings': PATHS.src + '/templates/pages/settings/settings.js',
+      'task': PATHS.src + '/templates/pages/task/task.js',
     },
     output: {
       path: PATHS.build,
@@ -77,6 +79,21 @@ const common = merge(
         filename: "tariff.html",
         chunks: ['tariff', 'common'],
         template: PATHS.src + '/templates/pages/tariff/tariff.pug'
+      }),
+      new HtmlWebpackPlugin({
+        filename: "settings.html",
+        chunks: ['settings', 'common'],
+        template: PATHS.src + '/templates/pages/settings/settings.pug'
+      }),
+      new HtmlWebpackPlugin({
+        filename: "task.html",
+        chunks: ['task', 'common'],
+        template: PATHS.src + '/templates/pages/task/task.pug'
+      }),
+      new HtmlWebpackPlugin({
+        filename: "task-blocked.html",
+        chunks: ['task', 'common'],
+        template: PATHS.src + '/templates/pages/task/task-blocked.pug'
       }),
 
       new webpack.ProvidePlugin({

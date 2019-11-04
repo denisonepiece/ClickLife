@@ -1,0 +1,36 @@
+@import "../../../../sass/colors"
+
+.modal-offer
+  .modal__body
+    max-width: 58rem
+
+  h4
+    margin-bottom: 3rem
+
+  .label
+    margin-bottom: 0.8rem
+    color: #000
+    font-size: 1.6rem
+
+  .price
+    margin-bottom: 2.5rem
+    display: flex
+    align-items: center
+
+    span
+      color: $grey-dark
+
+    .input
+      max-width: 18rem
+      margin-right: 2rem
+      position: relative
+
+      &:after
+        content: '₽'
+        position: absolute
+        right: 1rem
+        height: 1em
+        top: calc(50% - 1em/2)
+
+  .textarea
+    margin-bottom: 1rem

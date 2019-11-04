@@ -1,0 +1,18 @@
+include ../../../components/input/input
+include ../../../components/textarea/textarea
+
+.modal.modal-offer.modal-hidden
+  .modal__body
+    h4 Ваше предложение
+    form
+      p.label Ваша цена
+      .price
+        +input('10.000', 'text')
+        span Укажите цену до 10.000 ₽
+
+      p.label Сообщение заказчику
+      +textarea('Сообщение')
+
+      +button('default-grad', 'Отправить')
+    span.btn-close
+      include ../btn-close.svg

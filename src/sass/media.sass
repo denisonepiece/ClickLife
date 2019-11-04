@@ -16,7 +16,6 @@
     margin-right: 2.5rem
 
 
-
 @media screen and (max-width: 768px)
   .aside
     display: none
@@ -107,7 +106,59 @@
       max-width: 35rem
       margin-bottom: 1rem
 
+  .task-state
+    align-items: flex-start
+
+    .card-status
+      font-size: 1.6rem
+      margin-right: 0
+      margin-bottom: 1rem
+
+  .task-state
+    flex-direction: column
+
+  .task-state__list
+    margin-left: 0
+    flex-wrap: wrap
+
+  .task-state__item
+    border: none
+    width: max-content
+    font-size: 1.6rem
+    margin-right: 2rem
+    margin-left: 0
+    padding: 0
+    margin-bottom: 0.5rem
+
+  .task-information
+    padding-left: 0
+    padding-right: 0
+
+  .task-information__item.accent
+    border-radius: 0
+
+  .task-information__content
+    font-size: 1.6rem
+
+
+
+
 @media screen and (max-width: 450px)
+
+  .task-information__item
+    padding-left: 1.5rem
+    padding-right: 1.5rem
+
+  .task-information__item.accent
+    padding-left: 1.5rem
+    padding-right: 1.5rem
+
+  .task-information
+    .button
+      left: 0
+      width: 100%
+
+
 
   .profile-person_with-rate
     .profile-rate

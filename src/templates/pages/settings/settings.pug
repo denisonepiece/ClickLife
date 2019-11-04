@@ -1,0 +1,57 @@
+extends ../../layout/layout
+include ../../components/input/input
+include ../../components/button/button
+include ../../components/input-phone/input-phone
+
+block title
+  | Настройки
+
+block main
+  .container
+    h2.page-title Общее
+
+    .settings
+      .password
+        h5 Изменить пароль
+        +input('Старый пароль')
+        +input('Новый пароль')
+        +input('Повторите новый пароль')
+        +button('default-green-fill', 'Изменить')
+      .email
+        h5 Электронная почта
+        // Если почта подтверждена
+        input.input_fixed(value="denisonepiece@icloud.com" type="text" readonly)
+        // Нет почты
+        p.message Вы можете привязать к странице ваш адрес эл.почты.<br> Это позволит защитить ваш аккаунт.
+        // Ввод почты
+        +input('denisonepiece@icloud.com', 'email')
+
+        .email__wait-sumbited
+          p.message На ваш электронный адрес ydgf@mail.ru было отправлено письмо со ссылкой для подтверждения вашей почты на ClickLife. Пройдите по ссылке и активируйте вашу электронную почту
+          +button('send', 'Отправить новое письмо')
+          +button('send', 'Указать другую почту')
+
+
+
+        +button('default-green-fill', 'Добавить почту')
+      .number
+        h5 Номер телефона
+        // Если есть номер
+        input.input_fixed(value="79236656675" type="text" readonly)
+        // Ввод номера
+        +inputPhone('simple')
+        // Подтверждение
+        .number__wait-sumbited
+          input.input_fixed.input_wait-sumbited(value="+7 (923) 665-66-75" type="text" readonly)
+          span Указать другой номер
+
+          span Введите код из СМС
+          +inputPhone('simple')
+          span Выслать код повторно
+
+
+        p Вы можете привязать к странице ваш личный номер телефона.Это позволит защитить ваш аккаунт.
+
+        +button('default-green-fill', 'Изменить')
+
+

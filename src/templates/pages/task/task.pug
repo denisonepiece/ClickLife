@@ -1,0 +1,64 @@
+extends ../../layout/layout
+
+include ../../components/cards/card-status/card-status
+include ../../components/like-dislike/like-dislike
+
+block title
+  | Задание
+
+block main
+  .container
+    .wrapper
+      h2.page-title Разработать логотип
+      h5.task-price до 10.000 ₽
+      .task-state
+        +card-status('orange', 'Сбор заявок')
+        .task-state__list
+          .task-state__item Дизайн
+          .task-state__item 219 предложений
+          .task-state__item Создано вчера в 22:21
+          .task-state__item ID: 389743982
+      .task-information
+        .task-information__item
+          span.task-information__title Начать
+          p.task-information__content 20 июля
+
+        .task-information__item
+          span.task-information__title Закончить
+          p.task-information__content 25 августа
+        .task-information__item
+          span.task-information__title Стоимость
+          p.task-information__content Заказчик готов заплатить до 10 000 ₽
+        .task-information__item
+          span.task-information__title Оплата
+          p.task-information__content Банковским переводом на карту
+        .task-information__item
+          span.task-information__title Место <br> оказания <br> услуги
+          p.task-information__content Дистанционно
+
+        .task-information__item.accent
+          span.task-information__title Требуется
+          p.task-information__content Нужно взять готовый логотип в EPS (Текстовый) и изменить на новый Было AliExpress сделать AliPartner Цвет, стили и шрифт сохранить оригинала.Изменить на новый. Было AliExpress сделать AliPartner Цвет, стили и шрифт сохранить оригинала.
+
+        .task-information__item
+          span.task-information__title Документы
+          p.task-information__content
+            a.document(href="#") ТЗ.docx
+            a.document(href="#") ТЗ.docx
+
+        +button('default-grad-big', 'Предложить свои услуги', 'button-offer')
+
+
+    aside.aside
+      .task-creator
+        .photo
+        .info
+          .name Денис Митряков
+          .sub Автор этого задания
+          +like-dislike()
+          +button('report')
+
+block modals
+  include ../../components/modals/modal-offer/modal-offer
+
+

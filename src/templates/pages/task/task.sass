@@ -1,0 +1,176 @@
+@import "../../../sass/colors"
+@import "../../../sass/rules"
+
+
+.wrapper
+  max-width: calc(100% - 28rem - 2rem)
+  width: 100%
+  margin-bottom: 7rem
+
+main
+  .container
+    display: flex
+    justify-content: space-between
+    padding-top: 5rem
+    padding-bottom: 8rem
+    flex-wrap: wrap
+
+.aside
+  max-width: 28rem
+  width: 100%
+
+.row
+  display: flex
+  align-items: center
+
+.warn
+  position: relative
+  font-size: 1.6rem
+  font-weight: bold
+  color: $orange
+  padding-left: 2.7rem
+  display: flex
+  align-items: center
+  margin-bottom: 2.5rem
+  margin-left: 3rem
+
+  svg
+    position: absolute
+    left: 0
+
+
+.page-title
+  margin-bottom: 2rem
+
+.task-price
+  color: $green
+  background: $green-delicate
+  padding: 1.2rem 2rem
+  width: fit-content
+  border-radius: 4.3rem
+  font-weight: 500
+  margin-bottom: 2.5rem
+
+.task-state
+  display: flex
+  align-items: center
+  margin-bottom: 3rem
+
+  .card-status
+    margin-bottom: 0
+
+.task-state__list
+  display: flex
+  margin-left: 1rem
+
+.task-state__item
+  display: flex
+  align-items: center
+  color: $grey-dark
+  padding: 0 1.5rem
+  border-left: 1px solid $grey-dark
+
+  &:first-child
+    border: none
+
+  &:last-child
+    color: $grey
+    border-color: $grey
+
+.task-information
+  padding: 3rem 1.1rem 8rem
+  border: 1px solid $grey-lite
+  border-radius: 1.5rem
+  position: relative
+
+  .button
+    position: absolute
+    bottom: -3rem
+    left: 3rem
+
+.task-information__item
+  display: flex
+  padding: 0 2.5rem
+  margin-bottom: 2.5rem
+
+.task-information__item.accent
+  background: $grey-delicate
+  border-radius: 1.5rem
+  padding: 2.5rem 2.5rem
+
+  p
+    max-width: 75rem
+
+.task-information__title
+  min-width: 13rem
+  font-size: 1.6rem
+  font-weight: 700
+
+.document
+  color: #2F80ED
+  text-decoration: underline
+  margin-right: 1.5rem
+
+.task-creator
+  display: flex
+
+  .name
+    font-size: 1.8rem
+    margin-top: .7rem
+    margin-bottom: .5rem
+
+  .sub
+    color: $grey
+    margin-bottom: 1rem
+
+  .rate
+    margin-bottom: 2rem
+
+  .photo
+    @extend %photo
+    background-image: url("../../../assets/img/greyscale-square.png")
+    height: 8.5rem
+    width: 8.5rem
+    min-width: 8.5rem
+    margin-right: 1.5rem
+
+
+.button.-disable-
+  background: $grey
+  box-shadow: none
+  cursor: default
+
+  &:hover
+    background: $grey
+
+.warn-message
+  max-width: 38rem
+  position: relative
+  padding-left: 3.2rem
+  margin-left: 3rem
+  margin-top: 5rem
+  line-height: 1.5em
+
+  svg
+    position: absolute
+    left: 0
+    top: 0
+
+  a
+    color: $green
+    text-decoration: underline
+
+    &:hover
+      color: $green-lite
+
+
+@media screen and (max-width: 500px)
+  .row
+    flex-direction: column-reverse
+    align-items: flex-start
+
+  .warn
+    margin-left: 0
+
+  .warn-message
+    margin-left: 0
