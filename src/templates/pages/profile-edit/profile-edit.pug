@@ -18,10 +18,13 @@ block main
         p.information__sub Это твой личный кабинет
         form
           .information-edit
-            .information-edit__photo
-              label.information-edit__file-input
-                include photo.svg
-                input(type='file' id='file')
+            .left
+              .information-edit__photo
+                label.information-edit__file-input
+                  include photo.svg
+                  input(type='file' id='file')
+
+              +button('business')
             .information-edit__fields
                 +input('Имя Фамилия', 'name')
                 +input('Город', 'text')
@@ -41,15 +44,6 @@ block main
           +textarea('Информация о вас')
           +button('default-green', 'Сохранить')
 
-
-
-
-    aside.aside
-      +button('business')
-      // Два модальных окна в конце страницы,
-      // открываются разные в зависимости на какой блок нажать
-      +profile-elect()
-      +profile-elect(1)
 
 block modals
   include ../../components/modals/modal-elect/modal-elect

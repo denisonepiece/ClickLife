@@ -1,6 +1,7 @@
 "use strict";
 
 import './input-phone.sass';
+import '../tooltip/tooltip'
 import Inputmask from 'inputmask';
 
 Inputmask({"mask": "+7 (999) 999-99-99"}).mask('input[type="tel"]');

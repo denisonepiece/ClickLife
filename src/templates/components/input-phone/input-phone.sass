@@ -4,6 +4,12 @@
   position: relative
   font-size: 1.6rem
 
+  .tooltip
+    left: calc(100% + 10px)
+    bottom: calc(100% + 10px)
+    z-index: 2
+
+
 .input-phone__field.input-phone__field_messenger
   border-right: 0
   border-bottom-right-radius: 0
@@ -17,8 +23,8 @@
     border-color: $black
   &:active ~ .input-phone__messengers
     border-color: $black
-
-
+  &:focus ~ .tooltip
+    display: block
 
 .input-phone__messengers
   position: absolute
@@ -74,7 +80,14 @@
 
 
 
+@media screen and (max-width: 768px)
+  .input-phone
+    .tooltip
+      left: 0
 
+      &:after,
+      &:before
+        left: calc(100% - 3.5rem)
 
 
 

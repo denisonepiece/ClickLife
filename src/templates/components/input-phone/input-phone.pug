@@ -1,3 +1,5 @@
+include ../../components/tooltip/tooltip
+
 mixin inputPhone(variant="simple")
   if(variant=="messenger")
     div.input-phone
@@ -12,6 +14,7 @@ mixin inputPhone(variant="simple")
         label.messenger-checkbox
           input(type="checkbox")
           include telegram.svg
+      +tooltip('Отметьте мессенджеры привязанные к номеру')
 
 
   if(variant=="simple")
