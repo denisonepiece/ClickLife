@@ -93,6 +93,7 @@
 
   .profile-rate
     font-size: 1.7rem
+
     .left
       margin-bottom: 2rem
 
@@ -141,8 +142,6 @@
     font-size: 1.6rem
 
 
-
-
 @media screen and (max-width: 450px)
 
   .task-information__item
@@ -157,8 +156,6 @@
     .button
       left: 0
       width: 100%
-
-
 
   .profile-person_with-rate
     .profile-rate
@@ -181,6 +178,7 @@
   .information-edit__buttons
     display: flex
     justify-content: space-between
+
     .button
       font-size: 1.7rem
       width: calc(50% - 1rem)
@@ -201,24 +199,30 @@
   .card-buttons
     margin-top: 1rem
     justify-content: space-between
+
     .button
       width: calc(50% - 0.5rem)
+
       &:last-child
         margin: 0
 
   .card-title
     margin-bottom: 2rem
 
-  .card-info,
-  .card-person
-    height: 12rem
-    justify-content: space-between
-    margin-bottom: 2rem
+  .card
+    .card-info,
+    .card-person
+      height: 12rem
+      justify-content: space-between
+      margin-bottom: 2rem
 
-  .card-person
-    flex-direction: column
-    position: absolute
-    bottom: calc(5.8rem)
+
+    .card-person
+      flex-direction: column
+      position: absolute
+      bottom: calc(5.8rem)
+
+
 
   .card-info__price,
   .card-info__respond
