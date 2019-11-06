@@ -19,6 +19,7 @@ initModal('.button-report', '.modal-report');
 initModal('.button-tasks', '.modal-tasks');
 initModal('.button-tariff', '.modal-tariff');
 initModal('.button-offer', '.modal-offer');
+initModal('.button-deny', '.modal-deny');
 
 function showModal(modal) {
   modal.classList.remove("modal-hidden");

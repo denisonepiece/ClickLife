@@ -19,7 +19,7 @@ mixin button(style, content, dopClass)
     when 'default-red'
       button.button.button_border.button_default.button_red= content
     when 'default-grey'
-      button.button.button_border.button_default.button_grey= content
+      button.button.button_border.button_default.button_grey(class= dopClass)= content
     when 'default-grad'
       button.button.button_border.button_default.button_grad(class= dopClass)= content
     when 'default-grad-big'

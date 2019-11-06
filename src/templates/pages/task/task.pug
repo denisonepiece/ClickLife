@@ -10,7 +10,15 @@ block main
   .container
     .wrapper
       h2.page-title Разработать логотип
-      h5.task-price до 10.000 ₽
+      .task-top
+        h5.task-price до 10.000 ₽
+        .task-creator
+          .photo
+          .info
+            .name Денис Митряков
+            .sub Автор этого задания
+            +like-dislike()
+            +button('report')
       .task-state
         +card-status('orange', 'Сбор заявок')
         .task-state__list
@@ -52,6 +60,10 @@ block main
       .task-offer
         h4 Ваше предложение
         include ../../components/cards/cards-offer/card-isp
+        include ../../components/cards/cards-offer/card-zak-selected
+        include ../../components/cards/cards-offer/card-zak-select
+        include ../../components/cards/cards-offer/card-zak-abort
+        include ../../components/cards/cards-offer/card-zak-wait
     aside.aside
       .task-creator
         .photo
@@ -63,5 +75,6 @@ block main
 
 block modals
   include ../../components/modals/modal-offer/modal-offer
+  include ../../components/modals/modal-deny/modal-deny
 
 

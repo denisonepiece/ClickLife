@@ -41,17 +41,18 @@
     background: $white
 
 
-
 .card-offer__info
   display: flex
   justify-content: space-between
   align-items: center
+  flex-wrap: wrap
 
 .card-offer__message
   font-size: 1.6rem
   background: $grey-delicate
   padding: 1em 1.1em
   border-radius: 0.9em
+  line-height: 1.5
 
   margin-top: 1em
   margin-bottom: 1em
@@ -62,4 +63,36 @@
   .card-offer
     .button
       font-size: 1.7rem
+      width: calc(50% - 1rem)
+
+@media screen and (max-width: 500px)
+  .card-offer
+    .button
+      min-width: 100%
+      margin-right: 0
+      margin-bottom: 1rem
+
+    .card-info__price
+      align-self: flex-start
+
+
+  .card-offer_wait
+    .card-offer__info
+      align-items: flex-start
+      position: relative
+
+    .card-person
+      flex-direction: column
+
+    .card-status
+      margin-bottom: 0
+
+    .card-info__price
+      position: absolute
+      right: 0
+      top: 0
+
+
+
+
 
