@@ -1,7 +1,7 @@
 @import "../../../sass/colors"
 
 .main
-  height: calc(100vh - 10rem)
+  min-height: calc(100vh - 10rem)
 
 .page-title
   margin-top: 4.5rem
@@ -10,18 +10,34 @@
 .settings
   display: flex
   justify-content: space-between
-  //max-width: 98rem
 
   h5
     margin-bottom: 2.5rem
 
-  p
+  .message
     font-size: 1.6rem
     color: $grey-dark
     line-height: 1.5em
 
+
+  .label
+    margin-top: 2rem
+    font-size: 1.6rem
+    color: $black
+    margin-bottom: 0.7rem
+
+  .button_green-fill
+    margin-top: 2rem
+
+
+.btn-simple
+  cursor: pointer
+  display: block
+  margin-top: 0.7rem
+  color: $green
+
 .password
-  width: 38rem
+  width: 28rem
   margin-right: 3rem
 
   .input
@@ -33,20 +49,14 @@
     margin-top: 0.7rem
 
 .email
-  max-width: 28rem
+  width: 28rem
   margin-right: 2rem
 
-  .button_green-fill
-    margin-top: 2.7rem
-
-
 .number
-  max-width: 26rem
+  width: 28rem
 
-  .button
-    margin-top: 2.7rem
 
-input.input_fixed
+.input_fixed
   font-size: 1.6rem
   padding: 0.5em 1.2rem 0.375em
   line-height: 1.5em
@@ -56,8 +66,26 @@ input.input_fixed
   background: $grey-dark
   border-radius: 0.625em
 
+.input_fixed.lite
+  background: $grey-delicate
+  color: $grey-dark
+
 input.input_wait-sumbited
   background: $grey-delicate
   color: $grey-dark
+
+
+@media screen and (max-width: 768px)
+  .settings
+    flex-wrap: wrap
+
+  .password,
+  .number,
+  .email
+    min-width: 280px
+    margin-bottom: 5rem
+
+
+
 
 

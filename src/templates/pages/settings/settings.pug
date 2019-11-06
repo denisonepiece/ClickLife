@@ -20,38 +20,53 @@ block main
       .email
         h5 Электронная почта
         // Если почта подтверждена
-        input.input_fixed(value="denisonepiece@icloud.com" type="text" readonly)
+        .email-confrimed
+          input.input_fixed(value="denisonepiece@icloud.com" type="text" readonly)
+          +button('default-green-fill', 'Изменить')
         // Нет почты
-        p.message Вы можете привязать к странице ваш адрес эл.почты.<br> Это позволит защитить ваш аккаунт.
+        .email-without(style="display: none")
+          p.message Вы можете привязать к странице ваш адрес эл.почты.<br> Это позволит защитить ваш аккаунт.
+          +button('default-green-fill', 'Добавить почту')
         // Ввод почты
-        +input('denisonepiece@icloud.com', 'email')
+        .email-input(style="display: none")
+          +input('denisonepiece@icloud.com', 'email')
+          +button('default-green-fill', 'Добавить почту')
 
-        .email__wait-sumbited
-          p.message На ваш электронный адрес ydgf@mail.ru было отправлено письмо со ссылкой для подтверждения вашей почты на ClickLife. Пройдите по ссылке и активируйте вашу электронную почту
-          +button('send', 'Отправить новое письмо')
-          +button('send', 'Указать другую почту')
+        // Подтверждение почты
+        .email-confrim(style="display: none")
+          input.input_fixed.lite(value="denisonepiece@icloud.com" type="text" readonly)
+          a.btn-simple Указать другой email
 
+          p.label Введите код
+          +input('Код', 'text')
+          a.btn-simple Отправить код повторно
 
+          +button('default-green-fill', 'Отправить')
 
-        +button('default-green-fill', 'Добавить почту')
       .number
         h5 Номер телефона
-        // Если есть номер
-        input.input_fixed(value="79236656675" type="text" readonly)
+          // Если номер подтвержден
+        .number-confrimed
+          input.input_fixed(value="+79236656675" type="text" readonly)
+          +button('default-green-fill', 'Изменить')
+        // Нет номера
+        .number-without(style="display: none")
+          p.message Вы можете привязать к странице ваш личный телефон.<br> Это позволит защитить ваш аккаунт.
+          +button('default-green-fill', 'Добавить номер телефона')
         // Ввод номера
-        +inputPhone('simple')
-        // Подтверждение
-        .number__wait-sumbited
-          input.input_fixed.input_wait-sumbited(value="+7 (923) 665-66-75" type="text" readonly)
-          span Указать другой номер
+        .number-input(style="display: none")
+          +input('Номер телефона', 'tel')
+          +button('default-green-fill', 'Подтвердить номер')
+        // Подтверждение номера
+        .number-confrim(style="display: none")
+          input.input_fixed.lite(value="+79236656675" type="text" readonly)
+          a.btn-simple Указать другой номер
 
-          span Введите код из СМС
-          +inputPhone('simple')
-          span Выслать код повторно
+          p.label Введите код
+          +input('Код', 'text')
+          a.btn-simple Отправить код повторно
 
+          +button('default-green-fill', 'Отправить')
 
-        p Вы можете привязать к странице ваш личный номер телефона.Это позволит защитить ваш аккаунт.
-
-        +button('default-green-fill', 'Изменить')
 
 
