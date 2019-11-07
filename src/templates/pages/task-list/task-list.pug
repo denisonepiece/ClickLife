@@ -1,0 +1,162 @@
+extends ../../layout/layout
+
+include ../../components/checkbox/checkbox
+include ../../components/input/input
+
+block title
+  | Задания
+
+block main
+  .filter-top
+    .container
+      .filter-top__item
+        p.label Цена от
+        +input('10.000', 'text')
+      .filter-top__item
+        p.label Город
+        +input('Москва', 'text')
+      .filter-top__item
+        +checkbox('Удаленная работа')
+      .filter-top__item
+        +checkbox('Бизнес задание')
+  .wrap
+    .container
+      .content
+        include ../../components/cards/cards-task/cards-category
+        include ../../components/cards/cards-task/cards-category
+        include ../../components/cards/cards-task/cards-category
+        include ../../components/cards/cards-task/cards-category
+        include ../../components/cards/cards-task/cards-category
+        include ../../components/cards/cards-task/cards-category
+        include ../../components/cards/cards-task/cards-category
+        include ../../components/cards/cards-task/cards-category
+        include ../../components/cards/cards-task/cards-category
+        include ../../components/cards/cards-task/cards-category
+        include ../../components/cards/cards-task/cards-category
+        include ../../components/cards/cards-task/cards-category
+        include ../../components/cards/cards-task/cards-category
+        include ../../components/cards/cards-task/cards-category
+        include ../../components/cards/cards-task/cards-category
+        include ../../components/cards/cards-task/cards-category
+        include ../../components/cards/cards-task/cards-category
+        include ../../components/cards/cards-task/cards-category
+        include ../../components/cards/cards-task/cards-category
+        include ../../components/cards/cards-task/cards-category
+
+
+      aside.aside.filter-aside
+        .filter-aside__categories
+          // category
+          .filter-aside__category
+            label.filter-aside__common
+              input(type="radio" name="category")
+              span Все категории
+
+          .filter-aside__category
+            label.filter-aside__common
+              input(type="radio" name="category")
+              span Разработка сайтов
+
+            .filter-aside__subcategories
+              label.filter-aside__subcategory
+                input(type="radio" name="category")
+                span Верстка
+
+              label.filter-aside__subcategory
+                input(type="radio" name="category")
+                span Веб-приложение
+
+              label.filter-aside__subcategory
+                input(type="radio" name="category")
+                span Под ключ
+
+          .filter-aside__category
+            label.filter-aside__common
+              input(type="radio" name="category")
+              span Курьерские услуги
+
+          .filter-aside__category
+            label.filter-aside__common
+              input(type="radio" name="category")
+              span Ремонт и строительство
+
+          .filter-aside__category
+            label.filter-aside__common
+              input(type="radio" name="category")
+              span Дизайн
+
+          .filter-aside__category
+            label.filter-aside__common
+              input(type="radio" name="category")
+              span Грузоперевозки
+
+
+          .filter-aside__category
+            label.filter-aside__common
+              input(type="radio" name="category")
+              span Уборка и помощь по хозяйству
+
+          .filter-aside__category
+            label.filter-aside__common
+              input(type="radio" name="category")
+              span Виртуальный помощник
+
+
+          .filter-aside__category
+            label.filter-aside__common
+              input(type="radio" name="category")
+              span Компьютерная помощь
+
+
+          .filter-aside__category
+            label.filter-aside__common
+              input(type="radio" name="category")
+              span Мероприятия и промо-акции
+
+
+          .filter-aside__category
+            label.filter-aside__common
+              input(type="radio" name="category")
+              span Web-разработка
+
+
+          .filter-aside__category
+            label.filter-aside__common
+              input(type="radio" name="category")
+              span Фото и видео услуги
+
+
+          .filter-aside__category
+            label.filter-aside__common
+              input(type="radio" name="category")
+              span Установка и ремонт техники
+
+
+          .filter-aside__category
+            label.filter-aside__common
+              input(type="radio" name="category")
+              span Красота и здоровье
+
+
+          .filter-aside__category
+            label.filter-aside__common
+              input(type="radio" name="category")
+              span Ремонт цифровой техники
+
+          .filter-aside__category
+            label.filter-aside__common
+              input(type="radio" name="category")
+              span Юридическая помощь
+
+          .filter-aside__category
+            label.filter-aside__common
+              input(type="radio" name="category")
+              span Репетиторы и обучение
+
+          .filter-aside__category
+            label.filter-aside__common
+              input(type="radio" name="category")
+              span Ремонт транспорта
+
+
+

@@ -1,7 +1,7 @@
 import 'normalize.css';
 import '../../../sass/main.sass'
 import '../../../sass/typography.sass'
-import './profile.sass'
+import './task-list.sass'
 //Includes
 import '../../includes/header/header'
 import '../../includes/footer/footer'
@@ -18,22 +18,32 @@ import '../../components/tooltip/tooltip'
 //Media
 import '../../../sass/media.sass'
 
-toggleShowInformation();
+toggleSubCategories();
 
-function toggleShowInformation() {
-  const btn = document.querySelector('#btn-toggle-information');
-  let isOpen = false;
-  btn.innerHTML = 'Показать больше информации';
+function toggleSubCategories() {
+    const allCategory = document.querySelectorAll('.filter-aside__common');
 
-  btn.onclick = function (e) {
-    isOpen = !isOpen;
-    btn.parentNode.classList.toggle('-info-hidden-');
-
-    if(isOpen) {
-      btn.innerHTML = 'Показать меньше информации'
+    for (let i = 0; i < allCategory.length; i++) {
+        allCategory[i].addEventListener('click', function () {
+            closeAnother();
+            allCategory[i].parentNode.classList.add('-is-open-');
+        });
     }
-    else {
-      btn.innerHTML = 'Показать больше информации'
+
+    function closeAnother() {
+        for (let i = 0; i < allCategory.length; i++) {
+            allCategory[i].parentNode.classList.remove('-is-open-');
+        }
     }
-  };
 }
+
+
+function onScrollFilter() {
+    
+}
+
+
+
+
+
+

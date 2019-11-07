@@ -2,14 +2,14 @@ include ../../components/button/button
 
 header.header
   nav.nav
-    a.logo(href="#")
+    a.logo(href="profile.html")
       include ../../../assets/img/logo.svg
     ul.nav__list
       // Для активного элемента меню добавить класс -is-active-
       li.nav__item
-        a(href="#") Создать задание
-      li.nav__item
-        a(href="#") Задания
+        a(href="task-create.html") Создать задание
+      li.nav__item.-is-active-
+        a(href="task-list.html") Задания
   div.control-panel
     +button('default-green', 'Оплатить тариф')
     div.notice
@@ -24,18 +24,18 @@ header.header
   // Меню дублируется, нужно прописать все ссылки
   .menu
     .nav__item
-      a(href="#") Создать задание
+      a(href="task-create.html") Создать задание
     .nav__item
-      a(href="#") Задания
+      a(href="task-list.html") Задания
     .separator
     .nav__item
-      a(href="#") Профиль
+      a(href="profile.html") Профиль
     .nav__item
-      a(href="#") Тарифы
+      a(href="tariff.html") Тарифы
     .nav__item
       a(href="#") Мои избранные
     .nav__item
-      a(href="#") Настройки
+      a(href="settings.html") Настройки
     .nav__item.logout
       a(href="#") Выход
 

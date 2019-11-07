@@ -32,6 +32,7 @@ const common = merge(
       'tariff': PATHS.src + '/templates/pages/tariff/tariff.js',
       'settings': PATHS.src + '/templates/pages/settings/settings.js',
       'task': PATHS.src + '/templates/pages/task/task.js',
+      'task-list': PATHS.src + '/templates/pages/task-list/task-list.js',
     },
     output: {
       path: PATHS.build,
@@ -94,6 +95,11 @@ const common = merge(
         filename: "task-blocked.html",
         chunks: ['task', 'common'],
         template: PATHS.src + '/templates/pages/task/task-blocked.pug'
+      }),
+      new HtmlWebpackPlugin({
+        filename: "task-list.html",
+        chunks: ['task-list', 'common'],
+        template: PATHS.src + '/templates/pages/task-list/task-list.pug'
       }),
 
       new webpack.ProvidePlugin({
