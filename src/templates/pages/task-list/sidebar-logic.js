@@ -37,6 +37,7 @@ class Sidebar {
 
   bindEvents() {
     window.addEventListener('scroll', this, {passive: true, capture: false});
+    window.addEventListener('resize', this, {passive: true, capture: false});
     this.sidebar.addEventListener('update' + 'sidebar', this);
   }
 
@@ -128,7 +129,9 @@ class Sidebar {
             this._calcDimensionsWithScroll();
             this.observeScrollDir();
             break;
-
+          case 'resize':
+            this.calcDimensions();
+            break;
           default:
             this.calcDimensions();
             break;
