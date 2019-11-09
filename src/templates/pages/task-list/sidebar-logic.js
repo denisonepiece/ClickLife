@@ -58,6 +58,12 @@ class Sidebar {
   _calcDimensionsWithScroll() {
     var dims = this.dimensions;
 
+
+    dims.topVP = window.pageYOffset + dims.topSpacing;
+    dims.botVP = window.pageYOffset + document.documentElement.clientHeight;
+    dims.topSB = this.sidebarInner.offsetTop;
+    dims.botSB = this.sidebarInner.offsetTop + dims.sidebarHeight;
+
     dims.sidebarTop = this.sidebarInner.offsetTop;
     dims.viewportTop = document.documentElement.scrollTop ||
         document.body.scrollTop
@@ -96,7 +102,7 @@ class Sidebar {
   showSidebar() {
     let dims = this.dimensions;
 
-    if(window.pageYOffset > (dims.topSpacing + dims.sidebarHeight)) {
+    if(window.pageYOffset > (dims.topSpacing + dims.sidebarHeight) && !(dims.topSB > dims.topVP || dims.botSB > dims.topVP)) {
       this.sidebarInner.style.marginTop = dims.viewportTop - dims.sidebarHeight - dims.topSpacing + 'px';
     }
 
