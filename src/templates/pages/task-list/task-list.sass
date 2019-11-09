@@ -1,20 +1,15 @@
 @import "../../../sass/colors"
 
-main
-  .container
-    display: flex
-
-.aside
-  max-width: 26rem
-
 .content
   max-width: calc(100% - 28rem - 2rem)
   width: 100%
 
 .wrap
-  padding-top: 15rem
+  padding-top: 10rem
+  padding-bottom: 10rem
 
   .container
+    display: flex
     justify-content: space-between
 
 .card
@@ -30,9 +25,10 @@ main
   background: $white
   z-index: 9999
   .container
+    display: flex
     align-items: center
-    padding-top: 4rem
-    padding-bottom: 2rem
+    padding-top: 1.5rem
+    padding-bottom: 1.5rem
     border-bottom: 1px solid #EFEFEF
     box-shadow: 0px 13px 15px -12px rgba(0, 0, 0, 0.04)
 
@@ -40,6 +36,14 @@ main
 .filter-top__item
   margin-right: 2rem
   position: relative
+
+  .input__field
+    border-radius: 4px
+    font-size: 1.4rem
+
+  .checkbox
+    font-size: 1.4rem
+
 
   &:last-child
     margin-right: 0
@@ -49,30 +53,23 @@ main
     font-size: 1.6rem
     top: -2.5rem
 
+
 //Filter-aside
 
+.sticky
+  position: sticky
+  margin-top: 0 !important
+
 .filter-aside
-  position: relative
+  max-width: 26rem
 
 .filter-aside__categories
-  position: fixed
-  height: calc(100vh - 15rem - 6rem - 2rem)
-  overflow-y: scroll
 
-  &::-webkit-scrollbar
-    visibility: hidden
-    width: 5px
-
-  &::-webkit-scrollbar-thumb
-    background: $grey-dark
-    border-radius: 10px
 
 .filter-aside__category
   margin-bottom: 0.2rem
 
 .filter-aside__category.-is-open-
-  //margin-bottom: 1rem
-
   .filter-aside__common
     span
       color: $green
@@ -145,6 +142,10 @@ main
       &:before
         border-color: $green
         background: $green
+
+
+
+
 
 
 
