@@ -1,7 +1,13 @@
+/**
+ * VK Sidebar JavaScript Plugin.
+ * @version 0.0.1
+ * @author Denis Mitryakov <denisloverap@icloud.com>
+ * @licence The MIT License (MIT)
+ */
 class Sidebar {
-  constructor(sidebar) {
+  constructor(sidebar, sidebarInner) {
     this.sidebar = document.querySelector(sidebar);
-    this.sidebarInner = this.sidebar.querySelector('.filter-aside__categories');
+    this.sidebarInner = this.sidebar.querySelector(sidebarInner);
 
     this.direction = 'down';
 

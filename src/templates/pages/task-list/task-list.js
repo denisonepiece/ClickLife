@@ -20,7 +20,7 @@ import '../../../sass/media.sass'
 
 import Sidebar from "./sidebar-logic";
 
-const sidebar = new Sidebar('.filter-aside');
+const sidebar = new Sidebar('.filter-aside', '.filter-aside__categories');
 
 toggleSubCategories();
 
@@ -42,34 +42,6 @@ function toggleSubCategories() {
 }
 
 
-AsideOnScroll();
 
-function AsideOnScroll() {
-  const aside = document.querySelector('.filter-aside');
-  let lastScroll = 0;
-  let lastScrollDir = 'down';
-
-
-  window.addEventListener('scroll', function () {
-        let scroll = this.pageYOffset;
-        let scrollDir;
-
-        if (scroll > lastScroll) {
-          // console.log('down');
-          scrollDir = 'down';
-
-        } else if (scroll < lastScroll) {
-          // console.log('up');
-          scrollDir = 'up';
-        }
-
-        // observeScrollDir
-
-        lastScrollDir = scrollDir;
-        lastScroll = scroll;
-
-      }
-  );
-}
 
 
