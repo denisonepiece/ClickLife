@@ -13,7 +13,6 @@ const images = require('./webpack/images');
 const fonts = require('./webpack/fonts');
 const autoprefixer = require('autoprefixer');
 
-
 const PATHS = {
   src: path.join(__dirname, 'src'),
   build: path.join(__dirname, 'build')
@@ -33,6 +32,7 @@ const common = merge(
       'settings': PATHS.src + '/templates/pages/settings/settings.js',
       'task': PATHS.src + '/templates/pages/task/task.js',
       'task-list': PATHS.src + '/templates/pages/task-list/task-list.js',
+      'task-create': PATHS.src + '/templates/pages/task-create/task-create.js',
     },
     output: {
       path: PATHS.build,
@@ -100,6 +100,11 @@ const common = merge(
         filename: "task-list.html",
         chunks: ['task-list', 'common'],
         template: PATHS.src + '/templates/pages/task-list/task-list.pug'
+      }),
+      new HtmlWebpackPlugin({
+        filename: "task-create.html",
+        chunks: ['task-create', 'common'],
+        template: PATHS.src + '/templates/pages/task-create/task-create.pug'
       }),
 
       new webpack.ProvidePlugin({
