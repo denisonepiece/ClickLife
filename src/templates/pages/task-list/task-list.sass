@@ -23,15 +23,32 @@
   position: fixed
   width: 100%
   background: $white
-  z-index: 9999
+  z-index: 9000
+
   .container
-    display: flex
-    align-items: center
     padding-top: 1.5rem
     padding-bottom: 1.5rem
     border-bottom: 1px solid #EFEFEF
     box-shadow: 0px 13px 15px -12px rgba(0, 0, 0, 0.04)
 
+.filter-top__items
+  display: flex
+  align-items: center
+
+.filter-top__items.-is-open-
+  display: block
+  position: absolute
+  background: $white
+  width: 100%
+  left: 0
+  top: 0
+  padding: 10rem 2rem 2rem
+  z-index: -1
+  border-bottom: 1px solid #EFEFEF
+  box-shadow: 0px 13px 15px -12px rgba(0, 0, 0, 0.04)
+
+  .filter-top__item
+    margin-bottom: 1.5rem
 
 .filter-top__item
   margin-right: 2rem
@@ -54,6 +71,21 @@
     top: -2.5rem
 
 
+.filter-top__buttons
+  display: none
+  z-index: 8500
+
+.filter-top__button
+  display: block
+  background: $white
+  border: 1px solid $green
+  padding: 1rem
+  width: 100%
+  font-size: 2rem
+  font-weight: 500
+  border-radius: 4px
+  color: $green
+
 //Filter-aside
 
 .sticky
@@ -63,7 +95,22 @@
 .filter-aside
   max-width: 26rem
 
-.filter-aside__categories
+.filter-aside.-is-open-
+  position: fixed
+  display: block
+  background: white
+  width: 100%
+  left: 0
+  top: 0
+  max-width: unset
+  padding: 16rem 2rem 2rem
+  height: 100vh
+  overflow-y: scroll
+  z-index: 8000
+
+  .sticky
+    position: unset
+
 
 
 .filter-aside__category
@@ -144,9 +191,39 @@
         background: $green
 
 
+@media screen and (max-width: 768px)
+  .filter-aside
+    display: none
+
+  .sidebar__inner
+    margin-top: 0 !important
+    top: 0 !important
+
+  .content
+    max-width: unset
+
+  .filter-top
+    .container
+      flex-direction: column
+
+  .filter-top__items
+    display: none
+
+  .filter-top__buttons
+    display: flex
+    width: 100%
+
+  .filter-top__button
+    margin-right: 1rem
+    text-align: center
+
+    &:last-child
+      margin-right: 0
 
 
 
+  .filter-aside__category
+    font-size: 1.7rem
 
 
 

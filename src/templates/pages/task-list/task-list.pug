@@ -9,14 +9,21 @@ block title
 block main
   .filter-top
     .container
-      .filter-top__item
-        +input('Цена от', 'text')
-      .filter-top__item
-        +input('Город', 'text')
-      .filter-top__item
-        +checkbox('Удаленная работа')
-      .filter-top__item
-        +checkbox('Бизнес задание')
+      .filter-top__buttons
+        button.filter-top__button.filter Фильтры
+        button.filter-top__button.category Категории
+      .filter-top__items
+        .filter-top__item
+          +input('Цена от', 'text')
+        .filter-top__item
+          +input('Город', 'text')
+        .filter-top__item
+          +checkbox('Удаленная работа')
+        .filter-top__item
+          +checkbox('Бизнес задание')
+
+
+
 
   .wrap
     .container

@@ -1,7 +1,6 @@
 import 'normalize.css';
 import '../../../sass/main.sass'
 import '../../../sass/typography.sass'
-import './task-list.sass'
 //Includes
 import '../../includes/header/header'
 import '../../includes/footer/footer'
@@ -16,6 +15,7 @@ import '../../components/cards/card'
 import '../../components/modals/modal'
 import '../../components/tooltip/tooltip'
 //Media
+import './task-list.sass'
 import '../../../sass/media.sass'
 
 import Sidebar from "./sidebar-logic";
@@ -39,6 +39,42 @@ function toggleSubCategories() {
       allCategory[i].parentNode.classList.remove('-is-open-');
     }
   }
+}
+
+toggleFilter();
+
+function toggleFilter() {
+  const fltrBtn = document.querySelector('.filter-top__button.filter');
+  const fltrBlck = document.querySelector('.filter-top__items');
+  
+  fltrBtn.addEventListener('click', function () {
+    fltrBlck.classList.toggle('-is-open-');
+
+
+    if(fltrBtn.innerHTML === 'Фильтры') {
+      fltrBtn.innerHTML = 'Скрыть'
+    } else {
+      fltrBtn.innerHTML = 'Фильтры';
+    }
+
+  });
+}
+
+toggleCategory();
+
+function toggleCategory() {
+  const categoryBtn = document.querySelector('.filter-top__button.category');
+  const categoryBlock = document.querySelector('.filter-aside');
+
+  categoryBtn.addEventListener('click', function () {
+    categoryBlock.classList.toggle('-is-open-');
+
+    if(categoryBtn.innerHTML === 'Категории') {
+      categoryBtn.innerHTML = 'Скрыть'
+    } else {
+      categoryBtn.innerHTML = 'Категории';
+    }
+  })
 }
 
 
