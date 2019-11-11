@@ -68,4 +68,15 @@
   margin-bottom: 0.25em
   color: $red
 
+.input_price
+  max-width: 18rem
+  display: inline-block
 
+  .input__field
+    position: relative
+    &:after
+      content: '₽'
+      position: absolute
+      right: 12px
+      height: 1em
+      top: calc(50% - 1em/2)

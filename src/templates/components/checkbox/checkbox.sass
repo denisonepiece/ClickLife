@@ -9,6 +9,14 @@
   padding-left: 1.8125em
   line-height: 1.3em
 
+  .checkbox__label
+    color: $black
+
+  .checkbox__sub
+    color: $grey
+    line-height: 1.5
+    max-width: 25rem
+    margin-top: 0.3rem
 
   input
     position: absolute
@@ -26,6 +34,9 @@
       background-size: contain
       border-color: transparent
       background-repeat: no-repeat
+
+    &:checked ~ .checkbox__label
+      color: $green
 
 .checkbox__mark
   display: block

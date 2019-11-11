@@ -1,5 +1,7 @@
-mixin checkbox(label)
-  label.checkbox= label
+mixin checkbox(label, sub)
+  label.checkbox
     input(type="checkbox")
     span.checkbox__mark
-    //span.checkbox__label= label
+    div.checkbox__label= label
+      if(sub)
+        p.checkbox__sub= sub

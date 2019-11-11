@@ -1,0 +1,75 @@
+extends ../../layout/layout
+
+block title
+  | Создать задание
+
+
+include ../../components/input/input
+include ../../components/select/select
+include ../../components/textarea/textarea
+include ../../components/datepicker/datepicker
+include ../../components/checkbox/checkbox
+
+block main
+  .container.task-create
+    h2.page-title Заполните заявку
+    .content
+      form
+        .task-create__title
+          +input('Напишите, что вам требуется', 'text')
+          .row
+            +select('Категория', 'Разработка сайта', 'Сайтоботка райта')
+            +select('Подкатегория', 'Подразработка подсайта', 'Сайт за 100')
+
+        .task-create__about
+          +textarea('Подробно опишите то, что требуется')
+          //Добавить загрузку файлов
+
+        .task-create__dates
+          .task-create__date
+            .label Начать работу
+            +datepicker()
+          .task-create__date
+            .label Закончить работу
+            +datepicker()
+
+        .task-create__place
+          .label Место оказания услуги
+          .place__items
+            label.place__radio
+              input(type="radio" name="place")
+              span Дистанционно
+            label.place__radio
+              input(type="radio" name="place")
+              span У исполнителя
+            label.place__radio
+              input(type="radio" name="place" id="place-addr")
+              span По требуемому адресу
+          .place__address
+            +input('Введите адрес', 'addr', 'input-addr')
+            p(id='notice')
+            #map(style="width: 100%; height: 180px;")
+
+        .task-create__type
+          +checkbox('Хочу получать предложения только от юридических лиц или ИП')
+          +checkbox('Премиальное задание', 'Смогут откликаться только \n' +
+          'исполнители с хорошей репутацией.')
+
+
+        .task-create__budget
+          h5 На какой бюджет вы рассчитываете?
+
+          .task-create__price Цена до
+            include ../../components/input/input-price
+
+          .task-create__price Или укажите конкретную стоимость
+            include ../../components/input/input-price
+
+          +select('Способ оплаты', 'Налик', 'Мелочь', 'Натура')
+
+        +button('default-grad-big', 'Опубликовать')
+
+
+    script(src="https://api-maps.yandex.ru/2.1/?apikey=e1d17ea7-baa5-4b70-8250-ebc4a228b63a&lang=ru_RU")
+
+
