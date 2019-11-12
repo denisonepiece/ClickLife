@@ -18,10 +18,11 @@ block main
         p.information__sub Это твой личный кабинет
         form
           .information-edit
-            .information-edit__photo
-              label.information-edit__file-input
-                include photo.svg
-                input(type='file' id='file')
+            .left
+              .information-edit__photo
+                label.information-edit__file-input
+                  include photo.svg
+                  input(type='file' id='file')
             .information-edit__fields
               +input('Название компании', 'text')
               +input('Город*', 'text')
@@ -41,8 +42,6 @@ block main
           h5 Обо мне
           +textarea('Информация о вас')
           +button('default-green', 'Сохранить')
-    aside.aside
-      +button('business')
 
 
 

@@ -15,7 +15,7 @@ function addPhoneBlock() {
   function onFocusInputs(block) {
     const inputs = block.querySelectorAll('input[type="tel"]');
 
-    for(let i = 0; i < inputs.length; i++) {
+    for (let i = 0; i < inputs.length; i++) {
       inputs[i].addEventListener('focus', function () {
         inputs[i].parentNode.parentNode.classList.add('-input-focus-');
       });
@@ -28,7 +28,7 @@ function addPhoneBlock() {
 
 
   document.addEventListener("DOMContentLoaded", function () {
-    if(howElementsOnPage('.input-phone') === 3) {
+    if (howElementsOnPage('.input-phone') === 3) {
       addPhoneBtn.remove();
     }
 
@@ -40,8 +40,15 @@ function addPhoneBlock() {
     //Клонирование и сброс значений
     const inputClone = inputBlock.cloneNode(true);
     const checkboxes = inputClone.querySelectorAll('input[type="checkbox"]');
-    inputClone.querySelector('.input__field').value = '';
-    for( let i = 0; i < checkboxes.length; i++) {
+    // inputClone.querySelector('.input__field').value = '';
+    // for( let i = 0; i < checkboxes.length; i++) {
+    //   checkboxes[i].checked = false;
+    // }
+
+    let count = document.querySelectorAll('.input__field').length - 1;
+    inputClone.querySelector('.input__field').name = inputClone.querySelector('.input__field').name.replace(/phones\[.*\]\[(.*)\]/, "phones[" + count + "][$1]");
+    for (let i = 0; i < checkboxes.length; i++) {
+      checkboxes[i].name = checkboxes[i].name.replace(/phones\[.*\]\[(.*)\]/, "phones[" + count + "][$1]");
       checkboxes[i].checked = false;
     }
 
@@ -52,7 +59,7 @@ function addPhoneBlock() {
     }).mask('input[type="tel"]');
 
     onFocusInputs(PhonesBlock);
-    if(howElementsOnPage('.input-phone') === 3) {
+    if (howElementsOnPage('.input-phone') === 3) {
       addPhoneBtn.remove();
     }
   });

@@ -31,6 +31,25 @@ function hideModal(modal) {
   // document.body.style.overflowY = "";
 }
 
+function hideOpenModals(modal) {
+  const allModals = document.querySelectorAll('.modal');
+  const currentModalName = modal.classList[1];
+
+  for( let i = 0; i < allModals.length; i++) {
+    if(!allModals[i].classList.contains('modal-hidden') && !allModals[i].classList.contains(currentModalName)) {
+      allModals[i].classList.add('temp-hidden');
+    }
+  }
+}
+
+function showHideModals() {
+  const allModals = document.querySelectorAll('.modal');
+
+  for( let i = 0; i < allModals.length; i++) {
+    allModals[i].classList.remove('temp-hidden');
+  }
+}
+
 function initModal(btn, modal) {
   if(!document.querySelector(modal) || !document.querySelectorAll(btn)) {
     return;
@@ -42,18 +61,24 @@ function initModal(btn, modal) {
 
   //Добававляем обработчик событий для кнопок открытия модального окна
   for( let i = 0; i < allButtons.length; i++) {
-    allButtons[i].addEventListener('click', function() {
+    allButtons[i].addEventListener('click', function(e) {
+      e.preventDefault();
       showModal(modalCurrent);
+      hideOpenModals(modalCurrent);
     });
   }
 
   //Обработка кнопки закрытия
-  closeBtn.onclick = () => hideModal(modalCurrent);
+  closeBtn.onclick = () => {
+    hideModal(modalCurrent);
+    showHideModals();
+  };
 
   //Закрытие модального окна при клике мимо
   modalCurrent.onclick = function(e) {
     if(!e.target.closest('.modal__body')) {
-      hideModal(modalCurrent);
+      hideModal(this);
+      showHideModals();
     }
   }
 }

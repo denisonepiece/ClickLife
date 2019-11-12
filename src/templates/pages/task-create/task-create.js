@@ -1,7 +1,6 @@
 import 'normalize.css';
 import '../../../sass/main.sass'
 import '../../../sass/typography.sass'
-import './task-create.sass'
 //Includes
 import '../../includes/header/header'
 import '../../includes/footer/footer'
@@ -13,7 +12,9 @@ import '../../components/select/select'
 import '../../components/textarea/textarea'
 import '../../components/datepicker/datepicker'
 import '../../components/checkbox/checkbox'
+import '../../components/modals/modal'
 //Media
+import './task-create.sass'
 import '../../../sass/media.sass'
 
 
@@ -144,7 +145,6 @@ function init() {
     $('#message').text(message);
   }
 }
-
 // Yandex maps end
 
 showMaps();
