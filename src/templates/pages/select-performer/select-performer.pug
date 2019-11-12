@@ -1,0 +1,34 @@
+extends ../../layout/layout
+
+block title
+  | Выберите исполнителя
+
+include ../../components/like-dislike/like-dislike
+
+block main
+  .container.select-performer
+    .page-title
+      .row
+        h2 Выберите исполнителя
+        a.button.button_border.button_default.button_green-fill(href="task.html") Далее
+
+      p.page-sub в категории Дизайн - Фирменный стиль, логотипы, визитки
+
+    .content
+      .performers
+        - for (let i = 0; i < 15; i++)
+          .performers__item
+            .left
+              .performers__photo
+              +like-dislike()
+            .right
+              .name Мария Гусельникова
+              .last-visit Была в сети вчера в 4:20
+              p.about Дизайнер широкого профиля.<br>Работаю в программах Photoshop и Coreldraw Разработаю для Вас: Логотипы, визитки, фирменный стиль и прочая полиграфия…
+              +button('default-green', 'Предложить задание')
+
+
+
+
+
+

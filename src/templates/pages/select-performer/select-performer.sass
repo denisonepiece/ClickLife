@@ -1,0 +1,86 @@
+@import "../../../sass/colors"
+@import "../../../sass/rules"
+
+.page-title
+  width: 100%
+  position: fixed
+  background: $white
+  z-index: 10
+  padding-bottom: 2rem
+
+  h2
+    margin-right: 2rem
+
+  .row
+    display: flex
+    align-items: center
+    margin-bottom: 2rem
+
+  .button
+    width: 10rem
+    text-align: center
+
+
+.page-sub
+  font-size: 1.8rem
+
+.content
+  padding-top: 21rem
+  overflow: hidden
+  padding-bottom: 8rem
+
+.performers
+  max-width: 58rem
+
+.performers__item
+  display: flex
+  justify-content: space-between
+  margin-bottom: 4.5rem
+
+  .left
+    margin-right: 2rem
+
+  .name
+    font-size: 1.8rem
+    margin-bottom: 0.4rem
+
+  .last-visit
+    margin-bottom: 1rem
+    font-size: 12px
+    color: $grey-dark
+
+  .about
+    margin-bottom: 1.5rem
+    line-height: 1.5
+
+
+.performers__photo
+  background-image: url("../../../assets/img/greyscale-square.png")
+  min-width: 8rem
+  width: 8rem
+  height: 8rem
+  @extend %photo
+  margin-bottom: 0.7rem
+
+
+@media screen and (max-width: 768px)
+  .page-title
+    padding-right: 4rem
+
+    .row
+      align-items: flex-start
+      position: relative
+
+    .button
+      position: absolute
+      right: 0
+      top: 1.3rem
+      font-size: 1.6rem
+
+    h2
+      width: min-content
+
+  .content
+    padding-top: 26rem
+
+

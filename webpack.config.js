@@ -33,6 +33,7 @@ const common = merge(
       'task': PATHS.src + '/templates/pages/task/task.js',
       'task-list': PATHS.src + '/templates/pages/task-list/task-list.js',
       'task-create': PATHS.src + '/templates/pages/task-create/task-create.js',
+      'select-performer': PATHS.src + '/templates/pages/select-performer/select-performer.js',
     },
     output: {
       path: PATHS.build,
@@ -105,6 +106,11 @@ const common = merge(
         filename: "task-create.html",
         chunks: ['task-create', 'common'],
         template: PATHS.src + '/templates/pages/task-create/task-create.pug'
+      }),
+      new HtmlWebpackPlugin({
+        filename: "select-performer.html",
+        chunks: ['select-performer', 'common'],
+        template: PATHS.src + '/templates/pages/select-performer/select-performer.pug'
       }),
 
       new webpack.ProvidePlugin({
