@@ -174,7 +174,33 @@ main
 
 
 .card-offer
-  margin-bottom: 5rem
+  margin-bottom: 7rem
+
+.task-created
+  .aside
+    display: flex
+    justify-content: flex-end
+
+  .task-offer
+    h4
+      margin-bottom: 0
+
+    p.sub
+      color: $grey-dark
+      margin-bottom: 4rem
+
+
+
+
+
+.share
+  margin-top: 1.5rem
+  h4
+    margin-bottom: 1rem
+
+  p
+    color: $grey-dark
+    margin-bottom: 1.5rem
 
 @media screen and (max-width: 768px)
   .task-top
@@ -182,6 +208,13 @@ main
     margin-bottom: 2rem
     .task-creator
       display: flex
+
+  .task-created
+    .aside
+      max-width: unset
+      display: flex
+      justify-content: flex-start
+
 
 
 

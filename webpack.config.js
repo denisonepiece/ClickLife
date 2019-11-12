@@ -98,6 +98,11 @@ const common = merge(
         template: PATHS.src + '/templates/pages/task/task-blocked.pug'
       }),
       new HtmlWebpackPlugin({
+        filename: "task-created.html",
+        chunks: ['task', 'common'],
+        template: PATHS.src + '/templates/pages/task/task-created.pug'
+      }),
+      new HtmlWebpackPlugin({
         filename: "task-list.html",
         chunks: ['task-list', 'common'],
         template: PATHS.src + '/templates/pages/task-list/task-list.pug'
