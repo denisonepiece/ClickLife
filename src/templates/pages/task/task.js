@@ -20,3 +20,13 @@ import '../../components/textarea/textarea'
 //Media
 import '../../../sass/media.sass'
 
+toggleTaskMenu();
+
+function toggleTaskMenu() {
+  const menuBtn = document.querySelector('.task-menu');
+  const menu = document.querySelector('.task-menu__list');
+
+  menuBtn.addEventListener('click', () => {
+    menu.classList.toggle('-is-open-');
+  });
+}

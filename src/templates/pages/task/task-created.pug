@@ -9,7 +9,13 @@ block title
 block main
   .container.task-created
     .wrapper
-      h2 Разработать логотип
+      .task-header
+        h2 Грузоперевозка алюминия
+        .task-menu •••
+          .task-menu__list
+            .task-menu__item Редактировать
+            .task-menu__item.delete Удалить задание
+
       .task-top
         h5.task-price до 10.000 ₽
       .task-state
@@ -49,7 +55,7 @@ block main
 
 
       .task-offer
-        h4 Ваше предложение
+        h4 Предложения
         p.sub Видны только вам
         include ../../components/cards/cards-offer/card-zak-select
         include ../../components/cards/cards-offer/card-zak-selected
