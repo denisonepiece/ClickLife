@@ -1,0 +1,170 @@
+@import "../../../sass/colors"
+
+.content
+  max-width: 48rem
+  width: 100%
+  padding-bottom: 8rem
+
+.container
+  display: flex
+  justify-content: space-evenly
+.card
+  margin-bottom: 2rem
+
+  &:last-child
+    margin-bottom: 0
+
+
+.notification__list
+  max-width: 48rem
+  .notification
+    margin-bottom: 3rem
+
+.notification-end
+  text-align: center
+  color: $grey-dark
+
+//Filter-aside
+
+.sidebar__inner
+  position: sticky
+  top: 10rem
+
+.sticky
+  position: sticky
+  margin-top: 0 !important
+
+.filter-aside
+  padding-top: 14rem
+  max-width: 26rem
+
+.filter-aside.-is-open-
+  position: fixed
+  display: block
+  background: white
+  width: 100%
+  left: 0
+  top: 0
+  max-width: unset
+  padding: 16rem 2rem 2rem
+  height: 100vh
+  overflow-y: scroll
+  z-index: 8000
+
+  .sticky
+    position: unset
+
+
+
+.filter-aside__category
+  margin-bottom: 0.2rem
+
+.filter-aside__category.-is-open-
+  .filter-aside__common
+    span
+      color: $green
+      border-color: $green
+      border-radius: 1.5rem
+
+  .filter-aside__subcategories
+    display: flex
+    margin-bottom: 0.8rem
+
+.filter-aside__common
+  display: block
+
+  span
+    display: block
+    width: fit-content
+    padding: 0.3em 1.2rem
+    border: 1px solid transparent
+
+  input
+    position: absolute
+    height: 0
+    width: 0
+    opacity: 0
+
+    &:checked ~ span
+      color: $green
+      border-color: $green
+      border-radius: 1.5rem
+
+
+.filter-aside__subcategories
+  margin-top: 0.8rem
+  padding: 0 1.3rem
+  display: none
+  flex-direction: column
+
+.filter-aside__subcategory
+  margin-bottom: 0.5rem
+
+  &:last-child
+    margin-bottom: 0
+
+  span
+    padding-left: 1.2rem
+    position: relative
+    line-height: 1.9rem
+    color: $grey-dark
+
+    &:before
+      position: absolute
+      left: 0
+      content: ''
+      display: block
+      height: 6px
+      width: 6px
+      border: 1px solid $grey-dark
+      border-radius: 50%
+      top: calc(50% - 4px)
+
+  input
+    position: absolute
+    height: 0
+    width: 0
+    opacity: 0
+
+    &:checked ~ span
+      color: $green
+
+      &:before
+        border-color: $green
+        background: $green
+
+
+@media screen and (max-width: 768px)
+  .filter-aside
+    display: none
+
+  .sidebar__inner
+    margin-top: 0 !important
+    top: 0 !important
+
+  .content
+    max-width: unset
+
+  .filter-top
+    .container
+      flex-direction: column
+
+  .filter-top__items
+    display: none
+
+  .filter-top__buttons
+    display: flex
+    width: 100%
+
+  .filter-top__button
+    margin-right: 1rem
+    text-align: center
+
+    &:last-child
+      margin-right: 0
+
+  .filter-aside__category
+    font-size: 1.7rem
+
+
+

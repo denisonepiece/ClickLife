@@ -1,0 +1,34 @@
+extends ../../layout/layout
+
+block title
+  | Уведомления
+
+include ../../components/notification/notification
+
+block main
+  .container
+    .content
+      h2.page-title Уведомления
+      .notification__list
+        - for(let i = 0; i < 6; i++)
+            +notification(1)
+            +notification(2)
+            +notification(3)
+            +notification(4)
+        p.notification-end Показаны все недавние уведомления
+
+    aside.filter-aside
+      .filter-aside__categories.sidebar__inner
+        .filter-aside__category
+          label.filter-aside__common
+            input(type="radio" name="category" checked)
+            span Все уведомления
+        .filter-aside__category
+          label.filter-aside__common
+            input(type="radio" name="category")
+            span Как исполнитель
+        .filter-aside__category
+          label.filter-aside__common
+            input(type="radio" name="category")
+            span Как заказчик
+

@@ -3,6 +3,7 @@
 import './header.sass'
 import '../../components/header-menu/header-menu'
 import '../../components/notification/notification'
+import '../../components/button/button'
 
 function onClickNotice() {
   const notice = document.querySelector('.notice');
