@@ -8,6 +8,8 @@ mixin card-person(status, color)
       .right
         span.card-person__name Денис Митряков
         +card-status(color, status)
+      +tooltip('Исполнитель')
+
   else
     a(href="#").card-person
       .card-person__photo

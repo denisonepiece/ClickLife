@@ -14,6 +14,7 @@ import '../../components/feedback/feedback'
 import '../../components/cards/card'
 import '../../components/modals/modal'
 import '../../components/tooltip/tooltip'
+import '../../components/checkbox/checkbox'
 //Media
 import './task-list.sass'
 import '../../../sass/media.sass'

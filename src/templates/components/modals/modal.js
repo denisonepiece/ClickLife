@@ -22,6 +22,7 @@ initModal('.button-offer', '.modal-offer');
 initModal('.button-deny', '.modal-deny');
 initModal('.button-connect', '.modal-connect');
 initModal('.button-feedback', '.modal-feedback');
+initModal('.button-wow', '.modal-wow');
 
 function showModal(modal) {
   modal.classList.remove("modal-hidden");
