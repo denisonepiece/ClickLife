@@ -18,15 +18,16 @@
 @import "modal-wow/modal-wow"
 
 .modal
+  overflow: auto
+  padding: 0 1rem
+
   position: fixed
   top: 0
   width: 100%
   height: 100%
   background: linear-gradient(138.16deg, rgba(14, 97, 64, 0.864) 18.26%, rgba(31, 135, 94, 0.864) 89.07%)
   z-index: 10000
-  display: flex
-  align-items: center
-  justify-content: center
+
 
   p
     font-size: 1.8rem
@@ -47,6 +48,7 @@
   border-radius: 15px
   position: relative
   box-shadow: 0 35px 130px #053D27
+  margin: 22.222rem auto 2rem
 
 .modal__title
   margin-bottom: 2.5rem
@@ -74,5 +76,28 @@
   right: -30px
   top: 3px
 
+@media screen and (max-width: 768px)
+  .modal
+    .modal__body
+      padding-top: 5rem
+
+    .btn-close
+      top: 1rem
+      right: 1rem
+      svg
+        path
+          stroke: $grey-dark
 
 
+
+@media screen and (max-height: 900px)
+  .modal__body
+    margin-top: 20rem
+
+@media screen and (max-height: 800px)
+  .modal__body
+    margin-top: 15rem
+
+@media screen and (max-height: 700px)
+  .modal__body
+    margin-top: 10rem

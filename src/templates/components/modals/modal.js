@@ -26,12 +26,14 @@ initModal('.button-wow', '.modal-wow');
 
 function showModal(modal) {
   modal.classList.remove("modal-hidden");
-  // document.body.style.overflowY = "hidden";
+  modal.style.overflowY = "scroll";
+  document.body.style.overflowY = "hidden";
 }
 
 function hideModal(modal) {
   modal.classList.add("modal-hidden");
-  // document.body.style.overflowY = "";
+  modal.style.overflowY = "";
+  document.body.style.overflowY = "";
 }
 
 function hideOpenModals(modal) {
