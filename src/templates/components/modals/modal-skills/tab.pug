@@ -1,10 +1,20 @@
-include ../../checkbox/checkbox
-
 .tab-skill
   .tab-skill__header
-    +checkbox('Дизайн')
+    div.checkbox
+      input(type="checkbox")
+      span.checkbox__mark
+      span.checkbox__label Разработка сайтов
     include arrow.svg
   .tab-skill__items
-    +checkbox('Фирменный стиль')
-    +checkbox('Логотипы')
-    +checkbox('Брендбук')
+    div.checkbox
+      input(type="checkbox")
+      span.checkbox__mark
+      span.checkbox__label Верстка
+    div.checkbox
+      input(type="checkbox")
+      span.checkbox__mark
+      span.checkbox__label Бэкенд
+    div.checkbox
+      input(type="checkbox")
+      span.checkbox__mark
+      span.checkbox__label Фронтенд

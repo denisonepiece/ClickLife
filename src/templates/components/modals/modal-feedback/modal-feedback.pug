@@ -1,0 +1,21 @@
+.modal.modal-feedback.modal-hidden
+  .modal__body
+    h4 Оставить отзыв о
+      span Денис Митряков
+
+    form
+      .label Ваша оценка
+      .to-rate
+        label.like
+          input(type="radio" name="rate")
+          include ./like.svg
+        label.dislike
+          input(type="radio" name="rate")
+          include ./like.svg
+
+      +textarea('Напишите отзыв')
+
+
+      +button('big-fill-log', 'Отправить')
+    span.btn-close
+      include ../btn-close.svg

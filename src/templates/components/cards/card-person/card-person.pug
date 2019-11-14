@@ -1,4 +1,5 @@
 include ../../like-dislike/like-dislike
+include ../../tooltip/tooltip
 
 mixin card-person(status, color)
   if (status)
@@ -13,5 +14,6 @@ mixin card-person(status, color)
       .right
         span.card-person__name Денис Митряков
         +like-dislike()
+      +tooltip('Заказчик')
 
 

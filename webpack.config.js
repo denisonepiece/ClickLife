@@ -12,6 +12,7 @@ const terserJS = require('./webpack/terser');
 const images = require('./webpack/images');
 const fonts = require('./webpack/fonts');
 const autoprefixer = require('autoprefixer');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 const PATHS = {
   src: path.join(__dirname, 'src'),
@@ -42,6 +43,10 @@ const common = merge(
     },
     devtool: 'source-map',
     plugins: [
+      new FaviconsWebpackPlugin({
+        logo: PATHS.src + '/assets/img/favicon.png',
+        publicPath: '.',
+      }),
       new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
         filename: "ui-kit.html",

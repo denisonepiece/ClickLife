@@ -1,6 +1,11 @@
 .card-person
   display: flex
   width: fit-content
+  position: relative
+
+  &:hover
+    .tooltip
+      display: block
 
   .right
     display: flex
@@ -21,3 +26,14 @@
 .card-person__name
   margin-top: 0.5rem
   color: $black
+
+.tooltip
+  display: none
+  color: $black
+  bottom: calc(100% + 1rem)
+  left: 0
+
+  &:after,
+  &:before
+    left: 2.2rem
+

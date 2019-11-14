@@ -1,0 +1,52 @@
+@import "../../../../sass/colors"
+
+.modal-feedback
+
+  .modal__body
+    max-width: 58rem
+
+  h4
+    margin-bottom: 3rem
+    span
+      display: block
+      color: $green
+
+  .to-rate
+    padding: 1.1rem 2.2rem
+    border: 1px solid $grey-lite
+    border-radius: 1rem
+    width: fit-content
+    position: relative
+    display: flex
+    margin-bottom: 1.5rem
+
+  .like,
+  .dislike
+    display: block
+    cursor: pointer
+    input
+      opacity: 0
+      width: 0
+      height: 0
+      position: absolute
+
+  .label
+    color: $grey-dark
+    font-size: 1.6rem
+    margin-bottom: 0.5rem
+
+  .like
+    margin-right: 1.5rem
+    input:checked ~ svg
+      path
+        fill: $green
+
+
+  .dislike
+    margin-top: 1.7rem
+    svg
+      transform: rotateX(180deg)
+
+    input:checked ~ svg
+      path
+        fill: $red

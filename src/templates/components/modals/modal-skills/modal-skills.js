@@ -1,5 +1,4 @@
 import './modal-skills.sass'
-import '../../checkbox/checkbox'
 
 initAllTabs();
 

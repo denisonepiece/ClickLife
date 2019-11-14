@@ -11,7 +11,7 @@ mixin button(style, content, dopClass)
     when 'send'
       button.button.button_border.button_send= content
     when 'default-green'
-      button.button.button_border.button_default= content
+      button.button.button_border.button_default(class= dopClass)= content
     when 'default-green-fill'
       button.button.button_border.button_default.button_green-fill= content
     when 'default-orange'

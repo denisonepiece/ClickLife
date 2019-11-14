@@ -1,0 +1,9 @@
+include ../../profile-person/profile-person
+
+.modal.modal-connect.modal-hidden
+  .modal__body
+    +profile-person('name-city')
+    include ../../profile-contact/profile-contact
+    +button('default-green', 'Перейти в профиль')
+    span.btn-close
+      include ../btn-close.svg
