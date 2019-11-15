@@ -26,6 +26,7 @@ initModal('.button-wow', '.modal-wow');
 
 function showModal(modal) {
   modal.classList.remove("modal-hidden");
+  modal.classList.remove("temp-hidden");
   modal.style.overflowY = "scroll";
   document.body.style.overflowY = "hidden";
 }
@@ -68,8 +69,8 @@ function initModal(btn, modal) {
   for( let i = 0; i < allButtons.length; i++) {
     allButtons[i].addEventListener('click', function(e) {
       e.preventDefault();
-      showModal(modalCurrent);
       hideOpenModals(modalCurrent);
+      showModal(modalCurrent);
     });
   }
 

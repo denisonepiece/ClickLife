@@ -36,6 +36,9 @@
     color: #C5C5C5
     font-weight: 500
 
+    &:hover
+      color: $green
+
 .nav__item.-is-active-
   position: relative
 
@@ -62,6 +65,7 @@
   margin-right: 2rem
   &:last-child
     margin-right: 0
+
 
 .notice
   display: flex
@@ -101,6 +105,21 @@
   top: -6px
   right: 0
   transform: translateX(28%)
+
+
+.control-panel__item
+  height: 100%
+  display: flex
+  align-items: center
+  cursor: pointer
+  color: #C5C5C5
+  font-weight: 500
+
+  &:hover
+    color: $green
+
+.control-panel__item.button-reg
+  margin-right: 0
 
 
 .control-panel__photo
@@ -215,6 +234,10 @@
   margin-bottom: 2rem
   height: 1px
   background: $grey-lite
+
+
+
+
 
 
 

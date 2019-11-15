@@ -1,0 +1,26 @@
+doctype html
+html(lang="ru")
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='initial-scale=1.0, width=device-width')
+    title
+      block title
+  body
+
+    include ../includes/header/header-logout
+
+    main.main
+      block main
+
+    include ../includes/footer/footer
+
+    block modals
+
+    // Модальные окна необходимые для регистрации
+    include ../components/modals/modal-enter/modal-enter
+    include ../components/modals/modal-reg-fiz/modal-reg-fiz
+    include ../components/modals/modal-reg-comp/modal-reg-comp
+    include ../components/modals/modal-mail-confirm/modal-mail-confirm
+    include ../components/modals/modal-tel-confirm/modal-tel-confirm
+    include ../components/modals/modal-real-tel/modal-real-tel
+    include ../components/modals/modal-real-mail/modal-real-mail

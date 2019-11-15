@@ -3,11 +3,15 @@ include ../../button/button
 .modal.modal-mail-confirm.modal-hidden
   .modal__body
     h3 Подтвердите адрес вашей почты
-    p На ваш электронный адрес ydgf@mail.ru было отправлено письмо со ссылкой для подтверждения вашей почты на ClickLife. <br><br> Пройдите по ссылке и активируйте вашу электронную почту.
+    p На ваш электронный адрес <span>ydgf@mail.ru</span> было отправлено письмо с кодом для подтверждения вашей почты на ClickLife. <br><br> Введите код отправленный вам на почту, состоящий из 4 цифр в эту форму:
 
-    div.bottom
-      +button('send', 'Отправить новое письмо')
-      +button('send', 'Указать другую почту')
+    +input()
+    +button('big-fill-log', 'Отправить')
+
+    .mail-confirm
+      +button('send', 'Отправить новое SMS')
+      span Через 0:53
+    +button('send', 'Указать другой номер телефона')
 
     span.btn-close
       include ../btn-close.svg

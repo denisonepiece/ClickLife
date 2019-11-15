@@ -1,3 +1,6 @@
+include ../../input/input
+include ../../input-phone/input-phone
+
 .modal.modal-reg-comp.modal-hidden
   .modal__body
     form
@@ -9,7 +12,7 @@
       +inputPhone('simple')
       +input('ФИО представителя', 'name')
       +button('big-fill-log', 'Зарегистрироваться')
-      a.link-green(href='#') Зарегистрироваться как физ.лицо
+      a.link-green.button-reg-fiz Зарегистрироваться как физ.лицо
       +social-sign('Зарегистрироваться с помощью соц.сетей')
 
     span.btn-close

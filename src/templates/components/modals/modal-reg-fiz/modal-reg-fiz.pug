@@ -2,10 +2,10 @@
   .modal__body
     form
       +input('Имя и Фамилия')
-      +input('Телефон или email', 'email')
+      +input('Телефон или email', 'text')
       +input('Город')
       +button('big-fill-log', 'Зарегистрироваться')
-      a.link-green(href='#') Зарегистрироваться как компания
+      a.link-green.button-reg-comp Зарегистрироваться как компания
       +social-sign('Зарегистрироваться с помощью соц.сетей')
 
     span.btn-close

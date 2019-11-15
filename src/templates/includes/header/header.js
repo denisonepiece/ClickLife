@@ -5,6 +5,14 @@ import '../../components/header-menu/header-menu'
 import '../../components/notification/notification'
 import '../../components/button/button'
 
+if(document.querySelector('.notice')) {
+  onClickNotice();
+}
+
+if(document.querySelector('.menu-btn')) {
+  toggleMenu();
+}
+
 function onClickNotice() {
   const notice = document.querySelector('.notice');
 
@@ -18,9 +26,6 @@ function onClickNotice() {
     }
   });
 }
-
-onClickNotice();
-toggleMenu();
 
 function toggleMenu() {
   const menuBtn = document.querySelector('.menu-btn');

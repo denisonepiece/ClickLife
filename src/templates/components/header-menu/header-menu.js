@@ -1,6 +1,8 @@
 import './header-menu.sass'
 
-hideShowMenu();
+if(document.querySelector('.control-panel__photo')) {
+  hideShowMenu();
+}
 
 function hideShowMenu() {
   const menuBtn = document.querySelector('.control-panel__photo');
