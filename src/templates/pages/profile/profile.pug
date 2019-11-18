@@ -29,39 +29,68 @@ block main
           +button('hidden')
 
       section.profile-categories
-        .tab-nav
-          h5.tab-nav__item Как исполнитель
-          h5.tab-nav__item.-active- Как заказчик
-        .skills
-          .skills__list
-            .skills__item Заварить кофе
-            .skills__item Выпить кофе
-            .skills__item Помолоть кофе
-            .skills__item Процедить кофе
-            .skills__item Купить кофе
-            .skills__item Продать кофе
-            .skills__item Вколоть кофе в вену
-            .skills__item Выпить 2 литра кофе на спор
-            .skills__item Кофе?
-          +button('setting', '', 'button-skills')
-        .tasks
-          h5 Мои задания
-          .tab-nav
-            p.tab-nav__item.-active- Сбор завявок
-            p.tab-nav__item В работе
-            p.tab-nav__item Выполненные
-          .tasks__list
-            include ../../components/cards/cards-task/card-pred-zak
-            include ../../components/cards/cards-task/card
-            include ../../components/cards/cards-task/card-sbor-isp
-            include ../../components/cards/cards-task/card-not-active
-          +button('default-green', 'Смотреть все')
-
-
-      section.feedbacks
+        .tab-nav#tab-role
+          h5.tab-nav__item.-active- Как исполнитель
+          h5.tab-nav__item Как заказчик
+        .tab-nav__content.tab-role__content.-open-
+          .skills
+            .skills__list
+              .skills__item Заварить кофе
+              .skills__item Выпить кофе
+              .skills__item Помолоть кофе
+              .skills__item Процедить кофе
+              .skills__item Купить кофе
+              .skills__item Продать кофе
+              .skills__item Вколоть кофе в вену
+              .skills__item Выпить 2 литра кофе на спор
+              .skills__item Кофе?
+            +button('setting', '', 'button-skills')
+          .tasks
+            h5 Мои задания
+            .tab-nav.tab-task
+              p.tab-nav__item.-active- Сбор завявок
+              p.tab-nav__item В работе
+              p.tab-nav__item Выполненные
+            .tasks__list.tab-task__content.-open-
+              include ../../components/cards/cards-task/card-pred-zak
+              include ../../components/cards/cards-task/card
+              include ../../components/cards/cards-task/card-sbor-isp
+              include ../../components/cards/cards-task/card-not-active
+            .tasks__list.tab-task__content
+              include ../../components/cards/cards-task/card-pred-zak
+              include ../../components/cards/cards-task/card-not-active
+            .tasks__list.tab-task__content
+              include ../../components/cards/cards-task/card
+              include ../../components/cards/cards-task/card-sbor-isp
+            +button('default-green', 'Смотреть все')
+          .feedbacks
             h5 Отзывы
             +feedback('feedback')
             +feedback('default')
+            +button('default-green', 'Смотреть все')
+        .tab-nav__content.tab-role__content
+          .tasks
+            h5 Мои задания
+            .tab-nav.tab-task
+              p.tab-nav__item.-active- Сбор завявок
+              p.tab-nav__item В работе
+              p.tab-nav__item Выполненные
+            .tasks__list.tab-task__content.-open-
+              include ../../components/cards/cards-task/card-pred-zak
+              include ../../components/cards/cards-task/card
+              include ../../components/cards/cards-task/card-sbor-isp
+              include ../../components/cards/cards-task/card-not-active
+            .tasks__list.tab-task__content
+              include ../../components/cards/cards-task/card-pred-zak
+              include ../../components/cards/cards-task/card-not-active
+            .tasks__list.tab-task__content
+              include ../../components/cards/cards-task/card
+              include ../../components/cards/cards-task/card-sbor-isp
+            +button('default-green', 'Смотреть все')
+
+          .feedbacks
+            h5 Отзывы
+            +feedback('feedback')
             +button('default-green', 'Смотреть все')
     aside.aside
       +profile-elect()

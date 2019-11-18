@@ -18,6 +18,8 @@ import '../../components/tooltip/tooltip'
 //Media
 import '../../../sass/media.sass'
 
+import './changeTabs'
+
 toggleShowInformation();
 
 function toggleShowInformation() {
@@ -29,11 +31,11 @@ function toggleShowInformation() {
     isOpen = !isOpen;
     btn.parentNode.classList.toggle('-info-hidden-');
 
-    if(isOpen) {
+    if (isOpen) {
       btn.innerHTML = 'Показать меньше информации'
-    }
-    else {
+    } else {
       btn.innerHTML = 'Показать больше информации'
     }
   };
 }
+

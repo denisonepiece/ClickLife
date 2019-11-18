@@ -7,7 +7,6 @@ import './profile-another.sass'
 import '../../includes/header/header'
 import '../../includes/footer/footer'
 //Components
-import '../../components/notification/notification'
 import '../../components/button/button'
 import '../../components/profile-person/profile-person'
 import '../../components/profile-contact/profile-contact'
@@ -20,3 +19,5 @@ import '../../components/tooltip/tooltip'
 import '../../components/textarea/textarea'
 //Media
 import '../../../sass/media.sass'
+
+import '../profile/changeTabs'

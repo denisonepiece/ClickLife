@@ -3,6 +3,7 @@
 import './modal.sass'
 import './modal-skills/modal-skills'
 import './modal-offer/modal-offer'
+import './modal-reg-fiz/modal-reg-fiz'
 
 initModal('.button-enter', '.modal-enter');
 initModal('.button-reg-comp', '.modal-reg-comp');

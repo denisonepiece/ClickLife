@@ -16,25 +16,33 @@ block main
         +button('default-grad-big', 'Предложить задание', 'button-tasks')
         +button('default-orange-big', 'Добавить в избранное')
       section.profile-categories
-        .tab-nav
-          h5.tab-nav__item Как исполнитель
-          h5.tab-nav__item.-active- Как заказчик
-        .skills
-          .skills__list
-            .skills__item Заварить кофе
-            .skills__item Выпить кофе
-            .skills__item Помолоть кофе
-            .skills__item Процедить кофе
-            .skills__item Купить кофе
-            .skills__item Продать кофе
-            .skills__item Вколоть кофе в вену
-            .skills__item Выпить 2 литра кофе на спор
-            .skills__item Кофе?
-      section.feedbacks
-        h5 Отзывы
-        +feedback('report')
-        +feedback('report')
-        +button('default-green', 'Смотреть все')
+        .tab-nav#tab-role
+          h5.tab-nav__item.-active- Как исполнитель
+          h5.tab-nav__item Как заказчик
+        .tab-nav__content.tab-role__content.-open-
+          .skills
+            .skills__list
+              .skills__item Заварить кофе
+              .skills__item Выпить кофе
+              .skills__item Помолоть кофе
+              .skills__item Процедить кофе
+              .skills__item Купить кофе
+              .skills__item Продать кофе
+              .skills__item Вколоть кофе в вену
+              .skills__item Выпить 2 литра кофе на спор
+              .skills__item Кофе?
+          .feedbacks
+            h5 Отзывы
+            +feedback('report')
+            +feedback('report')
+            +button('default-green', 'Смотреть все')
+
+        .tab-nav__content.tab-role__content.-open-
+          .feedbacks
+            h5 Отзывы
+            +feedback('report')
+            +feedback('report')
+            +button('default-green', 'Смотреть все')
     aside.aside
       +button('default-grad-big', 'Предложить задание', 'button-tasks')
       +button('default-orange-big', 'Добавить в избранное')
