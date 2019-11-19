@@ -236,8 +236,22 @@
   background: $grey-lite
 
 
+@media screen and (max-width: 768px)
+  .control-panel__item
+    display: none
 
 
+@media screen and (max-width: 500px)
+  .header
+    .notification-block
+      width: calc(100vw - 2rem)
+      max-width: unset
+      right: calc(100% - 9rem)
+      top: 4.5rem
+
+      &:after,
+      &:before
+        display: none
 
 
 

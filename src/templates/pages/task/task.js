@@ -1,6 +1,5 @@
 import 'normalize.css';
 import '../../../sass/main.sass'
-import '../../../sass/typography.sass'
 import './task.sass'
 //Includes
 import '../../includes/header/header'
@@ -20,7 +19,9 @@ import '../../components/textarea/textarea'
 //Media
 import '../../../sass/media.sass'
 
-toggleTaskMenu();
+if (document.querySelector('.task-menu')) {
+  toggleTaskMenu();
+}
 
 function toggleTaskMenu() {
   const menuBtn = document.querySelector('.task-menu');

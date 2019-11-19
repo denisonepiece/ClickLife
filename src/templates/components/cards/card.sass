@@ -125,12 +125,65 @@
 
 
 @media screen and (max-width: 768px)
+  .card
+    .card-buttons
+      width: 100%
+
+      .button
+        width: 100%
+        margin-left: 0
+
   .card_category
     .button
       display: block
       width: 100%
       font-size: 1.6rem
 
+
+@media screen and (max-width: 500px)
+  .card
+    padding: 1em 2.2rem
+    flex-direction: column
+    position: relative
+
+    .left
+      position: relative
+
+
+    .card-person
+      flex-direction: column
+      position: absolute
+      top: 100%
+
+    .card-info,
+    .card-person
+      height: 12rem
+      justify-content: space-between
+      margin-bottom: 2rem
+
+  .card-buttons
+    flex-direction: column
+
+    .button
+      width: 100%
+      margin-left: 0
+
+
+
+
+
+  .card-title
+    margin-bottom: 2rem
+
+  .card-info__price,
+  .card-info__respond
+    margin: 0
+
+  .card-person__name
+    margin-bottom: 0.5rem
+
+  .card-status
+    display: block
 
 @media screen and (max-width: 450px)
   .card_category

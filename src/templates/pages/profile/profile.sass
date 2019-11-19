@@ -20,8 +20,6 @@ main
   margin-left: 3.2rem
   margin-bottom: 6rem
 
-
-
 .information
   margin-bottom: 6rem
 
@@ -48,11 +46,9 @@ main
 
 .about
   margin-bottom: 3rem
-  h5, pre
+  h5,
+  pre
     margin-bottom: 2.5rem
-
-.profile-categories
-  margin-bottom: 8rem
 
 .tab-nav
   display: flex
@@ -122,4 +118,24 @@ main
 
 .feedback
   margin-bottom: 4rem
+
+
+@media screen and (max-width: 768px)
+  .tab-nav__item
+    margin-right: 1.3rem
+
+  .skills__item
+    font-size: 1.5rem
+
+  .profile-rate
+    display: flex
+
+    .left
+      margin-right: 2rem
+      margin-bottom: 0
+
+@media screen and (max-width: 500px)
+  #btn-toggle-information
+    width: 100%
+
 
