@@ -12,10 +12,10 @@ import '../../components/profile-contact/profile-contact'
 import '../../components/profile-rate/profile-rate'
 import '../../components/profile-elect/profile-elect'
 import '../../components/feedback/feedback'
+import '../../components/tooltip/tooltip'
 import '../../components/cards/card'
 import '../../components/modals/modal'
 import '../../components/textarea/textarea'
-
 //Media
 import '../../../sass/media.sass'
 
@@ -25,9 +25,17 @@ if (document.querySelector('.task-menu')) {
 
 function toggleTaskMenu() {
   const menuBtn = document.querySelector('.task-menu');
-  const menu = document.querySelector('.task-menu__list');
 
-  menuBtn.addEventListener('click', () => {
-    menu.classList.toggle('-is-open-');
+  menuBtn.onclick = () => menuBtn.classList.toggle('-is-open-');
+
+  document.addEventListener('click', function (e) {
+    let container = $('.task-menu');
+
+    console.log(container.has(e.target).length);
+
+    if (container.has(e.target).length === 0 && e.target !== menuBtn) {
+      menuBtn.classList.remove('-is-open-');
+    }
   });
+
 }

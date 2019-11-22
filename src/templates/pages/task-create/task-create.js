@@ -145,6 +145,7 @@ function init() {
     $('#message').text(message);
   }
 }
+
 // Yandex maps end
 
 showMaps();
@@ -164,4 +165,49 @@ function showMaps() {
   }
 }
 
+loadFiles();
 
+function loadFiles() {
+  const loadFiles = document.querySelector('.load-files');
+  const fileInput = loadFiles.querySelector('input');
+  let fileBuffer = [];
+
+  fileInput.addEventListener('change', function () {
+    for(let [key, value] of Object.entries(this.files)) {
+      pushToBuffer(value);
+    }
+
+    displayBuffer();
+  });
+
+  function pushToBuffer(file) {
+    fileBuffer.push(file);
+  }
+  
+  function displayBuffer() {
+    const filesList = document.querySelector('.load-files__list');
+    //Очищаем буффер
+    filesList.innerHTML = '';
+    //Заполняем блок актуальными файлами
+    let files = '';
+
+    fileBuffer.forEach((file, index) => {
+      files += `<span class="load-files__item">${file.name}<span class="btn-delete" data="${index}"></span></span>`;
+    });
+
+    filesList.insertAdjacentHTML('afterbegin', files);
+    deleteFromBuffer();
+  }
+
+  function deleteFromBuffer() {
+    const btnsDelete = document.querySelectorAll('.load-files__item .btn-delete');
+
+    for(let i = 0; i < btnsDelete.length; i++) {
+      btnsDelete[i].addEventListener('click', function () {
+        let btnAttr = btnsDelete[i].getAttribute('data');
+        delete fileBuffer[btnAttr];
+        displayBuffer();
+      });
+    }
+  }
+}

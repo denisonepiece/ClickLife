@@ -113,7 +113,6 @@
 
 
 .load-files
-  cursor: pointer
   max-width: 25rem
   display: block
   position: absolute
@@ -127,6 +126,17 @@
     height: 0
     opacity: 0
 
+
+
+
+  .sub
+    color: $grey
+
+.input-file
+  display: block
+  cursor: pointer
+  width: 100%
+
   .label
     color: $green
     font-weight: 500
@@ -138,8 +148,41 @@
       position: absolute
       left: 0
 
-  .sub
-    color: $grey
+.load-files__list
+  display: flex
+  flex-direction: column
+  margin-bottom: 1rem
+
+.load-files__item
+  color: $black
+  font-weight: 500
+  margin-bottom: 0.7rem
+  position: relative
+
+  .btn-delete
+    height: 16px
+    width: 16px
+    display: block
+    position: absolute
+    top: 0
+    right: 0
+    cursor: pointer
+
+    &:before,
+    &:after
+      content: ''
+      position: absolute
+      top: 6px
+      left: 0
+      background: $red
+      height: 2px
+      width: 15px
+
+    &:after
+      transform: rotate(45deg)
+
+    &:before
+      transform: rotate(-45deg)
 
 
 @media screen and (max-width: 768px)
@@ -151,6 +194,8 @@
 
   .load-files
     position: unset
+    width: 100%
+    max-width: unset
 
     .label
       margin-top: 1rem
@@ -162,6 +207,9 @@
   .select,
   .task-create__date
     max-width: calc(50% - 1rem)
+
+  .input-file
+    margin-bottom: 1rem
 
 @media screen and (max-width: 500px)
   .select,

@@ -24,10 +24,12 @@ block main
         .task-create__about
           +textarea('Подробно опишите то, что требуется')
           //Добавить загрузку файлов
-          label.load-files
-            input(type="file" multiple)
-            .label Прикрепить файлы
-              include ./download.svg
+          .load-files
+            label.input-file
+              input(type="file" multiple)
+              .label Прикрепить файлы
+                include ./download.svg
+            .load-files__list
             .sub Если имеется техническое задание и прочая документация, детально описывающая задание.
 
         .task-create__dates
