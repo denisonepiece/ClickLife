@@ -1,64 +1,48 @@
 @import "../../../sass/colors"
 
-// header start
-.index-header
-  position: fixed
-  top: 0
-  width: 100%
-  height: 9rem
-  display: flex
-  justify-content: space-between
-  align-items: center
-  padding: 0 4rem
+main
+  padding-top: 0
 
-  .nav__list
-    align-items: center
-
-  .nav__item
-    display: flex
-    align-items: center
-    a
-      height: unset
-      line-height: unset
-      color: $white
+.header
+  background-color: transparent
+  border-bottom: none
+  box-shadow: none
 
   .logo
     svg
       path
-        fill: $white
+        fill: white
 
-.enter-btn
-  background: transparent
-  border: none
-  padding-left: 3.4rem
-  padding-right: 1.4rem
-  padding-top: 0.5rem
-  padding-bottom: 0.5rem
-  color: $white
-  font-weight: 500
-  display: flex
-  align-items: center
-  position: relative
-  cursor: pointer
-  svg
-    position: absolute
-    left: 0
-// header end
 
-.main
-  height: 100vh
-  width: 100%
-  background: url("index-bg.jpg")
-  background-position: top center
-  background-size: cover
+  .nav__item
+    a
+      color: $white
 
-.preview
-  h1
-    text-align: center
+  .control-panel__item
     color: $white
 
-.preview__btn
-  background: $white
-  border: none
-  color: #1A5A41
+  .nav__list
+    align-items: center
 
+.nav__item_index-page
+  cursor: pointer
+  font-weight: 500
+  line-height: 1.15em
+  font-size: 1.4rem
+  padding: .572em 1.1em
+  border-radius: 3.6rem
+  min-width: fit-content
+  background: linear-gradient(347.4deg, #008666 31.95%, #15BC8A 101.43%)
+  border: 1px solid rgba(255, 255, 255, 0.19)
+  box-shadow: 0 4px 11px rgba(41, 230, 173, 0.34)
+  color: $white
+  a
+    line-height: unset
+
+  &:hover
+    background: linear-gradient(174.39deg, #22DCA7 3.34%, #099E74 82.52%)
+
+
+.preview
+  height: 100vh
+  background: linear-gradient(0deg, #0EAA7E, #0EAA7E), radial-gradient(66.92% 92.57% at 39.76% 64.54%, #19885D 41.15%, #1BAC73 100%)

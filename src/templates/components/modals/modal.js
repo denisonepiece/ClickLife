@@ -29,6 +29,7 @@ function showModal(modal) {
   modal.classList.remove("modal-hidden");
   modal.classList.remove("temp-hidden");
   modal.style.overflowY = "scroll";
+
   document.body.style.overflowY = "hidden";
 }
 
@@ -36,6 +37,7 @@ function hideModal(modal) {
   modal.classList.add("modal-hidden");
   modal.style.overflowY = "";
   document.body.style.overflowY = "";
+  document.body.style.paddingRight = '0px';
 }
 
 function hideOpenModals(modal) {
