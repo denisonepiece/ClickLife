@@ -4,6 +4,7 @@ main
   padding-top: 0
 
 .header
+  position: absolute
   background-color: transparent
   border-bottom: none
   box-shadow: none
@@ -45,4 +46,188 @@ main
 
 .preview
   height: 100vh
+  padding-top: 20rem
   background: linear-gradient(0deg, #0EAA7E, #0EAA7E), radial-gradient(66.92% 92.57% at 39.76% 64.54%, #19885D 41.15%, #1BAC73 100%)
+
+.preview-buttons
+  display: flex
+  justify-content: space-between
+  margin-top: 9rem
+
+.preview-button
+  background-color: $white
+  padding: 6rem
+  padding-bottom: 17rem
+  width: calc(50% - 1rem)
+  border-radius: 4rem
+  display: flex
+  justify-content: space-between
+  position: relative
+
+  &:hover
+    .arrow
+      left: 7rem
+      transition: 0.2s
+
+  h3
+    color: $green
+    width: min-content
+
+  .arrow
+    height: 3px
+    max-width: 28rem
+    width: 100%
+    position: absolute
+    bottom: 6rem
+    left: 6rem
+    background-color: $green
+    display: flex
+    align-items: center
+    transition: 0.2s
+
+    svg
+      position: absolute
+      right: -3px
+
+.animation
+  color: $white
+
+// Преимущества
+
+.advantages
+  padding: 25rem 0
+
+  .container
+    display: flex
+    flex-direction: column
+
+
+.advantage
+  padding: 7.5rem
+  border: 1px solid $green-lite
+  border-radius: 4.4rem
+  margin-bottom: 6rem
+  max-width: 58rem
+  position: relative
+  background: $white
+
+  h3
+    margin-bottom: 1.5rem
+
+  p
+    color: $grey-dark
+    font-size: 18px
+
+  &:nth-child(1)
+    &:before
+      content: ''
+      display: block
+      width: 121px
+      height: 136px
+      background-image: url("clock.png")
+      position: absolute
+      top: -85px
+
+    &:after
+      content: ''
+      display: block
+      height: 700px
+      width: 600px
+      z-index: -1
+      border-radius: 54px
+      border-left: 1px solid $green-lite
+      border-bottom: 1px solid $green-lite
+      position: absolute
+      left: 290px
+      top: -300px
+
+  &:nth-child(2)
+    align-self: flex-end
+
+    &:before
+      content: ''
+      display: block
+      width: 168px
+      height: 134px
+      background-image: url("peoples.png")
+      position: absolute
+      top: -85px
+
+    &:after
+      content: ''
+      display: block
+      height: 400px
+      width: 600px
+      z-index: -1
+      border-radius: 54px
+      border-right: 1px solid $green-lite
+      border-bottom: 1px solid $green-lite
+      position: absolute
+      right: 290px
+      bottom: -160px
+
+  &:nth-child(3)
+    margin-bottom: 0
+    &:before
+      content: ''
+      display: block
+      width: 200px
+      height: 134px
+      background-image: url("pen.png")
+      position: absolute
+      top: -85px
+      left: 35px
+
+    &:after
+      content: ''
+      display: block
+      height: 400px
+      width: 1px
+      position: absolute
+      left: 290px
+      background: $green-lite
+      z-index: -1
+
+.new-tasks
+  background: $grey-delicate
+  border-top-left-radius: 100px
+  border-top-right-radius: 100px
+  padding-top: 20rem
+  padding-bottom: 20rem
+
+  .container
+    position: relative
+
+  h2
+    margin-bottom: 6rem
+
+  .task-list
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+
+  .card
+    background: $white
+    width: calc(50% - 1rem)
+    margin-bottom: 2rem
+
+  .show-all
+    font-size: 1.6rem
+    margin-top: 2.5rem
+    padding: 1.05rem 2.15rem
+
+  .btn-up
+    position: absolute
+    padding-top: 7.5rem
+    color: $grey-dark
+    font-weight: 500
+    right: 2rem
+    bottom: -15rem
+    &:after
+      content: ''
+      display: block
+      height: 66px
+      width: 48px
+      background: url("up.svg")
+      top: 0
+      position: absolute

@@ -4,7 +4,44 @@ block title
   | Кликлайф
 
 block main
+  a(name="top")
   .preview
     .container
       .animation
+        h3 Выполнить и заработать
+        h3 Найти исполнителя
+        h3 Просто
       .preview-buttons
+        a(href="task-list.html").preview-button
+          h3 Выполнить задание
+          include btn-key.svg
+          span.arrow
+            include arrow.svg
+        a(href="task-create.html").preview-button
+          h3 Заказать задание
+          include btn-circle.svg
+          span.arrow
+            include arrow.svg
+  .advantages
+    .container
+      .advantage
+        h3 Экономьте время
+        p Clicklife позволяет сократить время на поиски клиентов или исполнителей.
+      .advantage
+        h3 Один профиль – две роли
+        p Сервис позволяет иметь один профиль, но при этом быть как исполнителем, так и заказчиком. Быстро и без труда переключайтесь между ролями в личном кабинете.
+      .advantage
+        h3 Простота
+        p С легкостью создавайте или ищите задания. Вам не придется указывать большое количество ненужной информации и теряться в интерфейсе.
+  .new-tasks
+    .container
+      h2 Новые задания
+      .task-list
+        include ../../components/cards/cards-task/cards-category
+        include ../../components/cards/cards-task/cards-category
+        include ../../components/cards/cards-task/cards-category
+        include ../../components/cards/cards-task/cards-category
+        include ../../components/cards/cards-task/cards-category
+        include ../../components/cards/cards-task/cards-category
+      +button('default-grad', 'Показать все', 'show-all')
+      a(href="#top").btn-up Наверх
