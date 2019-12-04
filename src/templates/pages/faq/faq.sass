@@ -1,0 +1,43 @@
+@import "../../../sass/colors"
+
+.faq-list
+  margin-bottom: 8rem
+
+.faq-item
+  margin-bottom: 3rem
+
+  &:last-child
+    margin-bottom: 0
+
+  &.-is-open-
+    .faq-item__title
+      svg
+        transform: rotate(0)
+    .faq-item__body
+      display: block
+
+.faq-item__title
+  background: $grey-delicate
+  border: 1px solid #CDCDCD
+  border-radius: 1rem
+  font-size: 2rem
+  font-weight: 500
+  padding: 2.4rem 3.2rem
+  cursor: pointer
+  display: flex
+  align-items: center
+  justify-content: space-between
+
+  svg
+    transform: rotate(180deg)
+    min-width: 14px
+
+.faq-item__body
+  margin-top: -1.5rem
+  display: none
+  position: relative
+  z-index: -1
+  font-size: 1.8rem
+  padding: 3.5rem 3.3rem 2.5rem
+  border: 1px solid $grey-lite
+  border-radius: 1rem

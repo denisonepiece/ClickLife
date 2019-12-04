@@ -4,6 +4,7 @@ import '../../../sass/main.sass'
 import '../../includes/header/header'
 import '../../includes/footer/footer'
 //Components
+import '../../components/tooltip/tooltip'
 import '../../components/button/button'
 import '../../components/cards/card'
 import '../../components/modals/modal'
