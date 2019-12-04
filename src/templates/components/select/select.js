@@ -53,7 +53,6 @@ function closeAllSelect(elmnt) {
       arrNo.push(i)
     } else {
       y[i].classList.remove("select-arrow-active");
-      y[i].classList.add("selected")
     }
   }
   for (i = 0; i < x.length; i++) {
