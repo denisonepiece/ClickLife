@@ -1,0 +1,71 @@
+.main
+  min-height: calc(100vh - 10rem)
+
+.feedback
+  .page-title
+    padding-bottom: 2rem
+
+  .page-sub
+    padding-bottom: 4rem
+
+  .wrapper
+    max-width: unset
+    display: flex
+    justify-content: space-between
+    padding-bottom: 8rem
+
+  .content
+    max-width: calc(100% - 28rem - 20rem)
+    width: 100%
+
+.page-sub
+  font-size: 2rem
+  margin-bottom: 3rem
+
+.select
+  margin-bottom: 2rem
+
+.textarea
+  margin-bottom: 3rem
+
+
+.button
+  font-size: 1.7rem
+
+.aside
+  h4
+    margin-bottom: 2rem
+
+.pos
+  margin-bottom: 1.5rem
+
+.pos, .tel
+  font-size: 1.7rem
+  position: relative
+  padding-left: 3rem
+  display: flex
+  align-items: center
+  svg
+    position: absolute
+    left: 0
+    max-width: 2.5rem
+    max-height: 2.5rem
+
+
+@media screen and (max-width: 991px)
+  .feedback
+    .content
+      max-width: calc(100% - 28rem - 4rem)
+
+@media screen and (max-width: 768px)
+  .feedback
+
+    .wrapper
+      flex-direction: column
+
+    .content
+      max-width: 100%
+      margin-bottom: 4rem
+
+  .aside
+    display: block

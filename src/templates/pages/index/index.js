@@ -13,12 +13,10 @@ import '../../../sass/media.sass'
 //page styles
 import './index.sass'
 
-// window.onload = () => animation();
 animation();
 
 function animation() {
   const titles = document.querySelectorAll('.animation .row');
-
 
   setTimeout(function () {
     titles[0].classList.add('fade-in');

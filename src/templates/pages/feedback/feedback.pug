@@ -3,5 +3,23 @@ extends ../../layout/layout-logout
 block title
   | Обратная свзяь
 
+include ../../components/textarea/textarea
+include ../../components/select/select
+
 block main
-  .container
+  .container.feedback
+    h2.page-title Обратная свзяь
+    p.page-sub Пожалуйста, заполните заявку — и мы вам ответим в ближайшее время.
+    .wrapper
+      .content
+        form
+          +select('Выберите тему', 'Тема 1', 'Тема 2', 'Тема 3', 'Тема 4', 'Тема 5')
+          +textarea('Текс сообщения')
+          +button('default-green', 'Отправить')
+      aside.aside
+        h4 Контакты
+        .pos ул.Горно-Алтайская, д.666, г.Санкт-Петербург
+          include pos.svg
+        .tel +7 934 432 43 54
+          include tel.svg
+
