@@ -3,14 +3,14 @@ include ../../button/button
 .modal.modal-tel-confirm.modal-hidden
   .modal__body
     h3 Подтвердите ваш номер телефона
-    p На ваш мобильный телефон <span>+7 (913) *** ** 97</span> было отправлено SMS с кодом для подтверждения регистрации на Click Life.<br><br>Введите код из SMS состоящий из 4 цифр в эту форму:
+    p На ваш мобильный телефон <span id="contact">+7 (913) *** ** 97</span> было отправлено SMS с кодом для подтверждения регистрации на Click Life.<br><br>Введите код из SMS состоящий из 4 цифр в эту форму:
 
-    +input()
-    +button('big-fill-log', 'Отправить')
+    form(name="сodeConfirm")
+      +input()
+      +button('big-fill-log', 'Отправить')
 
     .tel-confirm
-      +button('send', 'Отправить новое SMS')
-      span Через 0:53
+      +button('send', 'Отправить код повторно')
     +button('send', 'Указать другой номер телефона')
 
     span.btn-close
