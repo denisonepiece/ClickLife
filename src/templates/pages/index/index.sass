@@ -1,16 +1,19 @@
 @import "../../../sass/colors"
-
 main
   padding-top: 0
 
 .header
-  position: absolute
-  background-color: transparent
+  position: fixed
+  background-color: $green
   border-bottom: none
   box-shadow: none
 
   .menu
-    display: none
+    background: $green
+
+    .separator
+      background: $white
+
 
   .logo
     svg
@@ -28,6 +31,12 @@ main
   .nav__list
     align-items: center
 
+
+.menu-btn span,
+.menu-btn span:after,
+.menu-btn span:before
+  background: $white
+
 .nav__item_index-page
   cursor: pointer
   font-weight: 500
@@ -40,6 +49,7 @@ main
   border: 1px solid rgba(255, 255, 255, 0.19)
   box-shadow: 0 4px 11px rgba(41, 230, 173, 0.34)
   color: $white
+
   a
     line-height: unset
 
@@ -131,9 +141,11 @@ main
 
     &:nth-child(2)
       top: 20px
+      width: calc(100% - 120px)
 
     &:nth-child(3)
       top: 40px
+      width: calc(100% - 120px)
 
       svg
         left: -50rem
@@ -196,7 +208,7 @@ main
       content: ''
       display: block
       height: 700px
-      width: 600px
+      width: 63%
       z-index: -1
       border-radius: 54px
       border-left: 1px solid $green-lite
@@ -232,6 +244,7 @@ main
 
   &:nth-child(3)
     margin-bottom: 0
+
     &:before
       content: ''
       display: block
@@ -282,11 +295,12 @@ main
 
   .btn-up
     position: absolute
-    padding-top: 7.5rem
+    padding-top: 75px
     color: $grey-dark
     font-weight: 500
     right: 2rem
     bottom: -15rem
+
     &:after
       content: ''
       display: block
@@ -295,3 +309,74 @@ main
       background: url("up.svg")
       top: 0
       position: absolute
+
+
+
+
+@media screen and (max-width: 991px)
+
+  .new-tasks
+    border-top-left-radius: 25px
+    border-top-right-radius: 25px
+    padding-top: 10rem
+
+  .task-list
+    flex-direction: column
+
+    .card
+      width: 100%
+
+
+
+@media screen and (max-width: 768px)
+
+  .animation
+
+    p
+      font-size: 2.4rem
+
+    .row
+      &:nth-child(2)
+        width: calc(100% - 60px)
+
+      &:nth-child(3)
+        width: calc(100% - 60px)
+
+  .preview
+    height: unset
+
+    .container
+      padding-top: 10rem
+
+  .preview-buttons
+    flex-direction: column
+    margin-top: 15rem
+
+  .preview-button
+    width: 100%
+    margin-bottom: 2rem
+    padding: 4rem
+    padding-bottom: 10rem
+
+    .arrow
+      left: 4rem
+
+
+  .new-tasks
+    padding-top: 6rem
+
+  .advantages
+    padding: 20rem 0
+    .container
+      align-items: center
+
+  .advantage
+    padding: 4rem
+    padding-top: 6rem
+    margin-bottom: 12rem
+
+    &:after
+      display: none !important
+
+    &:nth-child(2)
+      align-self: center

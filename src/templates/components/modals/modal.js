@@ -3,7 +3,8 @@
 import './modal.sass'
 import './modal-skills/modal-skills'
 import './modal-offer/modal-offer'
-import './modal-reg-fiz/modal-reg-fiz'
+import '../../../js/registration'
+
 
 initModal('.button-enter', '.modal-enter');
 initModal('.button-reg-comp', '.modal-reg-comp');
@@ -49,6 +50,10 @@ function hideOpenModals(modal) {
       allModals[i].classList.add('temp-hidden');
     }
   }
+}
+
+function closeModal(modal) {
+  modal.classList.add('modal-hidden');
 }
 
 function showHideModals() {

@@ -31,5 +31,4 @@ function valdateEmail(input) {
     inputBlock.classList.add('input_success');
     inputBlock.classList.remove('input_error');
   }
-
 }
