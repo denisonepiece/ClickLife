@@ -8,7 +8,9 @@ function registration() {
   const btnForm = regForm.querySelector('.button_fill-big');
   let token = '';
   let userId = '';
+  let contact = '';
 
+  registrationFiz();
 
   function registrationFiz() {
     const modalRegFiz = document.querySelector('.modal-reg-fiz');
@@ -41,6 +43,7 @@ function registration() {
         if (data.status) {
           token = data.token;
           userId = data['user_id'];
+          contact = inputData.contact;
           modalRegFiz.classList.add('modal-hidden');
 
           // Открываем окно подтверждения почты/телефона
@@ -78,7 +81,7 @@ function registration() {
 
   function codeConfirm(modal) {
     modal.classList.remove('modal-hidden');
-    modal.querySelector('#contact').innerHTML = inputData.contact;
+    modal.querySelector('#contact').innerHTML = contact;
 
     const codeForm = modal.forms.codeConfirm;
 
