@@ -1,0 +1,13 @@
+include ../../input/input
+
+.modal.modal-recovery.modal-hidden
+  .modal__body
+    h4 Восстановление пароля
+    p Пожалуйста, укажите телефон или email, который Вы использовали для входа на сайт
+    form(name="recovery1")
+      +input('Телефон или email', 'text')
+      +button('big-fill-log', 'Отправить')
+    span.btn-close
+      include ../btn-close.svg
+    span.modal-role Восстановление
+      include ../../../../assets/img/icon-enter.svg

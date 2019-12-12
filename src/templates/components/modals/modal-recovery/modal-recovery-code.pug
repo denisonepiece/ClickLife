@@ -1,0 +1,13 @@
+include ../../input/input
+
+.modal.modal-recovery-code.modal-hidden
+  .modal__body
+    h4 Введите код
+    p На ваш электронный адрес/телефон был отправлен код подтверждения.
+    form(name="recovery2")
+      +input('Введите код', 'text')
+      +button('big-fill-log', 'Отправить код')
+    span.btn-close
+      include ../btn-close.svg
+    span.modal-role Восстановление
+      include ../../../../assets/img/icon-enter.svg

@@ -4,7 +4,7 @@ import './modal.sass'
 import './modal-skills/modal-skills'
 import './modal-offer/modal-offer'
 import '../../../js/registration'
-
+import '../../../js/login'
 
 initModal('.button-enter', '.modal-enter');
 initModal('.button-reg-comp', '.modal-reg-comp');
@@ -25,6 +25,10 @@ initModal('.button-deny', '.modal-deny');
 initModal('.button-connect', '.modal-connect');
 initModal('.button-feedback', '.modal-feedback');
 initModal('.button-wow', '.modal-wow');
+initModal('.button-recovery', '.modal-recovery');
+initModal('.button-recovery-code', '.modal-recovery-code');
+initModal('.button-recovery-pass', '.modal-recovery-pass');
+
 
 function showModal(modal) {
   modal.classList.remove("modal-hidden");
@@ -50,10 +54,6 @@ function hideOpenModals(modal) {
       allModals[i].classList.add('temp-hidden');
     }
   }
-}
-
-function closeModal(modal) {
-  modal.classList.add('modal-hidden');
 }
 
 function showHideModals() {

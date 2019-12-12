@@ -3,7 +3,6 @@ if (document.querySelector('.modal-reg-fiz')) {
 }
 
 function registration() {
-
   const regForm = document.forms.registration;
   const btnForm = regForm.querySelector('.button_fill-big');
   let token = '';
@@ -83,13 +82,14 @@ function registration() {
     modal.classList.remove('modal-hidden');
     modal.querySelector('#contact').innerHTML = contact;
 
-    const codeForm = modal.forms.codeConfirm;
+    const codeInput = modal.querySelector('input');
 
-    codeForm.querySelector('.button').onclick = (e) => {
+    modal.querySelector('.button_fill-big').onclick = (e) => {
       e.preventDefault();
+
       codeData = {
-        code: codeForm.elements[0].value,
-        userId: userId
+        code: codeInput.value,
+        'user_id': userId
       };
 
       fetch('https://click-life.ru/api/register/step/2', {
@@ -109,7 +109,7 @@ function registration() {
           createPass();
 
         } else {
-          codeForm.elements[0].nextElementSibling.innerHTML = data.error;
+          codeInput.nextElementSibling.innerHTML = data.error;
         }
       });
     }
@@ -117,23 +117,23 @@ function registration() {
 
   function createPass() {
     const modalPass = document.querySelector('.modal-pass');
-    const passForm = modalPass.forms.pass;
+    const passForm = document.forms.pass;
     const btnFormPass = passForm.querySelector('.button');
 
     modalPass.classList.remove('modal-hidden');
 
-    let passData = {
-      'user_id': userId,
-      password: passForm.elements[0].value,
-      'password_confirmation': passForm.elements[1].value,
-      token: token
-    };
-
     btnFormPass.onclick = (e) => {
       e.preventDefault();
 
-      if(passData.password === passData['password_confirmation']) {
-        fetch('https://click-life.ru/api/register/step/2', {
+      let passData = {
+        'user_id': userId,
+        password: passForm.elements[0].value,
+        'password_confirmation': passForm.elements[1].value,
+        token: token
+      };
+
+      if(passForm.elements[0].value === passForm.elements[1].value) {
+        fetch('https://click-life.ru/api/register/step/3', {
           method: "POST",
           headers: {
             'Content-Type': 'application/json;charset=utf-8'
@@ -152,11 +152,8 @@ function registration() {
           }
         });
       }
-
-
     }
   }
-
 }
 
 

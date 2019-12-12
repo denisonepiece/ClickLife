@@ -4,10 +4,10 @@ include ../social-sign/social-sign
 
 .modal.modal-enter.modal-hidden
   .modal__body
-    form
+    form(name="login")
       +input('Телефон или e-mail')
       +input-password()
-      a.link-green(href='#') Восстановить пароль
+      a.link-green.button-recovery Восстановить пароль
       +button('big-fill-log', 'Войти')
       a.link-green.button-reg-fiz Зарегистрироваться
     span.btn-close

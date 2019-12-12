@@ -1,0 +1,13 @@
+include ../../input/input
+
+.modal.modal-recovery-pass.modal-hidden
+  .modal__body
+    h4 Придумайте новый пароль
+    form(name="recovery3")
+      +input-password('Введите новый пароль')
+      +input-password('Введите пароль еще раз')
+      +button('big-fill-log', 'Отправить')
+    span.btn-close
+      include ../btn-close.svg
+    span.modal-role Восстановление
+      include ../../../../assets/img/icon-enter.svg

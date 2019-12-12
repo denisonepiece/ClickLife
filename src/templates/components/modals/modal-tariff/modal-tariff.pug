@@ -2,26 +2,31 @@
   .modal__body
     .modal__part.count-week
       h5 По неделям
-      .count
-        span.minus
-          include minus.svg
-        span.value 1
-        span.plus
-          include plus.svg
-      .bottom
-        span.total Итого <b>75 ₽</b>
-        +button('default-grad', 'Оплатить')
-    .modal__part.count-mounth
+      form(name="payWeek")
+        .count
+          span.minus
+            include minus.svg
+          span.value 1
+          span.plus
+            include plus.svg
+          input(name="count")
+
+        .bottom
+          span.total Итого <b>75 ₽</b>
+          +button('default-grad', 'Оплатить')
+    .modal__part.count-month
       h5 По месяцам
-      .count
-        span.minus
-          include minus.svg
-        span.value 1
-        span.plus
-          include plus.svg
-      .bottom
-        span.total Итого <b>300 ₽</b>
-        +button('default-grad', 'Оплатить')
+      form(name="payMonth")
+        .count
+          span.minus
+            include minus.svg
+          span.value 1
+          span.plus
+            include plus.svg
+          input(name="count")
+        .bottom
+          span.total Итого <b>300 ₽</b>
+          +button('default-grad', 'Оплатить')
 
     span.btn-close
       include ../btn-close.svg
