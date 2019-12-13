@@ -1,51 +1,50 @@
 import 'normalize.css';
-import '../../../sass/main.sass'
-import '../../../sass/typography.sass'
-//Includes
-import '../../includes/header/header'
-import '../../includes/footer/footer'
-//Components
-import '../../components/button/button'
-import '../../components/modals/modal'
-import '../../components/input/input'
-import '../../components/select/select'
-import '../../components/textarea/textarea'
-import '../../components/datepicker/datepicker'
-import '../../components/checkbox/checkbox'
-import '../../components/modals/modal'
-//Media
-import './task-create.sass'
-import '../../../sass/media.sass'
-
+import '../../../sass/main.sass';
+import '../../../sass/typography.sass';
+// Includes
+import '../../includes/header/header';
+import '../../includes/footer/footer';
+// Components
+import '../../components/button/button';
+import '../../components/modals/modal';
+import '../../components/input/input';
+import '../../components/select/select';
+import '../../components/textarea/textarea';
+import '../../components/datepicker/datepicker';
+import '../../components/checkbox/checkbox';
+import '../../components/modals/modal';
+// Media
+import './task-create.sass';
+import '../../../sass/media.sass';
 
 // Yandex maps
 ymaps.ready(init);
 
 function init() {
   // Подключаем поисковые подсказки к полю ввода.
-  var suggestView = new ymaps.SuggestView('input-addr'),
-      map,
-      placemark;
+  const suggestView = new ymaps.SuggestView('input-addr');
+  var map;
+  let placemark;
 
   // При клике по кнопке запускаем верификацию введёных данных.
-  $('#input-addr').bind('focusout', function (e) {
+  $('#input-addr').bind('focusout', function(e) {
     geocode();
   });
 
   // По дефолту устанавливаем значение
-  var map = new ymaps.Map("map", {
+  var map = new ymaps.Map('map', {
     zoom: 7,
     center: [55.76, 37.64],
-    controls: []
+    controls: [],
   });
 
   function geocode() {
     // Забираем запрос из поля ввода.
-    var request = $('#input-addr').val();
+    const request = $('#input-addr').val();
     // Геокодируем введённые данные.
-    ymaps.geocode(request).then(function (res) {
-      var obj = res.geoObjects.get(0),
-          error, hint;
+    ymaps.geocode(request).then(function(res) {
+      const obj = res.geoObjects.get(0);
+      let error; let hint;
 
       if (obj) {
         // Об оценке точности ответа геокодера можно прочитать тут: https://tech.yandex.ru/maps/doc/geocoder/desc/reference/precision-docpage/
@@ -79,10 +78,9 @@ function init() {
       } else {
         showResult(obj);
       }
-    }, function (e) {
-      console.log(e)
-    })
-
+    }, function(e) {
+      console.log(e);
+    });
   }
 
   function showResult(obj) {
@@ -90,17 +88,17 @@ function init() {
     $('#suggest').removeClass('input_error');
     $('#notice').css('display', 'none');
 
-    var mapContainer = $('#map'),
-        bounds = obj.properties.get('boundedBy'),
-        // Рассчитываем видимую область для текущего положения пользователя.
-        mapState = ymaps.util.bounds.getCenterAndZoom(
-            bounds,
-            [mapContainer.width(), mapContainer.height()]
-        ),
-        // Сохраняем полный адрес для сообщения под картой.
-        address = [obj.getCountry(), obj.getAddressLine()].join(', '),
-        // Сохраняем укороченный адрес для подписи метки.
-        shortAddress = [obj.getThoroughfare(), obj.getPremiseNumber(), obj.getPremise()].join(' ');
+    const mapContainer = $('#map');
+    const bounds = obj.properties.get('boundedBy');
+    // Рассчитываем видимую область для текущего положения пользователя.
+    const mapState = ymaps.util.bounds.getCenterAndZoom(
+        bounds,
+        [mapContainer.width(), mapContainer.height()],
+    );
+    // Сохраняем полный адрес для сообщения под картой.
+    const address = [obj.getCountry(), obj.getAddressLine()].join(', ');
+    // Сохраняем укороченный адрес для подписи метки.
+    const shortAddress = [obj.getThoroughfare(), obj.getPremiseNumber(), obj.getPremise()].join(' ');
     // Убираем контролы с карты.
     mapState.controls = [];
     // Создаём карту.
@@ -127,9 +125,9 @@ function init() {
       placemark = new ymaps.Placemark(
           map.getCenter(), {
             iconCaption: caption,
-            balloonContent: caption
+            balloonContent: caption,
           }, {
-            preset: 'islands#redDotIconWithCaption'
+            preset: 'islands#redDotIconWithCaption',
           });
       map.geoObjects.add(placemark);
       // Если карта есть, то выставляем новый центр карты и меняем данные и позицию метки в соответствии с найденным адресом.
@@ -155,11 +153,11 @@ function showMaps() {
   const mapBlock = document.querySelector('.place__address');
 
   for (let i = 0; i < radio.length; i++) {
-    radio[i].addEventListener('change', function () {
+    radio[i].addEventListener('change', function() {
       if (radio[2].checked) {
-        mapBlock.style.display = "block"
+        mapBlock.style.display = 'block';
       } else {
-        mapBlock.style.display = "none"
+        mapBlock.style.display = 'none';
       }
     });
   }
@@ -170,30 +168,57 @@ loadFiles();
 function loadFiles() {
   const loadFiles = document.querySelector('.load-files');
   const fileInput = loadFiles.querySelector('input');
-  let fileBuffer = [];
+  const message = loadFiles.querySelector('.sub');
+  const fileBuffer = [];
 
-  fileInput.addEventListener('change', function () {
-    for(let [key, value] of Object.entries(this.files)) {
-      pushToBuffer(value);
+  fileInput.addEventListener('change', function() {
+    // eslint-disable-next-line no-unused-vars
+    for (const [, value] of Object.entries(this.files)) {
+      fileUpload(value);
     }
 
     displayBuffer();
   });
 
+  function log(text) {
+    message.innerHTML = text;
+  }
+
+  function fileUpload(file) {
+    let xhr = new XMLHttpRequest();
+
+    xhr.onload = xhr.onerror = function() {
+      if (this.status === 200) {
+        pushToBuffer(file);
+      } else {
+        log('Возникла ошибка при загрузке файла' + this.status);
+      }
+    };
+
+    xhr.upload.onprogress = function (e) {
+      log(e.loaded + ' / ' + e.total);
+    };
+
+    xhr.open('post', 'https://click-life.ru/api/attaches/upload', true);
+    xhr.send(file);
+  }
+
   function pushToBuffer(file) {
     fileBuffer.push(file);
   }
-  
+
   function displayBuffer() {
     const filesList = document.querySelector('.load-files__list');
-    //Очищаем буффер
+    // Очищаем буффер
     filesList.innerHTML = '';
-    //Заполняем блок актуальными файлами
+    // Заполняем блок актуальными файлами
     let files = '';
 
     fileBuffer.forEach((file, index) => {
       files += `<span class="load-files__item">${file.name}<span class="btn-delete" data="${index}"></span></span>`;
     });
+
+    console.log(fileBuffer);
 
     filesList.insertAdjacentHTML('afterbegin', files);
     deleteFromBuffer();
@@ -202,9 +227,9 @@ function loadFiles() {
   function deleteFromBuffer() {
     const btnsDelete = document.querySelectorAll('.load-files__item .btn-delete');
 
-    for(let i = 0; i < btnsDelete.length; i++) {
-      btnsDelete[i].addEventListener('click', function () {
-        let btnAttr = btnsDelete[i].getAttribute('data');
+    for (let i = 0; i < btnsDelete.length; i++) {
+      btnsDelete[i].addEventListener('click', function() {
+        const btnAttr = btnsDelete[i].getAttribute('data');
         delete fileBuffer[btnAttr];
         displayBuffer();
       });
