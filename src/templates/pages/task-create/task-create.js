@@ -18,6 +18,7 @@ import './task-create.sass';
 import '../../../sass/media.sass';
 
 // Yandex maps
+
 ymaps.ready(init);
 
 function init() {
@@ -27,7 +28,7 @@ function init() {
   let placemark;
 
   // При клике по кнопке запускаем верификацию введёных данных.
-  $('#input-addr').bind('focusout', function(e) {
+  $('#input-addr').bind('focusout', function (e) {
     geocode();
   });
 
@@ -42,9 +43,10 @@ function init() {
     // Забираем запрос из поля ввода.
     const request = $('#input-addr').val();
     // Геокодируем введённые данные.
-    ymaps.geocode(request).then(function(res) {
+    ymaps.geocode(request).then(function (res) {
       const obj = res.geoObjects.get(0);
-      let error; let hint;
+      let error;
+      let hint;
 
       if (obj) {
         // Об оценке точности ответа геокодера можно прочитать тут: https://tech.yandex.ru/maps/doc/geocoder/desc/reference/precision-docpage/
@@ -144,8 +146,6 @@ function init() {
   }
 }
 
-// Yandex maps end
-
 showMaps();
 
 function showMaps() {
@@ -153,7 +153,7 @@ function showMaps() {
   const mapBlock = document.querySelector('.place__address');
 
   for (let i = 0; i < radio.length; i++) {
-    radio[i].addEventListener('change', function() {
+    radio[i].addEventListener('change', function () {
       if (radio[2].checked) {
         mapBlock.style.display = 'block';
       } else {
@@ -163,76 +163,82 @@ function showMaps() {
   }
 }
 
+// Yandex maps end
+
 loadFiles();
 
 function loadFiles() {
   const loadFiles = document.querySelector('.load-files');
   const fileInput = loadFiles.querySelector('input');
   const message = loadFiles.querySelector('.sub');
-  const fileBuffer = [];
+  let usedFiles = [];
+  const fileList = loadFiles.querySelector('.load-files__list');
 
+  // При загрузке файлов, по одному отправляем на сервер
   fileInput.addEventListener('change', function() {
-    // eslint-disable-next-line no-unused-vars
-    for (const [, value] of Object.entries(this.files)) {
-      fileUpload(value);
+    for (const [, file] of Object.entries(this.files)) {
+      fileUpload(file);
     }
-
-    displayBuffer();
   });
+
+  // Выводим файл пользователю, с ссылкой, названием и id
+  function displayFile(response) {
+    const fileView =
+        `<span class="load-files__item">` +
+          `<a href="https://click-life.ru/${response.path}" target="_blank">${response.title}</a>` +
+          `<span class="btn-delete" data="${response.id}"></span>` +
+        `</span>`;
+
+    fileList.insertAdjacentHTML('beforeend', fileView);
+    deleteFiles();
+  }
 
   function log(text) {
     message.innerHTML = text;
   }
 
   function fileUpload(file) {
-    let xhr = new XMLHttpRequest();
+    const xhr = new XMLHttpRequest();
+    const formData = new FormData();
+    formData.append('attaches', file, file.name);
 
     xhr.onload = xhr.onerror = function() {
       if (this.status === 200) {
-        pushToBuffer(file);
+        const data = JSON.parse(xhr.response);
+        displayFile(data);
+        usedFiles.push(data.id);
+        updateUsedFiles();
+        log('Загрузка завершена');
       } else {
         log('Возникла ошибка при загрузке файла' + this.status);
       }
     };
 
-    xhr.upload.onprogress = function (e) {
-      log(e.loaded + ' / ' + e.total);
+    xhr.upload.onprogress = function(e) {
+      log(Math.trunc((e.loaded / e.total) * 100) + '%');
     };
 
     xhr.open('post', 'https://click-life.ru/api/attaches/upload', true);
-    xhr.send(file);
+    xhr.send(formData);
   }
 
-  function pushToBuffer(file) {
-    fileBuffer.push(file);
-  }
+  function deleteFiles() {
+    const deleteButtons = document.querySelectorAll('.load-files__item');
 
-  function displayBuffer() {
-    const filesList = document.querySelector('.load-files__list');
-    // Очищаем буффер
-    filesList.innerHTML = '';
-    // Заполняем блок актуальными файлами
-    let files = '';
-
-    fileBuffer.forEach((file, index) => {
-      files += `<span class="load-files__item">${file.name}<span class="btn-delete" data="${index}"></span></span>`;
-    });
-
-    console.log(fileBuffer);
-
-    filesList.insertAdjacentHTML('afterbegin', files);
-    deleteFromBuffer();
-  }
-
-  function deleteFromBuffer() {
-    const btnsDelete = document.querySelectorAll('.load-files__item .btn-delete');
-
-    for (let i = 0; i < btnsDelete.length; i++) {
-      btnsDelete[i].addEventListener('click', function() {
-        const btnAttr = btnsDelete[i].getAttribute('data');
-        delete fileBuffer[btnAttr];
-        displayBuffer();
-      });
+    for (let i = 0; i < deleteButtons.length; i++) {
+      deleteButtons[i].querySelector('.btn-delete').onclick = function() {
+        usedFiles.splice(usedFiles.indexOf(this.getAttribute('data'), 1));
+        this.parentNode.remove();
+        updateUsedFiles();
+      };
     }
   }
+
+  function updateUsedFiles() {
+    const usedFilesInput = document.querySelector('input[name="usedFiles"]');
+
+    console.log(usedFiles);
+    usedFilesInput.value = usedFiles;
+  }
 }
+

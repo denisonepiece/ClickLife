@@ -23,9 +23,10 @@ block main
         .task-create__about
           +textarea('Подробно опишите то, что требуется')
           //Добавить загрузку файлов
+          input(name="usedFiles" style="display: none")
           .load-files
             label.input-file
-              input(type="file" multiple)
+              input(type="file"  multiple)
               .label Прикрепить файлы
                 include ./download.svg
             .load-files__list
