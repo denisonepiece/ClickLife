@@ -1,10 +1,10 @@
 'use strict';
 
-import './modal.sass'
-import './modal-skills/modal-skills'
-import './modal-offer/modal-offer'
-import '../../../js/registration'
-import '../../../js/login'
+import './modal.sass';
+import './modal-skills/modal-skills';
+import './modal-offer/modal-offer';
+import '../../../js/registration';
+import '../../../js/login';
 
 initModal('.button-enter', '.modal-enter');
 initModal('.button-reg-comp', '.modal-reg-comp');
@@ -28,20 +28,20 @@ initModal('.button-wow', '.modal-wow');
 initModal('.button-recovery', '.modal-recovery');
 initModal('.button-recovery-code', '.modal-recovery-code');
 initModal('.button-recovery-pass', '.modal-recovery-pass');
-
+initModal('.button-notice', '.modal-notice');
 
 function showModal(modal) {
-  modal.classList.remove("modal-hidden");
-  modal.classList.remove("temp-hidden");
-  modal.style.overflowY = "scroll";
+  modal.classList.remove('modal-hidden');
+  modal.classList.remove('temp-hidden');
+  modal.style.overflowY = 'scroll';
 
-  document.body.style.overflowY = "hidden";
+  document.body.style.overflowY = 'hidden';
 }
 
 function hideModal(modal) {
-  modal.classList.add("modal-hidden");
-  modal.style.overflowY = "";
-  document.body.style.overflowY = "";
+  modal.classList.add('modal-hidden');
+  modal.style.overflowY = '';
+  document.body.style.overflowY = '';
   document.body.style.paddingRight = '0px';
 }
 
@@ -49,8 +49,8 @@ function hideOpenModals(modal) {
   const allModals = document.querySelectorAll('.modal');
   const currentModalName = modal.classList[1];
 
-  for( let i = 0; i < allModals.length; i++) {
-    if(!allModals[i].classList.contains('modal-hidden') && !allModals[i].classList.contains(currentModalName)) {
+  for ( let i = 0; i < allModals.length; i++) {
+    if (!allModals[i].classList.contains('modal-hidden') && !allModals[i].classList.contains(currentModalName)) {
       allModals[i].classList.add('temp-hidden');
     }
   }
@@ -59,22 +59,22 @@ function hideOpenModals(modal) {
 function showHideModals() {
   const allModals = document.querySelectorAll('.modal');
 
-  for( let i = 0; i < allModals.length; i++) {
+  for ( let i = 0; i < allModals.length; i++) {
     allModals[i].classList.remove('temp-hidden');
   }
 }
 
 function initModal(btn, modal) {
-  if(!document.querySelector(modal) || !document.querySelectorAll(btn)) {
+  if (!document.querySelector(modal) || !document.querySelectorAll(btn)) {
     return;
   }
 
-  const modalCurrent = document.querySelector(modal),
-    allButtons = document.querySelectorAll(btn),
-    closeBtn = modalCurrent.querySelector('.btn-close');
+  const modalCurrent = document.querySelector(modal);
+  const allButtons = document.querySelectorAll(btn);
+  const closeBtn = modalCurrent.querySelector('.btn-close');
 
-  //Добававляем обработчик событий для кнопок открытия модального окна
-  for( let i = 0; i < allButtons.length; i++) {
+  // Добававляем обработчик событий для кнопок открытия модального окна
+  for ( let i = 0; i < allButtons.length; i++) {
     allButtons[i].addEventListener('click', function(e) {
       e.preventDefault();
       hideOpenModals(modalCurrent);
@@ -82,17 +82,17 @@ function initModal(btn, modal) {
     });
   }
 
-  //Обработка кнопки закрытия
+  // Обработка кнопки закрытия
   closeBtn.onclick = () => {
     hideModal(modalCurrent);
     showHideModals();
   };
 
-  //Закрытие модального окна при клике мимо
+  // Закрытие модального окна при клике мимо
   modalCurrent.onclick = function(e) {
-    if(!e.target.closest('.modal__body')) {
+    if (!e.target.closest('.modal__body')) {
       hideModal(this);
       showHideModals();
     }
-  }
+  };
 }
