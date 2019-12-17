@@ -21,13 +21,13 @@ function login() {
         'Content-Type': 'application/json;charset=utf-8',
       },
       body: JSON.stringify(loginData),
-    }).then(function(response) {
+    }).then(function (response) {
       if (!response.ok) {
         return 'Данные с сервера не получены';
       }
       return response.json();
-    }).then(function(data) {
-      if (data.status) {
+    }).then(function (data) {
+      if (data.status && document.querySelector('meta[name="redirect_to"]')) {
         document.location.href = 'https://click-life.ru/user';
       } else {
         if (data.error.login) {

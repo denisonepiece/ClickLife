@@ -23,18 +23,18 @@ function registration() {
         name: regForm.elements[0].value,
         contact: regForm.elements[1].value,
         city: regForm.elements[2].value,
-        is_company: 'no'
+        is_company: 'no',
       };
 
       fetch('https://click-life.ru/api/register/step/1', {
-        method: "POST",
+        method: 'POST',
         headers: {
-          'Content-Type': 'application/json;charset=utf-8'
+          'Content-Type': 'application/json;charset=utf-8',
         },
-        body: JSON.stringify(inputData)
+        body: JSON.stringify(inputData),
       }).then(function (response) {
         if (!response.ok) {
-          return 'Данные с сервера не получены'
+          return 'Данные с сервера не получены';
         }
         return response.json();
       }).then(function (data) {
@@ -47,33 +47,32 @@ function registration() {
 
           // Открываем окно подтверждения почты/телефона
           if (data.mail) {
-            codeConfirm(modalMailConfirm)
+            codeConfirm(modalMailConfirm);
           } else {
-            codeConfirm(modalTelConfirm)
+            codeConfirm(modalTelConfirm);
           }
-
         } else {
-          //Иначе выводим соотвествуещие ошибки или удаляем
+          // Иначе выводим соотвествуещие ошибки или удаляем
           if (data.errors.name) {
             regForm.elements[0].nextElementSibling.innerHTML = data.errors.name;
-            regForm.elements[0].parentNode.classList.add('input_error')
+            regForm.elements[0].parentNode.classList.add('input_error');
           } else {
-            regForm.elements[0].parentNode.classList.remove('input_error')
+            regForm.elements[0].parentNode.classList.remove('input_error');
           }
           if (data.errors.contact) {
             regForm.elements[1].nextElementSibling.innerHTML = data.errors.contact;
-            regForm.elements[1].parentNode.classList.add('input_error')
+            regForm.elements[1].parentNode.classList.add('input_error');
           } else {
-            regForm.elements[1].parentNode.classList.remove('input_error')
+            regForm.elements[1].parentNode.classList.remove('input_error');
           }
           if (data.errors.city) {
             regForm.elements[2].nextElementSibling.innerHTML = data.errors.city;
-            regForm.elements[2].parentNode.classList.add('input_error')
+            regForm.elements[2].parentNode.classList.add('input_error');
           } else {
-            regForm.elements[2].parentNode.classList.remove('input_error')
+            regForm.elements[2].parentNode.classList.remove('input_error');
           }
         }
-      })
+      });
     };
   }
 
@@ -88,31 +87,30 @@ function registration() {
       e.preventDefault();
 
       codeData = {
-        code: codeInput.value,
-        'user_id': userId
+        'code': codeInput.value,
+        'user_id': userId,
       };
 
       fetch('https://click-life.ru/api/register/step/2', {
-        method: "POST",
+        method: 'POST',
         headers: {
-          'Content-Type': 'application/json;charset=utf-8'
+          'Content-Type': 'application/json;charset=utf-8',
         },
-        body: JSON.stringify(codeData)
+        body: JSON.stringify(codeData),
       }).then(function (response) {
         if (!response.ok) {
-          return 'Данные с сервера не получены'
+          return 'Данные с сервера не получены';
         }
         return response.json();
       }).then(function (data) {
-        if(data.status) {
+        if (data.status) {
           modal.classList.add('modal-hidden');
           createPass();
-
         } else {
           codeInput.nextElementSibling.innerHTML = data.error;
         }
       });
-    }
+    };
   }
 
   function createPass() {
@@ -125,36 +123,37 @@ function registration() {
     btnFormPass.onclick = (e) => {
       e.preventDefault();
 
-      let passData = {
+      const passData = {
         'user_id': userId,
-        password: passForm.elements[0].value,
+        'password': passForm.elements[0].value,
         'password_confirmation': passForm.elements[1].value,
-        token: token
+        'token': token,
       };
 
-      if(passForm.elements[0].value === passForm.elements[1].value) {
+      if (passForm.elements[0].value === passForm.elements[1].value) {
         fetch('https://click-life.ru/api/register/step/3', {
-          method: "POST",
+          method: 'POST',
           headers: {
-            'Content-Type': 'application/json;charset=utf-8'
+            'Content-Type': 'application/json;charset=utf-8',
           },
-          body: JSON.stringify(passData)
+          body: JSON.stringify(passData),
         }).then(function (response) {
           if (!response.ok) {
-            return 'Данные с сервера не получены'
+            return 'Данные с сервера не получены';
           }
           return response.json();
         }).then(function (data) {
-          if(data.status) {
-            document.location.href = "https://click-life.ru/user"
+          if (data.status) {
+            if (document.querySelector('meta[name="redirect_to"]')) {
+              document.location.href = 'https://click-life.ru/user';
+            }
           } else {
-            passForm.elements[1].nextElementSibling.innerHTML = "Пароли не совпадают"
+            passForm.elements[1].nextElementSibling.innerHTML = 'Пароли не совпадают';
           }
         });
       }
-    }
+    };
   }
 }
-
 
 
