@@ -237,8 +237,7 @@ function loadFiles() {
   function updateUsedFiles() {
     const usedFilesInput = document.querySelector('input[name="usedFiles"]');
 
-    console.log(usedFiles);
-    usedFilesInput.value = usedFiles;
+    usedFilesInput.value = usedFiles.toString();
   }
 }
 
