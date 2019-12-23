@@ -17,7 +17,7 @@ function registration() {
     const modalRegComp = document.querySelector('.modal-reg-comp');
     const modalMailConfirm = document.querySelector('.modal-mail-confirm');
 
-    btnForm.onclick = function (e) {
+    btnForm.onclick = function(e) {
       e.preventDefault();
 
       const inputData = {

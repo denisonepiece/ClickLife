@@ -13,6 +13,7 @@ import '../../components/textarea/textarea';
 import '../../components/datepicker/datepicker';
 import '../../components/checkbox/checkbox';
 import '../../components/modals/modal';
+import '../../components/select/select';
 // Media
 import './task-create.sass';
 import '../../../sass/media.sass';
@@ -80,7 +81,7 @@ function init() {
       } else {
         showResult(obj);
       }
-    }, function(e) {
+    }, function (e) {
       console.log(e);
     });
   }
@@ -175,7 +176,7 @@ function loadFiles() {
   const fileList = loadFiles.querySelector('.load-files__list');
 
   // При загрузке файлов, по одному отправляем на сервер
-  fileInput.addEventListener('change', function() {
+  fileInput.addEventListener('change', function () {
     for (const [, file] of Object.entries(this.files)) {
       fileUpload(file);
     }
@@ -185,8 +186,8 @@ function loadFiles() {
   function displayFile(response) {
     const fileView =
         `<span class="load-files__item">` +
-          `<a href="https://click-life.ru/${response.path}" target="_blank">${response.title}</a>` +
-          `<span class="btn-delete" data="${response.id}"></span>` +
+        `<a href="https://click-life.ru/${response.path}" target="_blank">${response.title}</a>` +
+        `<span class="btn-delete" data="${response.id}"></span>` +
         `</span>`;
 
     fileList.insertAdjacentHTML('beforeend', fileView);
@@ -202,7 +203,7 @@ function loadFiles() {
     const formData = new FormData();
     formData.append('attaches', file, file.name);
 
-    xhr.onload = xhr.onerror = function() {
+    xhr.onload = xhr.onerror = function () {
       if (this.status === 200) {
         const data = JSON.parse(xhr.response);
         displayFile(data);
@@ -214,7 +215,7 @@ function loadFiles() {
       }
     };
 
-    xhr.upload.onprogress = function(e) {
+    xhr.upload.onprogress = function (e) {
       log(Math.trunc((e.loaded / e.total) * 100) + '%');
     };
 
@@ -226,7 +227,7 @@ function loadFiles() {
     const deleteButtons = document.querySelectorAll('.load-files__item');
 
     for (let i = 0; i < deleteButtons.length; i++) {
-      deleteButtons[i].querySelector('.btn-delete').onclick = function() {
+      deleteButtons[i].querySelector('.btn-delete').onclick = function () {
         usedFiles.splice(usedFiles.indexOf(this.getAttribute('data'), 1));
         this.parentNode.remove();
         updateUsedFiles();
@@ -238,6 +239,43 @@ function loadFiles() {
     const usedFilesInput = document.querySelector('input[name="usedFiles"]');
 
     usedFilesInput.value = usedFiles.toString();
+  }
+}
+
+changeCategories();
+
+function changeCategories() {
+  const category = document.getElementsByName('parent_category')[0];
+  const subcategory = document.getElementsByName('child_category')[0];
+
+  category.parentNode.addEventListener('click', function() {
+    const categoryId = category.value;
+
+    fetch(`https://click-life.ru/api/categories/${categoryId}`)
+        .then(function(response) {
+          if (!response.ok) {
+            return 'Данные не получены';
+          }
+
+          return response.json();
+        }).then(function(data) {
+          selectUpdate(data);
+        });
+  });
+
+  function selectUpdate(data) {
+    subcategory.innerHTML = '';
+
+    subcategory.nextElementSibling.remove();
+    subcategory.nextElementSibling.remove();
+
+    for (let i = 0; i < data.length; i++) {
+      const newOption = new Option(data[i].name, data[i].id);
+
+      subcategory.append(newOption);
+    }
+
+    initSelects('.select-sub');
   }
 }
 
