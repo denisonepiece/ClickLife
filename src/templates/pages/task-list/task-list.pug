@@ -14,9 +14,7 @@ block main
         button.filter-top__button.category Категории
       .filter-top__items
         .filter-top__item
-          +input('Цена от', 'text')
-        .filter-top__item
-          +input('Город', 'text')
+          +input('Город', 'text', 'input-city')
         .filter-top__item
           +checkbox('Удаленная работа')
         .filter-top__item

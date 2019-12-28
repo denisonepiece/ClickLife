@@ -49,7 +49,7 @@ function hideOpenModals(modal) {
   const allModals = document.querySelectorAll('.modal');
   const currentModalName = modal.classList[1];
 
-  for ( let i = 0; i < allModals.length; i++) {
+  for (let i = 0; i < allModals.length; i++) {
     if (!allModals[i].classList.contains('modal-hidden') && !allModals[i].classList.contains(currentModalName)) {
       allModals[i].classList.add('temp-hidden');
     }
@@ -59,7 +59,7 @@ function hideOpenModals(modal) {
 function showHideModals() {
   const allModals = document.querySelectorAll('.modal');
 
-  for ( let i = 0; i < allModals.length; i++) {
+  for (let i = 0; i < allModals.length; i++) {
     allModals[i].classList.remove('temp-hidden');
   }
 }
@@ -74,8 +74,8 @@ function initModal(btn, modal) {
   const closeBtn = modalCurrent.querySelector('.btn-close');
 
   // Добававляем обработчик событий для кнопок открытия модального окна
-  for ( let i = 0; i < allButtons.length; i++) {
-    allButtons[i].addEventListener('click', function(e) {
+  for (let i = 0; i < allButtons.length; i++) {
+    allButtons[i].addEventListener('click', function (e) {
       e.preventDefault();
       hideOpenModals(modalCurrent);
       showModal(modalCurrent);
@@ -89,7 +89,7 @@ function initModal(btn, modal) {
   };
 
   // Закрытие модального окна при клике мимо
-  modalCurrent.onclick = function(e) {
+  modalCurrent.onclick = function (e) {
     if (!e.target.closest('.modal__body')) {
       hideModal(this);
       showHideModals();

@@ -15,6 +15,8 @@ import '../../components/cards/card';
 import '../../components/modals/modal';
 import '../../components/tooltip/tooltip';
 import '../../components/checkbox/checkbox';
+import 'jquery.kladr';
+import 'jquery.kladr/jquery.kladr.min.css';
 // Media
 import './task-list.sass';
 import '../../../sass/media.sass';
@@ -77,7 +79,6 @@ function toggleCategory() {
   });
 }
 
-
 handleFilterInputs();
 
 function handleFilterInputs() {
@@ -85,8 +86,11 @@ function handleFilterInputs() {
   const filterForm = document.querySelector('form');
 
   for (let i = 0; i < filterInputs.length; i++) {
-    filterInputs[i].addEventListener('change', function () {
+    filterInputs[i].addEventListener('change', function() {
       filterForm.submit();
     });
   }
 }
+
+$('#input-city').kladr('type', $.kladr.type.city);
+$('#kladr_autocomplete li')[1].remove();

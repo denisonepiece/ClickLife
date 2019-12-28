@@ -1,5 +1,24 @@
 @import "../../../sass/colors"
 
+#kladr_autocomplete
+  strong
+    color: $green
+
+  li
+    padding: 0.5em 1.2rem 0.375em
+
+  li:first-child
+    display: none
+
+  .spinner
+    display: none !important
+
+  ul
+    background: $grey-delicate
+    border-radius: 4px
+    border: none
+
+
 .content
   max-width: calc(100% - 28rem - 2rem)
   width: 100%
@@ -35,6 +54,8 @@
   display: flex
   align-items: center
 
+
+
 .filter-top__items.-is-open-
   display: block
   position: absolute
@@ -53,6 +74,9 @@
 .filter-top__item
   margin-right: 2rem
   position: relative
+
+  &:first-child
+    min-width: 200px
 
   .input__field
     border-radius: 4px

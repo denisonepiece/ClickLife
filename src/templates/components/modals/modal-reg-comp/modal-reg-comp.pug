@@ -6,7 +6,7 @@ include ../../input-phone/input-phone
     form(name="registrationCompany")
       +input('Наименование компании')
       +input('ИНН')
-      +input('Город')
+      +input('Город', 'text', '#input-city-comp')
       +input('Адрес офиса компании')
       +input('Email', 'email')
       +inputPhone('simple')
