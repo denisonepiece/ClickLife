@@ -625,14 +625,15 @@
     },
 
     clear: function () {
-      this.selectedDates = [];
-      this.minRange = '';
-      this.maxRange = '';
-      this.views[this.currentView]._render();
-      this._setInputValue();
-      if (this.opts.onSelect) {
-        this._triggerOnChange()
-      }
+      // this.selectedDates = [];
+      // this.minRange = '';
+      // this.maxRange = '';
+      // this.views[this.currentView]._render();
+      // this._setInputValue();
+      // if (this.opts.onSelect) {
+      //   this._triggerOnChange()
+      // }
+      console.log(this.el.parentNode.classList.remove('datepicker-is-open'));
     },
 
     /**
@@ -1517,7 +1518,7 @@
       months: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
       monthsShort: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'],
       today: 'Сегодня',
-      clear: 'Сбросить',
+      clear: 'Закрыть',
       dateFormat: 'dd.mm.yyyy',
       timeFormat: 'hh:ii',
       firstDay: 1

@@ -11,7 +11,6 @@ function addPhoneBlock() {
   const addPhoneBtn = PhonesBlock.querySelector('.add-phone-button');
   const inputBlock = PhonesBlock.querySelector('.input-phone');
 
-
   function onFocusInputs(block) {
     const inputs = block.querySelectorAll('input[type="tel"]');
 
@@ -28,7 +27,7 @@ function addPhoneBlock() {
 
 
   document.addEventListener("DOMContentLoaded", function () {
-    if (howElementsOnPage('.input-phone') === 3) {
+    if (howElementsOnPage('.input-phone') >= 3) {
       addPhoneBtn.remove();
     }
 
@@ -40,11 +39,8 @@ function addPhoneBlock() {
     //Клонирование и сброс значений
     const inputClone = inputBlock.cloneNode(true);
     const checkboxes = inputClone.querySelectorAll('input[type="checkbox"]');
-    // inputClone.querySelector('.input__field').value = '';
-    // for( let i = 0; i < checkboxes.length; i++) {
-    //   checkboxes[i].checked = false;
-    // }
 
+    inputClone.querySelector('.input__field').value = '';
     let count = document.querySelectorAll('.input__field').length - 1;
     inputClone.querySelector('.input__field').name = inputClone.querySelector('.input__field').name.replace(/phones\[.*\]\[(.*)\]/, "phones[" + count + "][$1]");
     for (let i = 0; i < checkboxes.length; i++) {
