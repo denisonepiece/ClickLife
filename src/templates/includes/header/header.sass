@@ -1,4 +1,5 @@
 @import "../../../sass/colors"
+@import "../../../sass/rules"
 
 .header
   position: fixed
@@ -102,12 +103,10 @@
   padding: 0 4.67px
   user-select: none
   cursor: pointer
-
   position: absolute
   top: -6px
   right: 0
   transform: translateX(28%)
-
 
 .control-panel__item
   height: 100%
@@ -123,18 +122,15 @@
 .control-panel__item.button-reg
   margin-right: 0
 
-
 .control-panel__photo
   height: 4rem
   width: 4rem
   min-width: 4rem
-  background: url("../../../assets/img/greyscale-square.png") top center
-  background-size: 110%
-  border-radius: 50%
+  background: url("../../../assets/img/greyscale-square.png")
+  @extend %photo
   border: 2px solid #EAEAEA
   cursor: pointer
   position: relative
-
 
 .control-panel__photo.active
   box-shadow: 0 0 0 3px $green
