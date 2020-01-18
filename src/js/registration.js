@@ -235,6 +235,8 @@ function registration() {
           if (data.status) {
             if (document.querySelector('meta[name="redirect_to"]')) {
               document.location.href = 'https://click-life.ru/user';
+            } else {
+              document.location.reload();
             }
           } else {
             passForm.elements[1].nextElementSibling.innerHTML = 'Пароли не совпадают';

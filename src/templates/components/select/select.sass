@@ -3,6 +3,16 @@
 .select
   position: relative
   font-size: 1.6rem
+  .input_message
+    display: none
+
+.select.input_error
+  .input_message
+    display: block
+    color: $red
+    position: absolute
+    top: calc(100% + .25em)
+    padding-left: 1.25rem
 
 .select select
   display: none

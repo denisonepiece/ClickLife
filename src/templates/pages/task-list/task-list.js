@@ -83,7 +83,7 @@ handleFilterInputs();
 
 function handleFilterInputs() {
   const filterInputs = document.querySelectorAll('.filter-top input');
-  const filterForm = document.querySelector('form');
+  const filterForm = document.querySelector('.filter-top form');
 
   for (let i = 0; i < filterInputs.length; i++) {
     filterInputs[i].addEventListener('change', function() {
