@@ -5,6 +5,7 @@ import './modal-skills/modal-skills';
 import './modal-offer/modal-offer';
 import '../../../js/registration';
 import '../../../js/login';
+import './social-sign/handleSocial';
 
 initModal('.button-enter', '.modal-enter');
 initModal('.button-reg-comp', '.modal-reg-comp');
