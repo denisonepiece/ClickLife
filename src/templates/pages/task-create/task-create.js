@@ -29,7 +29,7 @@ function init() {
   let placemark;
 
   // При клике по кнопке запускаем верификацию введёных данных.
-  $('#input-addr').bind('focusout', function (e) {
+  $('#input-addr').bind('focusout', function(e) {
     geocode();
   });
 

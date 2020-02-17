@@ -1,5 +1,6 @@
 'use strict';
 
+import '../checkbox/checkbox';
 import './modal.sass';
 import './modal-skills/modal-skills';
 import './modal-offer/modal-offer';

@@ -18,6 +18,14 @@
     max-width: calc(100% - 28rem - 20rem)
     width: 100%
 
+  .row
+    display: flex
+    margin-bottom: 2rem
+    justify-content: space-between
+
+    .input
+      width: calc(50% - 1rem)
+
 .page-sub
   font-size: 2rem
   margin-bottom: 3rem
@@ -66,6 +74,13 @@
     .content
       max-width: 100%
       margin-bottom: 4rem
+
+    .row
+      flex-direction: column
+      margin-bottom: 0
+      .input
+        width: 100%
+        margin-bottom: 2rem
 
   .aside
     display: block

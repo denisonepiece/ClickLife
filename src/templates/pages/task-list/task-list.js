@@ -92,5 +92,5 @@ function handleFilterInputs() {
   }
 }
 
+// eslint-disable-next-line no-undef
 $('#input-city').kladr('type', $.kladr.type.city);
-$('#kladr_autocomplete li')[1].remove();
