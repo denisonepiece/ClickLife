@@ -7,6 +7,10 @@ import './modal-offer/modal-offer';
 import '../../../js/registration';
 import '../../../js/login';
 import './social-sign/handleSocial';
+import '../../../js/feedback';
+import '../../../js/report';
+import '../../../js/connect';
+import '../textarea/textarea';
 
 initModal('.button-enter', '.modal-enter');
 initModal('.button-reg-comp', '.modal-reg-comp');
@@ -91,7 +95,7 @@ function initModal(btn, modal) {
   };
 
   // Закрытие модального окна при клике мимо
-  modalCurrent.onclick = function (e) {
+  modalCurrent.onclick = function(e) {
     if (!e.target.closest('.modal__body')) {
       hideModal(this);
       showHideModals();

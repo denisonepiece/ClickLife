@@ -1,7 +1,7 @@
 mixin button(style, content, dopClass)
   case style
     when 'big-fill-log'
-      button.button.button_fill-big= content
+      button.button.button_fill-big(class= dopClass)= content
     when 'business'
       a.button.button_border.button_business(href="profile-edit-company.html") Перевести <br> в бизнес-профиль
         include lightning.svg
