@@ -15,11 +15,11 @@ import '../textarea/textarea';
 initModal('.button-enter', '.modal-enter');
 initModal('.button-reg-comp', '.modal-reg-comp');
 initModal('.button-reg-fiz', '.modal-reg-fiz');
-initModal('.button-mail-confirm', '.modal-mail-confirm');
-initModal('.button-tel-confirm', '.modal-tel-confirm');
-initModal('.button-pass', '.modal-pass');
-initModal('.button-real-mail', '.modal-real-mail');
-initModal('.button-real-tel', '.modal-real-tel');
+// initModal('.button-mail-confirm', '.modal-mail-confirm');
+// initModal('.button-tel-confirm', '.modal-tel-confirm');
+// initModal('.button-pass', '.modal-pass');
+// initModal('.button-real-mail', '.modal-real-mail');
+// initModal('.button-real-tel', '.modal-real-tel');
 initModal('.button-i-elect', '.modal-i-elect');
 initModal('.button-my-elect', '.modal-my-elect');
 initModal('.button-skills', '.modal-skills');
@@ -81,7 +81,7 @@ function initModal(btn, modal) {
 
   // Добававляем обработчик событий для кнопок открытия модального окна
   for (let i = 0; i < allButtons.length; i++) {
-    allButtons[i].addEventListener('click', function (e) {
+    allButtons[i].addEventListener('click', function(e) {
       e.preventDefault();
       hideOpenModals(modalCurrent);
       showModal(modalCurrent);
@@ -95,10 +95,10 @@ function initModal(btn, modal) {
   };
 
   // Закрытие модального окна при клике мимо
-  modalCurrent.onclick = function(e) {
+  modalCurrent.addEventListener('mousedown', function(e) {
     if (!e.target.closest('.modal__body')) {
       hideModal(this);
       showHideModals();
     }
-  };
+  });
 }

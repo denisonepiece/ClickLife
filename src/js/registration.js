@@ -17,7 +17,7 @@ function registration() {
     const modalRegComp = document.querySelector('.modal-reg-comp');
     const modalMailConfirm = document.querySelector('.modal-mail-confirm');
 
-    btnForm.onclick = function(e) {
+    btnForm.onclick = function (e) {
       e.preventDefault();
 
       const inputData = {
@@ -37,12 +37,12 @@ function registration() {
           'Content-Type': 'application/json;charset=utf-8',
         },
         body: JSON.stringify(inputData),
-      }).then(function(response) {
+      }).then(function (response) {
         if (!response.ok) {
           return 'Данные с сервера не получены';
         }
         return response.json();
-      }).then(function(data) {
+      }).then(function (data) {
         if (data.status) {
           token = data.token;
           userId = data['user_id'];
@@ -172,6 +172,110 @@ function registration() {
 
     const codeInput = modal.querySelector('input');
 
+    const btnChangeMail = document.querySelector('#btn-change-mail');
+    const btnChangeTel = document.querySelector('#btn-change-tel');
+    const modalChangeMail = document.querySelector('.modal-real-mail');
+    const modalChangeTel = document.querySelector('.modal-real-tel');
+
+    const btnSendCodeAgain = modal.querySelector('.btn-send-code-again');
+    const timerSpan = modal.querySelector('.code-timer');
+
+    Timer.init(timerSpan);
+
+    btnSendCodeAgain.onclick = function () {
+      if (Timer.end) {
+        fetch(`https://click-life.ru/api/register/resend/${userId}@${token}`)
+            .then(function (response) {
+              if (!response.ok) {
+                return 'Данные с сервера не получены';
+              }
+              return response.json();
+            }).then(function (data) {
+              if (data.status) {
+                console.log('код отправлен');
+              } else {
+                console.log('иди на хуй');
+              }
+            });
+        Timer.init(timerSpan);
+      }
+    };
+
+
+    btnChangeMail.onclick = function () {
+      modal.classList.add('modal-hidden');
+      modalChangeMail.classList.remove('modal-hidden');
+      const inputValue = modalChangeMail.querySelector('input').value;
+
+      const btnSumbit = modalChangeMail.querySelector('.button');
+
+      btnSumbit.addEventListener('click', function (e) {
+        e.preventDefault();
+        const changeData = {
+          'token': token,
+          'contact': inputValue,
+          'user_id': userId,
+        };
+
+        fetch('https://click-life.ru/api/register/step/4', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json;charset=utf-8',
+          },
+          body: JSON.stringify(changeData),
+        }).then(function (response) {
+          if (!response.ok) {
+            return 'Данные с сервера не получены';
+          }
+          return response.json();
+        }).then(function (data) {
+          if (data.status) {
+            modalChangeMail.classList.add('modal-hidden');
+            modal.classList.remove('modal-hidden');
+          } else {
+            modalChangeMail.querySelector('input').nextElementSibling.innerHTML = 'Вы ввели неверные данные';
+          }
+        });
+      });
+    };
+
+    btnChangeTel.onclick = function () {
+      modal.classList.add('modal-hidden');
+      modalChangeTel.classList.remove('modal-hidden');
+      const inputValue = modalChangeTel.querySelector('input').value;
+
+      const btnSumbit = modalChangeTel.querySelector('.button');
+
+      btnSumbit.addEventListener('click', function (e) {
+        e.preventDefault();
+        const changeData = {
+          'token': token,
+          'contact': inputValue,
+          'user_id': userId,
+        };
+
+        fetch('https://click-life.ru/api/register/step/4', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json;charset=utf-8',
+          },
+          body: JSON.stringify(changeData),
+        }).then(function (response) {
+          if (!response.ok) {
+            return 'Данные с сервера не получены';
+          }
+          return response.json();
+        }).then(function (data) {
+          if (data.status) {
+            modalChangeTel.classList.add('modal-hidden');
+            modal.classList.remove('modal-hidden');
+          } else {
+            modalChangeTel.querySelector('input').nextElementSibling.innerHTML = 'Вы ввели неверные данные';
+          }
+        });
+      });
+    };
+
     modal.querySelector('.button_fill-big').onclick = (e) => {
       e.preventDefault();
 
@@ -186,12 +290,12 @@ function registration() {
           'Content-Type': 'application/json;charset=utf-8',
         },
         body: JSON.stringify(codeData),
-      }).then(function(response) {
+      }).then(function (response) {
         if (!response.ok) {
           return 'Данные с сервера не получены';
         }
         return response.json();
-      }).then(function(data) {
+      }).then(function (data) {
         if (data.status) {
           modal.classList.add('modal-hidden');
           createPass();
@@ -226,12 +330,12 @@ function registration() {
             'Content-Type': 'application/json;charset=utf-8',
           },
           body: JSON.stringify(passData),
-        }).then(function(response) {
+        }).then(function (response) {
           if (!response.ok) {
             return 'Данные с сервера не получены';
           }
           return response.json();
-        }).then(function(data) {
+        }).then(function (data) {
           if (data.status) {
             if (document.querySelector('meta[name="redirect_to"]')) {
               document.location.href = 'https://click-life.ru/user';
@@ -247,4 +351,49 @@ function registration() {
   }
 }
 
+
+let Timer = {
+  minutes: 0,
+  seconds: 0,
+  element: null,
+  end: false,
+
+  init: function (el) {
+    this.minutes = 2;
+    this.seconds = 59;
+    this.element = el;
+
+    this.tickDown();
+  },
+
+  tickDown: function () {
+    let timerId = setInterval(() => {
+      this.updateView();
+
+      if (this.seconds > 0) {
+        this.seconds--;
+      }
+
+      if (this.minutes === 0 && this.seconds === 0) {
+        this.updateView();
+        clearInterval(timerId);
+        this.end = true;
+      }
+
+      if (this.seconds === 0) {
+        this.minutes--;
+        this.seconds = 59;
+      }
+    }, 1000);
+  },
+
+  updateView: function () {
+    const el = this.element;
+    if (this.seconds < 10) {
+      el.innerHTML = '0' + this.minutes + ':0' + this.seconds;
+    } else {
+      el.innerHTML = '0' + this.minutes + ':' + this.seconds;
+    }
+  },
+};
 

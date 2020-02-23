@@ -7,6 +7,7 @@ import '../../includes/footer/footer'
 //Components
 import '../../components/button/button'
 import '../../components/like-dislike/like-dislike'
+import '../../components/modals/modal'
 //Media
 import './select-performer.sass'
 import '../../../sass/media.sass'

@@ -41,4 +41,22 @@ function toggleTaskMenu() {
   });
 }
 
+function tochnoHoches() {
+  const menuList = document.querySelector('.task-menu__list');
+  const btnDelete = menuList.querySelector('.delete');
+  const form = menuList.querySelector('form');
+
+  btnDelete.addEventListener('click', function (e) {
+    e.preventDefault();
+
+    const yes = confirm('Вы точно хотите удалить задание?');
+
+    if(yes) {
+      form.submit();
+    }
+  });
+}
+
+tochnoHoches();
+
 

@@ -1,3 +1,6 @@
+import {onClickNotice, toggleMenu} from '../../../includes/header/header';
+import {hideShowMenu} from "../../header-menu/header-menu";
+
 function handleSocial() {
   const socialLinks = document.querySelectorAll('.social-sign__social');
 
@@ -35,14 +38,17 @@ function headerUpdate() {
       })
       .then((data) => {
         const parser = new DOMParser();
-        const header = parser.parseFromString(data, 'text/html').querySelector('.header');
+        const header = parser.parseFromString(data, 'text/html').querySelector('.header').childNodes;
         const oldHeader = document.querySelector('.header');
 
-        document.body.replaceChild(header, oldHeader);
+        oldHeader.innerHTML = '';
+        oldHeader.append(...header);
+        onClickNotice();
+        toggleMenu();
+        hideShowMenu();
 
         document.querySelector('.modal-enter').classList.add('modal-hidden');
         document.querySelector('.modal-reg-fiz').classList.add('modal-hidden');
         document.querySelector('.modal-reg-comp').classList.add('modal-hidden');
-
       });
 };

@@ -13,13 +13,20 @@ if (document.querySelector('.menu-btn')) {
   toggleMenu();
 }
 
-function onClickNotice() {
+export function onClickNotice() {
+  const header = document.querySelector('.header');
   const notice = document.querySelector('.notice');
   const noticeBlock = notice.querySelector('.notification-block');
 
-  notice.onclick = () => notice.classList.toggle('-is-open-');
+  header.addEventListener('click', function(e) {
+    let n = e.target.closest('.notice');
 
-  noticeBlock.addEventListener('click', e => e.stopPropagation());
+    if (n && header.contains(n)) {
+      notice.classList.toggle('-is-open-');
+    }
+  });
+
+  noticeBlock.addEventListener('click', (e) => e.stopPropagation());
 
   document.addEventListener('click', function(e) {
     const container = $('.notice');
@@ -30,7 +37,7 @@ function onClickNotice() {
   });
 }
 
-function toggleMenu() {
+export function toggleMenu() {
   const menuBtn = document.querySelector('.menu-btn');
   const menu = document.querySelector('.menu');
 

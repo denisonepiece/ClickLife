@@ -4,7 +4,7 @@ if(document.querySelector('.control-panel__photo')) {
   hideShowMenu();
 }
 
-function hideShowMenu() {
+export function hideShowMenu() {
   const menuBtn = document.querySelector('.control-panel__photo');
 
   menuBtn.onclick = () => menuBtn.parentNode.classList.toggle('-menu-is-open-');

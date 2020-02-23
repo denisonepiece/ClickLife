@@ -28,7 +28,10 @@ function init() {
   var map;
   let placemark;
 
-  // При клике по кнопке запускаем верификацию введёных данных.
+  if($('#input-addr').val() !== 0) {
+    geocode();
+  }
+
   $('#input-addr').bind('focusout', function(e) {
     geocode();
   });
@@ -153,14 +156,20 @@ function showMaps() {
   const radio = document.querySelectorAll('.place__radio input');
   const mapBlock = document.querySelector('.place__address');
 
+  check();
+
   for (let i = 0; i < radio.length; i++) {
-    radio[i].addEventListener('change', function () {
-      if (radio[2].checked) {
-        mapBlock.style.display = 'block';
-      } else {
-        mapBlock.style.display = 'none';
-      }
+    radio[i].addEventListener('change', function() {
+      check();
     });
+  }
+
+  function check() {
+    if (radio[2].checked) {
+      mapBlock.style.display = 'block';
+    } else {
+      mapBlock.style.display = 'none';
+    }
   }
 }
 
@@ -172,8 +181,17 @@ function loadFiles() {
   const loadFiles = document.querySelector('.load-files');
   const fileInput = loadFiles.querySelector('input');
   const message = loadFiles.querySelector('.sub');
-  let usedFiles = [];
+  let usedFiles = document.querySelector('input[name="usedFiles"]').value.split(',');
   const fileList = loadFiles.querySelector('.load-files__list');
+
+
+  if(usedFiles[0] == '') {
+    usedFiles = [];
+  }
+
+  if(document.querySelector('.load-files__item')) {
+    deleteFiles();
+  }
 
   // При загрузке файлов, по одному отправляем на сервер
   fileInput.addEventListener('change', function () {
@@ -228,7 +246,7 @@ function loadFiles() {
 
     for (let i = 0; i < deleteButtons.length; i++) {
       deleteButtons[i].querySelector('.btn-delete').onclick = function () {
-        usedFiles.splice(usedFiles.indexOf(this.getAttribute('data'), 1));
+        usedFiles.splice(usedFiles.indexOf(+this.getAttribute('data')), 1);
         this.parentNode.remove();
         updateUsedFiles();
       };

@@ -18,14 +18,36 @@
     border-radius: 4px
     border: none
 
+.bottom-navigation
+  position: relative
+  display: flex
+  margin-top: 4rem
+
+.btn-up
+  position: absolute
+  padding-top: 75px
+  color: $grey-dark
+  font-weight: 500
+  right: 2rem
+
+  &:after
+    content: ''
+    display: block
+    height: 66px
+    width: 48px
+    background: url("up.svg")
+    top: 0
+    position: absolute
+
 
 .content
   max-width: calc(100% - 28rem - 2rem)
   width: 100%
 
+
 .wrap
   padding-top: 10rem
-  padding-bottom: 10rem
+  padding-bottom: 20rem
 
   .container
     display: flex
